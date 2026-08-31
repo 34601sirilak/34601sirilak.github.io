@@ -30,6 +30,392 @@ padding: 30px; }
 </div>
 <!-- ปุ่มกดกลับหน้าแรก -->
 <a href="index.html" class="btn"> กลับหน้าแรก🔙</a>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | นางสาว สิริลักษณ์ ผาดผ่อง</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Tahoma", sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #fff0f6, #f3e8ff);
+            color: #4a3158;
+            min-height: 100vh;
+        }
+        header {
+            background: #c084fc;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        header p {
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .page {
+            background: rgba(255,255,255,0.9);
+            border-radius: 25px;
+            padding: 45px 35px;
+            min-height: 520px;
+            box-shadow: 0 8px 25px rgba(100, 50, 120, 0.15);
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .page h2 {
+            color: #9333ea;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+        .page h3 {
+            color: #a855f7;
+            margin: 20px 0 10px;
+        }
+        .page p,
+        .page li {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        .page ul {
+            padding-left: 30px;
+        }
+        .profile {
+            text-align: center;
+        }
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #d8b4fe;
+            margin-bottom: 20px;
+        }
+        .portfolio-card {
+            background: #faf5ff;
+            border-left: 6px solid #c084fc;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+        }
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        button {
+            border: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            background: #a855f7;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #7e22ce;
+            transform: translateY(-2px);
+        }
+        button.back {
+            background: #d8b4fe;
+            color: #4a3158;
+        }
+        button.back:hover {
+            background: #c084fc;
+        }
+        .page-number {
+            text-align: center;
+            margin-top: 15px;
+            color: #8b5fa8;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #7e5a8e;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 10px;
+            }
+            .page {
+                padding: 30px 20px;
+            }
+            .page h2 {
+                font-size: 26px;
+            }
+            .page p,
+            .page li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>แฟ้มสะสมผลงาน (Portfolio)</h1>
+    <p>นางสาว สิริลักษณ์ ผาดผ่อง</p>
+</header>
+<div class="container">
+    <!-- หน้า 1 : คำนำ -->
+    <section class="page active">
+        <h2>คำนำ</h2>
+        <p>
+            แฟ้มสะสมผลงาน (Portfolio) ฉบับนี้จัดทำขึ้นเพื่อรวบรวม
+            ประวัติส่วนตัว ประวัติการศึกษา ผลงาน โครงงาน และกิจกรรมต่าง ๆ
+            ที่แสดงถึงความสามารถ ความสนใจ และความตั้งใจของข้าพเจ้า
+        </p>
+        <p style="margin-top:20px;">
+            ข้าพเจ้าหวังว่าแฟ้มสะสมผลงานฉบับนี้จะช่วยแสดงให้เห็นถึง
+            ตัวตน ความสามารถ และความมุ่งมั่นในการศึกษาต่อ
+            รวมถึงเป้าหมายที่ข้าพเจ้าตั้งใจจะพัฒนาตนเองต่อไปในอนาคต
+        </p>
+        <p style="margin-top:20px; text-align:right;">
+            นางสาว สิริลักษณ์ ผาดผ่อง
+        </p>
+        <div class="navigation">
+            <button onclick="nextPage()">หน้าถัดไป →</button>
+        </div>
+        <div class="page-number">หน้า 1 / 7</div>
+    </section>
+    <!-- หน้า 2 : แนะนำตัว -->
+    <section class="page">
+        <h2>แนะนำตัว</h2>
+        <div class="profile">
+            <!-- ใส่รูปของตัวเองตรง src -->
+            <img src="profile.jpg"
+                 alt="รูปโปรไฟล์"
+                 class="profile-img">
+            <h3>นางสาว สิริลักษณ์ ผาดผ่อง</h3>
+            <p>
+                สวัสดีค่ะ ดิฉันชื่อ สิริลักษณ์ ผาดผ่อง
+                เป็นผู้ที่มีความสนใจในการเรียนรู้สิ่งใหม่ ๆ
+                และต้องการพัฒนาความรู้ ความสามารถ และประสบการณ์
+                เพื่อนำไปใช้ในการศึกษาต่อและการทำงานในอนาคต
+            </p>
+        </div>
+        <div class="navigation">
+            <button class="back" onclick="prevPage()">← ย้อนกลับ</button>
+            <button onclick="nextPage()">หน้าถัดไป →</button>
+        </div>
+        <div class="page-number">หน้า 2 / 7</div>
+    </section>
+    <!-- หน้า 3 : รายละเอียดการศึกษา -->
+    <section class="page">
+        <h2>รายละเอียดการศึกษา</h2>
+        <div class="portfolio-card">
+            <h3>ระดับมัธยมศึกษา</h3>
+            <p>
+                สถานศึกษา : ........................................
+            </p>
+            <p>
+                แผนการเรียน : ....................................
+            </p>
+            <p>
+                ปีการศึกษา : .......................................
+            </p>
+        </div>
+        <div class="portfolio-card">
+            <h3>ความสนใจด้านการเรียน</h3>
+            <p>
+                มีความสนใจในด้าน ........................................
+                และต้องการนำความรู้ไปต่อยอดในการศึกษาระดับมหาวิทยาลัย
+            </p>
+        </div>
+        <div class="navigation">
+            <button class="back" onclick="prevPage()">← ย้อนกลับ</button>
+            <button onclick="nextPage()">หน้าถัดไป →</button>
+        </div>
+        <div class="page-number">หน้า 3 / 7</div>
+    </section>
+    <!-- หน้า 4 : มหาลัยที่อยากเข้า -->
+    <section class="page">
+        <h2>มหาวิทยาลัยที่อยากเข้า</h2>
+        <div class="portfolio-card">
+            <h3>มหาวิทยาลัยที่ใฝ่ฝัน</h3>
+            <p>
+                มหาวิทยาลัย : ........................................
+            </p>
+            <p>
+                คณะที่ต้องการ : .....................................
+            </p>
+            <p>
+                สาขาที่ต้องการ : .....................................
+            </p>
+        </div>
+        <p style="margin-top:25px;">
+            เหตุผลที่ต้องการเข้าศึกษาต่อในมหาวิทยาลัยแห่งนี้
+            เนื่องจากเป็นสถาบันที่มีหลักสูตรและสภาพแวดล้อม
+            ที่เหมาะสมกับความสนใจและเป้าหมายในการพัฒนาตนเอง
+        </p>
+        <div class="navigation">
+            <button class="back" onclick="prevPage()">← ย้อนกลับ</button>
+            <button onclick="nextPage()">หน้าถัดไป →</button>
+        </div>
+        <div class="page-number">หน้า 4 / 7</div>
+    </section>
+    <!-- หน้า 5 : แฟ้มสะสมผลงาน -->
+    <section class="page">
+        <h2>แฟ้มสะสมผลงาน</h2>
+        <div class="portfolio-card">
+            <h3>ผลงานที่ 1</h3>
+            <p>
+                ชื่อผลงาน : ........................................
+            </p>
+            <p>
+                รายละเอียด : ........................................
+            </p>
+        </div>
+        <div class="portfolio-card">
+            <h3>ผลงานที่ 2</h3>
+            <p>
+                ชื่อผลงาน : ........................................
+            </p>
+            <p>
+                รายละเอียด : ........................................
+            </p>
+        </div>
+        <div class="portfolio-card">
+            <h3>ผลงานที่ 3</h3>
+            <p>
+                ชื่อผลงาน : ........................................
+            </p>
+            <p>
+                รายละเอียด : ........................................
+            </p>
+        </div>
+        <div class="navigation">
+            <button class="back" onclick="prevPage()">← ย้อนกลับ</button>
+            <button onclick="nextPage()">หน้าถัดไป →</button>
+        </div>
+        <div class="page-number">หน้า 5 / 7</div>
+    </section>
+    <!-- หน้า 6 : โครงงาน/ชิ้นงาน -->
+    <section class="page">
+        <h2>โครงงาน / ชิ้นงาน</h2>
+        <div class="portfolio-card">
+            <h3>โครงงาน / ชิ้นงานที่ 1</h3>
+            <p>
+                ชื่อโครงงาน : ........................................
+            </p>
+            <p>
+                ที่มาและความสำคัญ : ................................
+            </p>
+            <p>
+                สิ่งที่ได้รับจากโครงงาน :
+                ........................................................
+            </p>
+        </div>
+        <div class="portfolio-card">
+            <h3>โครงงาน / ชิ้นงานที่ 2</h3>
+            <p>
+                ชื่อโครงงาน : ........................................
+            </p>
+            <p>
+                รายละเอียด : ........................................
+            </p>
+        </div>
+        <div class="navigation">
+            <button class="back" onclick="prevPage()">← ย้อนกลับ</button>
+            <button onclick="nextPage()">หน้าถัดไป →</button>
+        </div>
+        <div class="page-number">หน้า 6 / 7</div>
+    </section>
+    <!-- หน้า 7 : ผลงานที่ภูมิใจ -->
+    <section class="page">
+        <h2>ผลงานที่ภูมิใจ</h2>
+        <div class="portfolio-card">
+            <h3>🏆 ผลงานที่ภาคภูมิใจ</h3>
+            <p>
+                ผลงาน : ................................................
+            </p>
+            <p>
+                รายละเอียดของผลงาน :
+                ........................................................
+                ........................................................
+            </p>
+            <p>
+                เหตุผลที่ภาคภูมิใจ :
+                ........................................................
+                ........................................................
+            </p>
+        </div>
+        <div class="portfolio-card">
+            <h3>สิ่งที่ได้รับ</h3>
+            <p>
+                จากผลงานนี้ ข้าพเจ้าได้รับประสบการณ์
+                ได้เรียนรู้การทำงาน และได้พัฒนาทักษะต่าง ๆ
+                ซึ่งสามารถนำไปต่อยอดในการเรียนและอนาคตได้
+            </p>
+        </div>
+        <div class="navigation">
+            <button class="back" onclick="prevPage()">← ย้อนกลับ</button>
+            <button onclick="goToFirstPage()">กลับหน้าแรก</button>
+        </div>
+        <div class="page-number">หน้า 7 / 7</div>
+    </section>
 </div>
+<footer>
+    © 2026 Portfolio | นางสาว สิริลักษณ์ ผาดผ่อง
+</footer>
+<script>
+    let currentPage = 0;
+    const pages = document.querySelectorAll(".page");
+    function showPage(pageNumber) {
+        pages.forEach((page, index) => {
+            page.classList.toggle("active", index === pageNumber);
+        });
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+    function nextPage() {
+        if (currentPage < pages.length - 1) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    }
+    function prevPage() {
+        if (currentPage > 0) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    }
+    function goToFirstPage() {
+        currentPage = 0;
+        showPage(currentPage);
+    }
+</script>
 </body>
 </html>

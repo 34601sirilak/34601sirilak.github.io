@@ -554,28 +554,39 @@
 
     <div class="thank-you-content">
 
-        <div class="teacher-icon">
-            👩🏻‍🏫🔬🧪
+        <!-- ตกแต่งอาชีพครูวิทยาศาสตร์ -->
+        <div class="teacher-decoration">
+            👩🏻‍🏫 🔬 🧪 📚 🌱
         </div>
 
+        <!-- ข้อความกลางหน้า -->
         <h2>ขอบคุณ</h2>
 
         <p class="thank-you-text">
             ขอบคุณที่เข้ามาเยี่ยมชมแฟ้มสะสมผลงาน
         </p>
 
-        <p class="teacher-goal">
-            🌱 ความฝันของฉัน 🌱
-        </p>
+        <div class="dream-box">
 
-        <p class="teacher-text">
-            การได้เป็น <strong>ครูวิทยาศาสตร์</strong><br>
-            เพื่อถ่ายทอดความรู้ สร้างแรงบันดาลใจ<br>
-            และทำให้นักเรียนสนุกกับการเรียนรู้วิทยาศาสตร์
-        </p>
+            <h3>🌱 ความฝันของฉัน 🌱</h3>
 
+            <p>
+                ฉันมีความตั้งใจที่จะศึกษาต่อ
+                <strong>คณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป</strong>
+            </p>
+
+            <p>
+                และมุ่งมั่นที่จะก้าวไปสู่การเป็น
+                <strong>ครูวิทยาศาสตร์</strong>
+                ที่สามารถถ่ายทอดความรู้
+                สร้างแรงบันดาลใจ และทำให้นักเรียนสนุกกับการเรียนรู้
+            </p>
+
+        </div>
+
+        <!-- ตกแต่งด้านล่าง -->
         <div class="science-decoration">
-            ⚗️　🔬　🧬　🧪　🌱
+            ⚗️　🔬　🧬　🧪
         </div>
 
         <p class="thank-name">
@@ -584,6 +595,7 @@
 
     </div>
 
+    <!-- ปุ่มย้อนกลับ -->
     <div class="navigation">
 
         <button class="back" onclick="prevPage()">
@@ -607,11 +619,18 @@
 
 .thank-you-page {
     min-height: 650px;
+    position: relative;
     display: none;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #ffffff, #eefaff);
+    background: linear-gradient(
+        135deg,
+        #FFFFFF,
+        #F0FAFF,
+        #E6F4FF
+    );
+    overflow: hidden;
 }
 
 .thank-you-page.active {
@@ -619,68 +638,93 @@
     flex-direction: column;
 }
 
+/* เนื้อหากลางหน้า */
 .thank-you-content {
     width: 100%;
-    max-width: 750px;
+    max-width: 800px;
     padding: 30px;
 }
 
-/* ไอคอนครูวิทยาศาสตร์ */
-.teacher-icon {
+/* รูปตกแต่งครูวิทยาศาสตร์ */
+.teacher-decoration {
     font-size: 55px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 8px;
 }
 
 /* คำว่า ขอบคุณ */
 .thank-you-page h2 {
-    font-size: 65px;
     color: #3182B8;
-    margin-bottom: 25px;
-    letter-spacing: 5px;
+    font-size: 70px;
+    margin-bottom: 20px;
+    letter-spacing: 8px;
 }
 
 /* ข้อความขอบคุณ */
 .thank-you-text {
-    color: #4F7188;
+    color: #527F9B;
     font-size: 22px !important;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
-/* ความฝัน */
-.teacher-goal {
-    color: #5AA9D6;
-    font-size: 24px !important;
-    font-weight: bold;
-    margin: 20px 0 10px;
+/* กล่องความฝัน */
+.dream-box {
+    background: rgba(255,255,255,0.95);
+    border: 2px solid #BFE7FA;
+    border-radius: 25px;
+    padding: 25px 35px;
+    box-shadow: 0 8px 25px rgba(70,150,200,0.12);
 }
 
-/* ข้อความครูวิทยาศาสตร์ */
-.teacher-text {
+/* หัวข้อความฝัน */
+.dream-box h3 {
+    color: #3B8FC4;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+/* ข้อความในกล่อง */
+.dream-box p {
     color: #4F7188;
-    font-size: 20px !important;
-    line-height: 2 !important;
+    font-size: 18px !important;
+    line-height: 1.9 !important;
+    margin-top: 10px;
 }
 
-.teacher-text strong {
+/* เน้นคำว่าครูวิทยาศาสตร์ */
+.dream-box strong {
     color: #3182B8;
 }
 
-/* ของตกแต่งวิทยาศาสตร์ */
+/* ไอคอนวิทยาศาสตร์ */
 .science-decoration {
-    font-size: 32px;
-    margin: 30px 0;
+    color: #5AA9D6;
+    font-size: 35px;
+    margin: 30px 0 20px;
     letter-spacing: 8px;
 }
 
 /* ชื่อ */
 .thank-name {
     color: #5798BC;
-    font-size: 18px !important;
-    margin-top: 15px;
+    font-size: 19px !important;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 
-/* ===== มือถือ ===== */
+/* ========================= */
+/* ปุ่มย้อนกลับ */
+/* ========================= */
+
+.thank-you-page .navigation {
+    margin-top: 10px;
+}
+
+
+/* ========================= */
+/* มือถือ */
+/* ========================= */
 
 @media (max-width: 600px) {
 
@@ -688,137 +732,45 @@
         min-height: 600px;
     }
 
-    .teacher-icon {
-        font-size: 42px;
+    .thank-you-content {
+        padding: 20px 15px;
+    }
+
+    .teacher-decoration {
+        font-size: 40px;
+        letter-spacing: 3px;
     }
 
     .thank-you-page h2 {
         font-size: 48px;
+        letter-spacing: 4px;
     }
 
     .thank-you-text {
         font-size: 18px !important;
     }
 
-    .teacher-goal {
-        font-size: 20px !important;
+    .dream-box {
+        padding: 20px;
     }
 
-    .teacher-text {
-        font-size: 17px !important;
+    .dream-box h3 {
+        font-size: 21px;
+    }
+
+    .dream-box p {
+        font-size: 16px !important;
     }
 
     .science-decoration {
-        font-size: 25px;
+        font-size: 27px;
         letter-spacing: 3px;
     }
 
 }
 
-</style> 
-<!-- ========================= -->
-<!-- CSS สำหรับหน้า 4 -->
-<!-- ========================= -->
-
-<style>
-
-.award-card {
-    background: #F5FCFF;
-    border: 2px solid #BFE7FA;
-    border-radius: 20px;
-    padding: 22px;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 15px rgba(90,169,214,0.12);
-}
-
-.award-card h3 {
-    color: #3182B8;
-    font-size: 23px;
-    margin: 0 0 8px;
-}
-
-.award-subtitle {
-    color: #5B8299;
-    font-size: 17px !important;
-    margin-bottom: 8px;
-}
-
-.award-result {
-    color: #3182B8;
-    font-weight: bold;
-    font-size: 18px !important;
-    margin-bottom: 18px;
-}
-
-/* รูปภาพ 2 รูป */
-.award-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    margin: 15px 0 20px;
-}
-
-.award-images img {
-    width: 45%;
-    max-width: 360px;
-    height: 240px;
-    object-fit: contain;
-    background: white;
-    border-radius: 15px;
-    border: 4px solid #BFE7FA;
-    padding: 5px;
-    box-shadow: 0 5px 15px rgba(90,169,214,0.15);
-}
-
-/* กล่องอธิบาย */
-.award-description {
-    background: white;
-    border-left: 5px solid #79BFE8;
-    border-radius: 12px;
-    padding: 15px 18px;
-}
-
-.award-description h4 {
-    color: #3182B8;
-    font-size: 19px;
-    margin-bottom: 8px;
-}
-
-.award-description p {
-    color: #4F7188;
-    font-size: 16px !important;
-    line-height: 1.7;
-}
-
-
-/* รองรับมือถือ */
-@media (max-width: 600px) {
-
-    .award-card {
-        padding: 16px;
-    }
-
-    .award-card h3 {
-        font-size: 19px;
-    }
-
-    .award-images {
-        gap: 8px;
-    }
-
-    .award-images img {
-        width: 50%;
-        height: 190px;
-    }
-
-    .award-description p {
-        font-size: 15px !important;
-    }
-
-}
-
 </style>
+
 
 <!-- ========================= -->
 <!-- JavaScript เปลี่ยนหน้า -->
@@ -826,62 +778,52 @@
 
 <script>
 
-    let currentPage = 0;
+let currentPage = 0;
 
-    const pages = document.querySelectorAll(".page");
+const pages = document.querySelectorAll(".page");
 
+function showPage(pageNumber) {
 
-    function showPage(pageNumber) {
+    pages.forEach(function(page, index) {
 
-        pages.forEach(function(page, index) {
-
-            if (index === pageNumber) {
-
-                page.classList.add("active");
-
-            } else {
-
-                page.classList.remove("active");
-
-            }
-
-        });
-
-    }
-
-
-    function nextPage() {
-
-        if (currentPage < pages.length - 1) {
-
-            currentPage++;
-
-            showPage(currentPage);
-
+        if (index === pageNumber) {
+            page.classList.add("active");
+        } else {
+            page.classList.remove("active");
         }
 
+    });
+
+}
+
+function nextPage() {
+
+    if (currentPage < pages.length - 1) {
+
+        currentPage++;
+
+        showPage(currentPage);
+
     }
 
+}
 
-    function prevPage() {
+function prevPage() {
 
-        if (currentPage > 0) {
+    if (currentPage > 0) {
 
-            currentPage--;
+        currentPage--;
 
-            showPage(currentPage);
-
-        }
+        showPage(currentPage);
 
     }
 
+}
 
-    // แสดงหน้าแรกเมื่อเปิดเว็บไซต์
-    showPage(currentPage);
+/* เปิดเว็บไซต์ที่หน้า 1 */
+showPage(currentPage);
 
 </script>
 
 </body>
 </html>
-
-        

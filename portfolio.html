@@ -193,6 +193,101 @@
 .university-goal p {
     color: #4F7188;
 }
+        /* ===== หน้า 4 ผลงานและรางวัล ===== */
+
+.award-card {
+    background: #F5FCFF;
+    border: 2px solid #BFE7FA;
+    border-radius: 20px;
+    padding: 22px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(90,169,214,0.12);
+}
+
+.award-card h3 {
+    color: #3182B8;
+    font-size: 23px;
+    margin: 0 0 8px;
+}
+
+.award-subtitle {
+    color: #5B8299;
+    font-size: 17px !important;
+    margin-bottom: 8px;
+}
+
+.award-result {
+    color: #3182B8;
+    font-weight: bold;
+    font-size: 18px !important;
+    margin-bottom: 18px;
+}
+
+/* รูปภาพ 2 รูป */
+.award-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 15px 0 20px;
+}
+
+.award-images img {
+    width: 48%;
+    height: 250px;
+    object-fit: contain;
+    background: white;
+    border-radius: 15px;
+    border: 4px solid #BFE7FA;
+    padding: 5px;
+    box-shadow: 0 5px 15px rgba(90,169,214,0.15);
+}
+
+/* กล่องทักษะ */
+.award-description {
+    background: white;
+    border-left: 5px solid #79BFE8;
+    border-radius: 12px;
+    padding: 15px 18px;
+}
+
+.award-description h4 {
+    color: #3182B8;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.award-description p {
+    color: #4F7188;
+    font-size: 16px !important;
+    line-height: 1.7;
+}
+
+/* มือถือ */
+@media (max-width: 600px) {
+
+    .award-card {
+        padding: 16px;
+    }
+
+    .award-card h3 {
+        font-size: 19px;
+    }
+
+    .award-images {
+        gap: 8px;
+    }
+
+    .award-images img {
+        width: 50%;
+        height: 190px;
+    }
+
+    .award-description p {
+        font-size: 15px !important;
+    }
+
+}
         @media (max-width: 600px) {
             .container {
                 margin: 20px auto;
@@ -368,26 +463,25 @@
             🥈 ได้รับรางวัลรองชนะเลิศอันดับ 1
         </p>
 
-        <!-- รูปภาพ 2 รูป -->
         <div class="award-images">
 
             <img src="IMG_6494.jpeg"
-                 alt="ภาพการแข่งขันศึกวัดเซียนปรากฏการณ์ธรรมชาติ รูปที่ 1">
+                 alt="ภาพการแข่งขัน รูปที่ 1">
 
             <img src="IMG_6497.jpeg"
-                 alt="ภาพการแข่งขันศึกวัดเซียนปรากฏการณ์ธรรมชาติ รูปที่ 2">
+                 alt="ภาพการแข่งขัน รูปที่ 2">
 
         </div>
 
         <div class="award-description">
 
-            <h4>✨ สิ่งที่ได้รับจากกิจกรรม</h4>
+            <h4>✨ ทักษะที่ได้รับ</h4>
 
             <p>
-                กิจกรรมนี้ช่วยพัฒนาทักษะการคิดวิเคราะห์และการแก้ปัญหา
-                รวมถึงการนำความรู้ด้านวิทยาศาสตร์มาประยุกต์ใช้ในการแข่งขัน
-                นอกจากนี้ยังได้ฝึกการทำงานร่วมกับผู้อื่น การวางแผน
-                และการตัดสินใจอย่างเป็นระบบ
+                ได้พัฒนาทักษะการคิดวิเคราะห์ การนำความรู้ด้านวิทยาศาสตร์
+                มาประยุกต์ใช้ในการแข่งขัน และการแก้ปัญหาอย่างเป็นระบบ
+                รวมถึงได้ฝึกการทำงานร่วมกับผู้อื่น การวางแผน
+                และการตัดสินใจอย่างมีเหตุผล
             </p>
 
         </div>
@@ -408,7 +502,6 @@
             ⭐ ได้รับรางวัลจากการมีคะแนนความประพฤติดีมากกว่า 100 คะแนน
         </p>
 
-        <!-- รูปภาพ 2 รูป -->
         <div class="award-images">
 
             <img src="IMG_3586.jpeg"
@@ -421,13 +514,13 @@
 
         <div class="award-description">
 
-            <h4>🌟 สิ่งที่ได้รับจากกิจกรรม</h4>
+            <h4>🌟 ทักษะและสิ่งที่ได้รับ</h4>
 
             <p>
-                รางวัลนี้สะท้อนถึงความรับผิดชอบ การมีวินัย
-                และการปฏิบัติตนตามกฎระเบียบของสถานศึกษาอย่างสม่ำเสมอ
-                ทำให้ได้ฝึกความมีระเบียบ ความรับผิดชอบต่อตนเองและส่วนรวม
-                รวมถึงการประพฤติตนอย่างเหมาะสมในสถานศึกษา
+                รางวัลนี้สะท้อนถึงความรับผิดชอบ ความมีวินัย
+                และการปฏิบัติตนตามกฎระเบียบของสถานศึกษา
+                ทำให้ได้ฝึกความรับผิดชอบต่อตนเองและส่วนรวม
+                รวมถึงการมีระเบียบวินัยและการประพฤติตนอย่างเหมาะสม
             </p>
 
         </div>
@@ -453,8 +546,6 @@
     </div>
 
 </section>
-
-
 <!-- ========================= -->
 <!-- CSS สำหรับหน้า 4 -->
 <!-- ========================= -->

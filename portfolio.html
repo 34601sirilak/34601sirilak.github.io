@@ -131,6 +131,68 @@
             padding: 25px;
             color: #527F9B;
         }
+        /* ===== หน้า 3 มหาวิทยาลัยที่สนใจ ===== */
+.university {
+    text-align: center;
+}
+.university-title {
+    color: #3B8FC4;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+.university-image {
+    width: 100%;
+    max-width: 650px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid #BFE7FA;
+    box-shadow: 0 6px 18px rgba(90, 169, 214, 0.18);
+    margin-bottom: 25px;
+}
+.university-name {
+    background: #EAF8FF;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #BFE7FA;
+}
+.university-name h3 {
+    color: #3182B8;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.university-name p {
+    color: #4F7188;
+    font-size: 18px;
+}
+.reason-box {
+    background: #F5FCFF;
+    border-left: 6px solid #79BFE8;
+    border-radius: 15px;
+    padding: 20px 25px;
+    margin-top: 20px;
+    text-align: left;
+}
+.reason-box h3 {
+    color: #3B8FC4;
+    margin-bottom: 10px;
+}
+.reason-box p {
+    color: #4F7188;
+}
+.university-goal {
+    background: #EAF8FF;
+    border-radius: 18px;
+    padding: 18px;
+    margin-top: 20px;
+}
+.university-goal h3 {
+    color: #3182B8;
+}
+.university-goal p {
+    color: #4F7188;
+}
         @media (max-width: 600px) {
             .container {
                 margin: 20px auto;
@@ -182,7 +244,7 @@
         <div class="profile">
             <img src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
                  alt="รูปโปรไฟล์"
-                 class="profile-img"
+                 class="profile-img">
         <div class="profile-info">
     <div>ชื่อ-สกุล : นางสาวสิริลักษณ์ ผาดผ่อง</div>
     <div>ชื่อเล่น : ปอ</div>
@@ -200,4 +262,44 @@
         </div>
         <div class="page-number">หน้า 2 / 7</div>
     </section>
-    
+    <!-- หน้า 3 : มหาวิทยาลัยที่ฉันสนใจ -->
+<section class="page">
+    <h2>มหาวิทยาลัยที่ฉันสนใจอยากจะเข้าศึกษาต่อ</h2>
+    <div class="university-card">
+        <img src="IMG_6475.png"
+             alt="มหาวิทยาลัยเกษตรศาสตร์ บางเขน"
+             class="university-img">
+        <h3>มหาวิทยาลัยเกษตรศาสตร์</h3>
+        <h4>คณะศึกษาศาสตร์</h4>
+        <p class="major">
+            สาขาวิชาวิทยาศาสตร์ทั่วไป
+        </p>
+        <div class="reason-box">
+            <h4>💙 เหตุผลที่ฉันสนใจ 💙</h4>
+            <p>
+                ฉันมีความสนใจในวิชาวิทยาศาสตร์ เพราะเป็นวิชาที่ได้เรียนรู้
+                และค้นหาคำตอบจากสิ่งต่าง ๆ รอบตัว อีกทั้งยังชอบการทดลอง
+                เพราะทำให้ได้ลงมือปฏิบัติจริงและได้เรียนรู้จากประสบการณ์
+            </p>
+            <p>
+                นอกจากนี้ ฉันยังชอบการวิเคราะห์และการแก้ปัญหา
+                ซึ่งเป็นทักษะสำคัญในการเรียนวิทยาศาสตร์
+                ฉันจึงมีความตั้งใจที่จะศึกษาต่อในคณะศึกษาศาสตร์
+                สาขาวิชาวิทยาศาสตร์ทั่วไป
+                เพื่อพัฒนาความรู้และทักษะของตนเอง
+                และนำความรู้ไปถ่ายทอดให้ผู้อื่นในอนาคต
+            </p>
+            <p>
+                ฉันหวังว่าจะได้พัฒนาตนเองทั้งด้านความรู้
+                การทดลอง การคิดวิเคราะห์ และการแก้ปัญหา
+                เพื่อก้าวไปสู่การเป็นครูวิทยาศาสตร์ที่ดี
+                และสามารถสร้างแรงบันดาลใจให้นักเรียนรักและสนใจวิทยาศาสตร์
+            </p>
+        </div>
+    </div>
+    <div class="navigation">
+        <button class="back" onclick="prevPage()">← ย้อนกลับ</button>
+        <button onclick="nextPage()">หน้าถัดไป →</button>
+    </div>
+    <div class="page-number">หน้า 3 / 7</div>
+</section>

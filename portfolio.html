@@ -269,12 +269,8 @@
     <h2>มหาวิทยาลัยที่ฉันสนใจอยากจะเข้าศึกษาต่อ</h2>
 
     <div class="university">
-<section class="page">
 
-    <h2>มหาวิทยาลัยที่ฉันสนใจอยากจะเข้าศึกษาต่อ</h2>
-
-    <div class="university">
-
+        <!-- ข้อมูลมหาวิทยาลัย -->
         <div class="university-name">
 
             <h3>🌱 มหาวิทยาลัยเกษตรศาสตร์ บางเขน 🌱</h3>
@@ -289,6 +285,7 @@
 
         </div>
 
+        <!-- เหตุผลที่สนใจ -->
         <div class="reason-box">
 
             <h3>💙 เหตุผลที่ฉันสนใจ 💙</h3>
@@ -311,11 +308,12 @@
                 <strong>คณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป</strong>
                 เพื่อพัฒนาความรู้และทักษะด้านวิทยาศาสตร์
                 รวมถึงเรียนรู้การถ่ายทอดความรู้ให้ผู้อื่นเข้าใจได้ง่าย
-                และมุ่งมั่นที่จะนำความรู้ไปต่อยอดในอนาคต
+                และนำความรู้ไปต่อยอดในอนาคต
             </p>
 
         </div>
 
+        <!-- เป้าหมาย -->
         <div class="university-goal">
 
             <h3>🎓 เป้าหมายของฉัน</h3>
@@ -331,53 +329,88 @@
 
     </div>
 
+    <!-- ปุ่มเปลี่ยนหน้า -->
     <div class="navigation">
-        <button class="back" onclick="prevPage()">← ย้อนกลับ</button>
-        <button onclick="nextPage()">หน้าถัดไป →</button>
+
+        <button class="back" onclick="prevPage()">
+            ← ย้อนกลับ
+        </button>
+
+        <button onclick="nextPage()">
+            หน้าถัดไป →
+        </button>
+
     </div>
 
-    <div class="page-number">หน้า 3 / 5</div>
+    <div class="page-number">
+        หน้า 3 / 5
+    </div>
 
 </section>
+
+
+<!-- ========================= -->
+<!-- JavaScript เปลี่ยนหน้า -->
+<!-- ========================= -->
+
 <script>
+
     let currentPage = 0;
 
     const pages = document.querySelectorAll(".page");
+
 
     function showPage(pageNumber) {
 
         pages.forEach(function(page, index) {
 
             if (index === pageNumber) {
+
                 page.classList.add("active");
+
             } else {
+
                 page.classList.remove("active");
+
             }
 
         });
 
     }
 
+
     function nextPage() {
 
         if (currentPage < pages.length - 1) {
+
             currentPage++;
+
             showPage(currentPage);
+
         }
 
     }
+
 
     function prevPage() {
 
         if (currentPage > 0) {
+
             currentPage--;
+
             showPage(currentPage);
+
         }
 
     }
 
+
+    // แสดงหน้าแรกเมื่อเปิดเว็บไซต์
     showPage(currentPage);
+
 </script>
 
 </body>
 </html>
+
+        

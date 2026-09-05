@@ -6,52 +6,63 @@
     <title>Portfolio | นางสาว สิริลักษณ์ ผาดผ่อง</title>
 
     <style>
-        /* CSS ทั้งหมดของฉัน */
-    </style>
-</head>
-
-<body>
-
-<!-- เมนูมุมขวา -->
-<nav class="top-menu">
-    <a href="#page1">คำนำ</a>
-    <a href="#page2">About Me</a>
-    <a href="#page3">มหาวิทยาลัย</a>
-    <a href="#page4">ผลงาน</a>
-    <a href="#page5">ขอบคุณ</a>
-</nav>
-
-<header>
-    <h1>✨แฟ้มสะสมผลงาน (Portfolio)✨</h1>
-    <p>💫นางสาว สิริลักษณ์ ผาดผ่อง💫</p>
-</header>
-}
-
-.top-menu a {
-    text-decoration: none;
-    color: #3182B8;
-    background: #EAF8FF;
-    padding: 8px 14px;
-    border-radius: 15px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.top-menu a:hover {
-    background: #BFE7FA;
-}
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: "Tahoma", sans-serif;
         }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
         body {
             background: linear-gradient(135deg, #F0F8FF, #E6F4FF);
             color: #355C7D;
             min-height: 100vh;
         }
+
+        /* ========================= */
+        /* เมนูมุมขวา */
+        /* ========================= */
+
+        .top-menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: rgba(255,255,255,0.95);
+            padding: 12px;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px rgba(70,150,200,0.2);
+        }
+
+        .top-menu a {
+            text-decoration: none;
+            color: #3182B8;
+            background: #EAF8FF;
+            padding: 8px 14px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .top-menu a:hover {
+            background: #BFE7FA;
+            transform: translateX(-3px);
+        }
+
+        /* ========================= */
+        /* ส่วนหัว */
+        /* ========================= */
+
         header {
             background: #79BFE8;
             color: white;
@@ -59,61 +70,79 @@
             padding: 25px 15px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
+
         header h1 {
             font-size: 28px;
             margin-bottom: 8px;
         }
+
         header p {
             font-size: 16px;
         }
+
+        /* ========================= */
+        /* กล่องเนื้อหา */
+        /* ========================= */
+
         .container {
             max-width: 1000px;
             margin: 40px auto;
             padding: 20px;
         }
+
         .page {
             background: rgba(255,255,255,0.9);
             border-radius: 25px;
             padding: 45px 35px;
             min-height: 520px;
-            box-shadow: 0 8px 25px rgba(70, 150, 200, 0.15);
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(70,150,200,0.15);
             display: block;
             animation: fadeIn 0.5s ease;
         }
-        .page.active {
-            display: block;
-        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
                 transform: translateY(15px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         .page h2 {
             color: #3B8FC4;
             text-align: center;
             font-size: 32px;
             margin-bottom: 30px;
         }
+
         .page h3 {
             color: #a855f7;
             margin: 20px 0 10px;
         }
+
         .page p,
         .page li {
             font-size: 18px;
             line-height: 1.8;
         }
+
         .page ul {
             padding-left: 30px;
         }
+
+        /* ========================= */
+        /* About Me */
+        /* ========================= */
+
         .profile {
             text-align: center;
         }
+
         .profile-img {
             width: 160px;
             height: 160px;
@@ -122,625 +151,634 @@
             border: 6px solid #A9DDF5;
             margin-bottom: 20px;
         }
-        .portfolio-card {
+
+        .profile-info {
             background: #F3FAFF;
-            border-left: 6px solid #c084fc;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 15px 0;
+            border-radius: 20px;
+            padding: 25px;
+            line-height: 2;
+            text-align: left;
+            max-width: 600px;
+            margin: auto;
         }
-        .navigation {
+
+        .profile-info div {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        /* ========================= */
+        /* มหาวิทยาลัย */
+        /* ========================= */
+
+        .university {
+            text-align: center;
+        }
+
+        .university-name {
+            background: #EAF8FF;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 2px solid #BFE7FA;
+        }
+
+        .university-name h3 {
+            color: #3182B8;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .university-name p {
+            color: #4F7188;
+            font-size: 18px;
+        }
+
+        .reason-box {
+            background: #F5FCFF;
+            border-left: 6px solid #79BFE8;
+            border-radius: 15px;
+            padding: 20px 25px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .reason-box h3 {
+            color: #3B8FC4;
+            margin-bottom: 10px;
+        }
+
+        .reason-box p {
+            color: #4F7188;
+        }
+
+        .university-goal {
+            background: #EAF8FF;
+            border-radius: 18px;
+            padding: 18px;
+            margin-top: 20px;
+        }
+
+        .university-goal h3 {
+            color: #3182B8;
+        }
+
+        .university-goal p {
+            color: #4F7188;
+        }
+
+        /* ========================= */
+        /* ผลงานและรางวัล */
+        /* ========================= */
+
+        .award-card {
+            background: #F5FCFF;
+            border: 2px solid #BFE7FA;
+            border-radius: 20px;
+            padding: 22px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(90,169,214,0.12);
+        }
+
+        .award-card h3 {
+            color: #3182B8;
+            font-size: 23px;
+            margin: 0 0 8px;
+        }
+
+        .award-subtitle {
+            color: #5B8299;
+            font-size: 17px !important;
+            margin-bottom: 8px;
+        }
+
+        .award-result {
+            color: #3182B8;
+            font-weight: bold;
+            font-size: 18px !important;
+            margin-bottom: 18px;
+        }
+
+        .award-images {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 18px;
+            margin: 15px 0 20px;
         }
-        button {
-            border: none;
-            padding: 14px 28px;
-            border-radius: 30px;
-            background: #5AA9D6;
-            color: white;
-            font-size: 17px;
-            cursor: pointer;
-            transition: 0.3s;
+
+        .award-images img {
+            width: 48%;
+            height: 250px;
+            object-fit: contain;
+            background: white;
+            border-radius: 15px;
+            border: 4px solid #BFE7FA;
+            padding: 5px;
+            box-shadow: 0 5px 15px rgba(90,169,214,0.15);
         }
-        button:hover {
-            background: #3182B8;
-            transform: translateY(-2px);
+
+        .award-description {
+            background: white;
+            border-left: 5px solid #79BFE8;
+            border-radius: 12px;
+            padding: 15px 18px;
         }
-        button.back {
-            background: #d8b4fe;
-            color: #4a3158;
+
+        .award-description h4 {
+            color: #3182B8;
+            font-size: 19px;
+            margin-bottom: 8px;
         }
-        button.back:hover {
-            background: #79BFE8;
+
+        .award-description p {
+            color: #4F7188;
+            font-size: 16px !important;
+            line-height: 1.7;
         }
-        .page-number {
+
+        /* ========================= */
+        /* หน้าขอบคุณ */
+        /* ========================= */
+
+        .thank-you-page {
+            min-height: 650px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            margin-top: 15px;
-            color: #5798BC;
+            background: linear-gradient(
+                135deg,
+                #FFFFFF,
+                #F0FAFF,
+                #E6F4FF
+            );
+            overflow: hidden;
         }
-        footer {
-            text-align: center;
-            padding: 25px;
+
+        .thank-you-content {
+            width: 100%;
+            max-width: 800px;
+            padding: 30px;
+        }
+
+        .teacher-decoration {
+            font-size: 55px;
+            margin-bottom: 20px;
+            letter-spacing: 8px;
+        }
+
+        .thank-you-page h2 {
+            color: #3182B8;
+            font-size: 70px;
+            margin-bottom: 20px;
+            letter-spacing: 8px;
+        }
+
+        .thank-you-text {
             color: #527F9B;
+            font-size: 22px !important;
+            margin-bottom: 30px;
         }
-        /* ===== หน้า 3 มหาวิทยาลัยที่สนใจ ===== */
-.university {
-    text-align: center;
-}
-.university-title {
-    color: #3B8FC4;
-    font-size: 30px;
-    margin-bottom: 25px;
-}
-.university-image {
-    width: 100%;
-    max-width: 650px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 20px;
-    border: 5px solid #BFE7FA;
-    box-shadow: 0 6px 18px rgba(90, 169, 214, 0.18);
-    margin-bottom: 25px;
-}
-.university-name {
-    background: #EAF8FF;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 15px 0;
-    border: 2px solid #BFE7FA;
-}
-.university-name h3 {
-    color: #3182B8;
-    font-size: 25px;
-    margin-bottom: 10px;
-}
-.university-name p {
-    color: #4F7188;
-    font-size: 18px;
-}
-.reason-box {
-    background: #F5FCFF;
-    border-left: 6px solid #79BFE8;
-    border-radius: 15px;
-    padding: 20px 25px;
-    margin-top: 20px;
-    text-align: left;
-}
-.reason-box h3 {
-    color: #3B8FC4;
-    margin-bottom: 10px;
-}
-.reason-box p {
-    color: #4F7188;
-}
-.university-goal {
-    background: #EAF8FF;
-    border-radius: 18px;
-    padding: 18px;
-    margin-top: 20px;
-}
-.university-goal h3 {
-    color: #3182B8;
-}
-.university-goal p {
-    color: #4F7188;
-}
-        /* ===== หน้า 4 ผลงานและรางวัล ===== */
 
-.award-card {
-    background: #F5FCFF;
-    border: 2px solid #BFE7FA;
-    border-radius: 20px;
-    padding: 22px;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 15px rgba(90,169,214,0.12);
-}
+        .dream-box {
+            background: rgba(255,255,255,0.95);
+            border: 2px solid #BFE7FA;
+            border-radius: 25px;
+            padding: 25px 35px;
+            box-shadow: 0 8px 25px rgba(70,150,200,0.12);
+        }
 
-.award-card h3 {
-    color: #3182B8;
-    font-size: 23px;
-    margin: 0 0 8px;
-}
+        .dream-box h3 {
+            color: #3B8FC4;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
 
-.award-subtitle {
-    color: #5B8299;
-    font-size: 17px !important;
-    margin-bottom: 8px;
-}
+        .dream-box p {
+            color: #4F7188;
+            font-size: 18px !important;
+            line-height: 1.9 !important;
+            margin-top: 10px;
+        }
 
-.award-result {
-    color: #3182B8;
-    font-weight: bold;
-    font-size: 18px !important;
-    margin-bottom: 18px;
-}
+        .dream-box strong {
+            color: #3182B8;
+        }
 
-/* รูปภาพ 2 รูป */
-.award-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    margin: 15px 0 20px;
-}
+        .science-decoration {
+            color: #5AA9D6;
+            font-size: 35px;
+            margin: 30px 0 20px;
+            letter-spacing: 8px;
+        }
 
-.award-images img {
-    width: 48%;
-    height: 250px;
-    object-fit: contain;
-    background: white;
-    border-radius: 15px;
-    border: 4px solid #BFE7FA;
-    padding: 5px;
-    box-shadow: 0 5px 15px rgba(90,169,214,0.15);
-}
+        .thank-name {
+            color: #5798BC;
+            font-size: 19px !important;
+            font-weight: bold;
+            margin-top: 10px;
+        }
 
-/* กล่องทักษะ */
-.award-description {
-    background: white;
-    border-left: 5px solid #79BFE8;
-    border-radius: 12px;
-    padding: 15px 18px;
-}
+        /* ========================= */
+        /* มือถือ */
+        /* ========================= */
 
-.award-description h4 {
-    color: #3182B8;
-    font-size: 19px;
-    margin-bottom: 8px;
-}
-
-.award-description p {
-    color: #4F7188;
-    font-size: 16px !important;
-    line-height: 1.7;
-}
-
-/* มือถือ */
-@media (max-width: 600px) {
-
-    .award-card {
-        padding: 16px;
-    }
-
-    .award-card h3 {
-        font-size: 19px;
-    }
-
-    .award-images {
-        gap: 8px;
-    }
-
-    .award-images img {
-        width: 50%;
-        height: 190px;
-    }
-
-    .award-description p {
-        font-size: 15px !important;
-    }
-
-}
         @media (max-width: 600px) {
+
+            .top-menu {
+                top: 10px;
+                right: 10px;
+                padding: 8px;
+                gap: 5px;
+            }
+
+            .top-menu a {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
             .container {
                 margin: 20px auto;
                 padding: 10px;
             }
+
             .page {
                 padding: 30px 20px;
+                margin-bottom: 25px;
             }
+
             .page h2 {
                 font-size: 26px;
             }
+
             .page p,
             .page li {
                 font-size: 16px;
             }
+
+            .profile-info {
+                padding: 18px;
+            }
+
+            .profile-info div {
+                font-size: 16px;
+            }
+
+            .award-card {
+                padding: 16px;
+            }
+
+            .award-card h3 {
+                font-size: 19px;
+            }
+
+            .award-images {
+                gap: 8px;
+            }
+
+            .award-images img {
+                width: 50%;
+                height: 190px;
+            }
+
+            .award-description p {
+                font-size: 15px !important;
+            }
+
+            .thank-you-page {
+                min-height: 600px;
+            }
+
+            .thank-you-content {
+                padding: 20px 15px;
+            }
+
+            .teacher-decoration {
+                font-size: 40px;
+                letter-spacing: 3px;
+            }
+
+            .thank-you-page h2 {
+                font-size: 48px;
+                letter-spacing: 4px;
+            }
+
+            .thank-you-text {
+                font-size: 18px !important;
+            }
+
+            .dream-box {
+                padding: 20px;
+            }
+
+            .dream-box h3 {
+                font-size: 21px;
+            }
+
+            .dream-box p {
+                font-size: 16px !important;
+            }
+
+            .science-decoration {
+                font-size: 27px;
+                letter-spacing: 3px;
+            }
         }
     </style>
 </head>
+
 <body>
-<header>
-    <h1>✨แฟ้มสะสมผลงาน (Portfolio)✨</h1>
-    <p>💫นางสาว สิริลักษณ์ ผาดผ่อง💫</p>
-</header>
-<div class="container">
-    <!-- หน้า 1 : คำนำ -->
-  <section class="page active" id="page1">
-        <h2>คำนำ</h2>
-        <p>
-            แฟ้มสะสมผลงาน (Portfolio) ฉบับนี้จัดทำขึ้นเพื่อรวบรวม
-            ประวัติส่วนตัว ประวัติการศึกษา ผลงาน โครงงาน และกิจกรรมต่าง ๆ
-            ที่แสดงถึงความสามารถ ความสนใจ และความตั้งใจของข้าพเจ้า
-        </p>
-        <p style="margin-top:20px;">
-            ข้าพเจ้าหวังเป็นอย่างยิ่งว่าแฟ้มสะสมผลงานเล่มนี้จะช่วยให้ผู้อ่านได้รู้จักตัวตน
-            ความสามารถ และเป้าหมายในการศึกษาต่อของข้าพเจ้ามากยิ่งขึ้น 
-            และเป็นส่วนหนึ่งที่แสดงถึงความมุ่งมั่นในการพัฒนาตนเองเพื่อก้าวไปสู่ความสำเร็จในอนาคต
-        </p>
-        <p style="margin-top:20px; text-align:right;">
-            นางสาว สิริลักษณ์ ผาดผ่อง
-        </p>
-        
-    </section>
-    <!-- หน้า 2 : About Me -->
-<section class="page" id="page2">
-    <h2>About Me</h2>
-    <div class="profile">
-        <img src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
-             alt="รูปโปรไฟล์"
-             class="profile-img">
-        <div class="profile-info">
-            <div>ชื่อ-สกุล : นางสาวสิริลักษณ์ ผาดผ่อง</div>
-            <div>ชื่อเล่น : ปอ</div>
-            <div>วัน/เดือน/ปีเกิด : 18 ตุลาคม พ.ศ.2551</div>
-            <div>อายุ : 17 ปี</div>
-            <div>แผนการเรียน : เตรียมวิศวกรรมศาสตร์</div>
-            <div>📩 ช่องทางการติดต่อ 📩</div>
-            <div>เบอร์โทรศัพท์ : 090-199-4740 ☎️</div>
-            <div>FACEBOOK : Sirilak Phartpong 📨</div>
-            <div>GMail : por99srl@gmail.com 📧</div>
-        </div>
-    
-    
-    <div class="page-number">หน้า 2 / 5</div>
-</section>
 
-<!-- หน้า 3 : มหาวิทยาลัยที่ฉันสนใจ -->
-<section class="page" id="page3">
+    <!-- เมนูมุมขวา -->
+    <nav class="top-menu">
+        <a href="#page1">คำนำ</a>
+        <a href="#page2">About Me</a>
+        <a href="#page3">มหาวิทยาลัย</a>
+        <a href="#page4">ผลงาน</a>
+        <a href="#page5">ขอบคุณ</a>
+    </nav>
 
-    <h2>มหาวิทยาลัยที่ฉันสนใจอยากจะเข้าศึกษาต่อ</h2>
+    <!-- ส่วนหัว -->
+    <header>
+        <h1>✨แฟ้มสะสมผลงาน (Portfolio)✨</h1>
+        <p>💫นางสาว สิริลักษณ์ ผาดผ่อง💫</p>
+    </header>
 
-    <div class="university">
+    <div class="container">
 
-        <!-- ข้อมูลมหาวิทยาลัย -->
-        <div class="university-name">
+        <!-- ========================= -->
+        <!-- หน้า 1 : คำนำ -->
+        <!-- ========================= -->
 
-            <h3>🌱 มหาวิทยาลัยเกษตรศาสตร์ บางเขน 🌱</h3>
+        <section class="page" id="page1">
+
+            <h2>คำนำ</h2>
 
             <p>
-                <strong>คณะศึกษาศาสตร์</strong>
+                แฟ้มสะสมผลงาน (Portfolio) ฉบับนี้จัดทำขึ้นเพื่อรวบรวม
+                ประวัติส่วนตัว ประวัติการศึกษา ผลงาน โครงงาน และกิจกรรมต่าง ๆ
+                ที่แสดงถึงความสามารถ ความสนใจ และความตั้งใจของข้าพเจ้า
             </p>
 
-            <p>
-                สาขาวิชาวิทยาศาสตร์ทั่วไป
+            <p style="margin-top:20px;">
+                ข้าพเจ้าหวังเป็นอย่างยิ่งว่าแฟ้มสะสมผลงานเล่มนี้จะช่วยให้ผู้อ่านได้รู้จักตัวตน
+                ความสามารถ และเป้าหมายในการศึกษาต่อของข้าพเจ้ามากยิ่งขึ้น
+                และเป็นส่วนหนึ่งที่แสดงถึงความมุ่งมั่นในการพัฒนาตนเองเพื่อก้าวไปสู่ความสำเร็จในอนาคต
             </p>
 
-        </div>
-
-        <!-- เหตุผลที่สนใจ -->
-        <div class="reason-box">
-
-            <h3>💙 เหตุผลที่ฉันสนใจ 💙</h3>
-
-            <p>
-                ฉันมีความสนใจในวิชาวิทยาศาสตร์ เพราะเป็นวิชาที่ทำให้ได้เรียนรู้
-                และค้นหาคำตอบจากสิ่งต่าง ๆ รอบตัว อีกทั้งยังชอบการทดลอง
-                เพราะทำให้ได้ลงมือปฏิบัติจริง ได้สังเกตผล
-                และเรียนรู้จากประสบการณ์
+            <p style="margin-top:20px; text-align:right;">
+                นางสาว สิริลักษณ์ ผาดผ่อง
             </p>
 
-            <p style="margin-top:15px;">
-                นอกจากนี้ ฉันยังชอบการวิเคราะห์และการแก้ปัญหา
-                เพราะทำให้ได้ฝึกคิดอย่างเป็นระบบ ใช้เหตุผล
-                และค้นหาวิธีแก้ไขปัญหาอย่างเหมาะสม
-            </p>
+        </section>
 
-            <p style="margin-top:15px;">
-                ฉันจึงมีความตั้งใจที่จะศึกษาต่อใน
-                <strong>คณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป</strong>
-                เพื่อพัฒนาความรู้และทักษะด้านวิทยาศาสตร์
-                รวมถึงเรียนรู้การถ่ายทอดความรู้ให้ผู้อื่นเข้าใจได้ง่าย
-                และนำความรู้ไปต่อยอดในอนาคต
-            </p>
+        <!-- ========================= -->
+        <!-- หน้า 2 : About Me -->
+        <!-- ========================= -->
 
-        </div>
+        <section class="page" id="page2">
 
-        <!-- เป้าหมาย -->
-        <div class="university-goal">
+            <h2>About Me</h2>
 
-            <h3>🎓 เป้าหมายของฉัน</h3>
+            <div class="profile">
 
-            <p>
-                ตั้งใจเรียน พัฒนาทักษะด้านวิทยาศาสตร์
-                ฝึกการทดลอง การคิดวิเคราะห์ และการแก้ปัญหา
-                เพื่อก้าวไปสู่เป้าหมายในการศึกษาต่อ
-                และเติบโตเป็นครูวิทยาศาสตร์ที่ดีในอนาคต
-            </p>
+                <img src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
+                     alt="รูปโปรไฟล์"
+                     class="profile-img">
 
-        </div>
+                <div class="profile-info">
 
-    
+                    <div>ชื่อ-สกุล : นางสาวสิริลักษณ์ ผาดผ่อง</div>
+                    <div>ชื่อเล่น : ปอ</div>
+                    <div>วัน/เดือน/ปีเกิด : 18 ตุลาคม พ.ศ.2551</div>
+                    <div>อายุ : 17 ปี</div>
+                    <div>แผนการเรียน : เตรียมวิศวกรรมศาสตร์</div>
+                    <div>📩 ช่องทางการติดต่อ 📩</div>
+                    <div>เบอร์โทรศัพท์ : 090-199-4740 ☎️</div>
+                    <div>FACEBOOK : Sirilak Phartpong 📨</div>
+                    <div>GMail : por99srl@gmail.com 📧</div>
 
-</section>
-    <!-- หน้า 4 : ผลงานและรางวัล -->
-<section class="page" id="page4">
+                </div>
 
-    <h2>🏆 ผลงานและรางวัล 🏆</h2>
+            </div>
 
-    <!-- รางวัลที่ 1 -->
-    <div class="award-card">
+        </section>
 
-        <h3>🏆 การแข่งขันศึกวัดเซียนปรากฏการณ์ธรรมชาติ</h3>
+        <!-- ========================= -->
+        <!-- หน้า 3 : มหาวิทยาลัย -->
+        <!-- ========================= -->
 
-        <p class="award-subtitle">
-            ระดับมัธยมศึกษาตอนปลาย
-        </p>
+        <section class="page" id="page3">
 
-        <p class="award-result">
-            🥈 ได้รับรางวัลรองชนะเลิศอันดับ 1
-        </p>
+            <h2>มหาวิทยาลัยที่ฉันสนใจอยากจะเข้าศึกษาต่อ</h2>
 
-        <div class="award-images">
+            <div class="university">
 
-            <img src="IMG_6494.jpeg"
-                 alt="ภาพการแข่งขัน รูปที่ 1">
+                <div class="university-name">
 
-            <img src="IMG_6497.jpeg"
-                 alt="ภาพการแข่งขัน รูปที่ 2">
+                    <h3>🌱 มหาวิทยาลัยเกษตรศาสตร์ บางเขน 🌱</h3>
 
-        </div>
+                    <p>
+                        <strong>คณะศึกษาศาสตร์</strong>
+                    </p>
 
-        <div class="award-description">
+                    <p>
+                        สาขาวิชาวิทยาศาสตร์ทั่วไป
+                    </p>
 
-            <h4>✨ ทักษะที่ได้รับ</h4>
+                </div>
 
-            <p>
-                ได้พัฒนาทักษะการคิดวิเคราะห์ การนำความรู้ด้านวิทยาศาสตร์
-                มาประยุกต์ใช้ในการแข่งขัน และการแก้ปัญหาอย่างเป็นระบบ
-                รวมถึงได้ฝึกการทำงานร่วมกับผู้อื่น การวางแผน
-                และการตัดสินใจอย่างมีเหตุผล
-            </p>
+                <div class="reason-box">
 
-        </div>
+                    <h3>💙 เหตุผลที่ฉันสนใจ 💙</h3>
+
+                    <p>
+                        ฉันมีความสนใจในวิชาวิทยาศาสตร์ เพราะเป็นวิชาที่ทำให้ได้เรียนรู้
+                        และค้นหาคำตอบจากสิ่งต่าง ๆ รอบตัว อีกทั้งยังชอบการทดลอง
+                        เพราะทำให้ได้ลงมือปฏิบัติจริง ได้สังเกตผล
+                        และเรียนรู้จากประสบการณ์
+                    </p>
+
+                    <p style="margin-top:15px;">
+                        นอกจากนี้ ฉันยังชอบการวิเคราะห์และการแก้ปัญหา
+                        เพราะทำให้ได้ฝึกคิดอย่างเป็นระบบ ใช้เหตุผล
+                        และค้นหาวิธีแก้ไขปัญหาอย่างเหมาะสม
+                    </p>
+
+                    <p style="margin-top:15px;">
+                        ฉันจึงมีความตั้งใจที่จะศึกษาต่อใน
+                        <strong>คณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป</strong>
+                        เพื่อพัฒนาความรู้และทักษะด้านวิทยาศาสตร์
+                        รวมถึงเรียนรู้การถ่ายทอดความรู้ให้ผู้อื่นเข้าใจได้ง่าย
+                        และนำความรู้ไปต่อยอดในอนาคต
+                    </p>
+
+                </div>
+
+                <div class="university-goal">
+
+                    <h3>🎓 เป้าหมายของฉัน</h3>
+
+                    <p>
+                        ตั้งใจเรียน พัฒนาทักษะด้านวิทยาศาสตร์
+                        ฝึกการทดลอง การคิดวิเคราะห์ และการแก้ปัญหา
+                        เพื่อก้าวไปสู่เป้าหมายในการศึกษาต่อ
+                        และเติบโตเป็นครูวิทยาศาสตร์ที่ดีในอนาคต
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- หน้า 4 : ผลงานและรางวัล -->
+        <!-- ========================= -->
+
+        <section class="page" id="page4">
+
+            <h2>🏆 ผลงานและรางวัล 🏆</h2>
+
+            <!-- รางวัลที่ 1 -->
+
+            <div class="award-card">
+
+                <h3>🏆 การแข่งขันศึกวัดเซียนปรากฏการณ์ธรรมชาติ</h3>
+
+                <p class="award-subtitle">
+                    ระดับมัธยมศึกษาตอนปลาย
+                </p>
+
+                <p class="award-result">
+                    🥈 ได้รับรางวัลรองชนะเลิศอันดับ 1
+                </p>
+
+                <div class="award-images">
+
+                    <img src="IMG_6494.jpeg"
+                         alt="ภาพการแข่งขัน รูปที่ 1">
+
+                    <img src="IMG_6497.jpeg"
+                         alt="ภาพการแข่งขัน รูปที่ 2">
+
+                </div>
+
+                <div class="award-description">
+
+                    <h4>✨ ทักษะที่ได้รับ</h4>
+
+                    <p>
+                        ได้พัฒนาทักษะการคิดวิเคราะห์ การนำความรู้ด้านวิทยาศาสตร์
+                        มาประยุกต์ใช้ในการแข่งขัน และการแก้ปัญหาอย่างเป็นระบบ
+                        รวมถึงได้ฝึกการทำงานร่วมกับผู้อื่น การวางแผน
+                        และการตัดสินใจอย่างมีเหตุผล
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- รางวัลที่ 2 -->
+
+            <div class="award-card">
+
+                <h3>🎖️ รางวัล “นักเรียนประพฤติดี”</h3>
+
+                <p class="award-subtitle">
+                    ประจำปีการศึกษา 2568
+                </p>
+
+                <p class="award-result">
+                    ⭐ ได้รับรางวัลจากการมีคะแนนความประพฤติดี มีระเบียบวินัย มีความรับผิดชอบต่อสถานศึกษา
+                </p>
+
+                <div class="award-images">
+
+                    <img src="IMG_3586.jpeg"
+                         alt="รางวัลนักเรียนประพฤติดี รูปที่ 1">
+
+                    <img src="IMG_6499.png"
+                         alt="รางวัลนักเรียนประพฤติดี รูปที่ 2">
+
+                </div>
+
+                <div class="award-description">
+
+                    <h4>🌟 ทักษะและสิ่งที่ได้รับ</h4>
+
+                    <p>
+                        รางวัลนี้สะท้อนถึงความรับผิดชอบ ความมีวินัย
+                        และการปฏิบัติตนตามกฎระเบียบของสถานศึกษา
+                        ทำให้ได้ฝึกความรับผิดชอบต่อตนเองและส่วนรวม
+                        รวมถึงการมีระเบียบวินัยและการประพฤติตนอย่างเหมาะสม
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- หน้า 5 : ขอบคุณ -->
+        <!-- ========================= -->
+
+        <section class="page thank-you-page" id="page5">
+
+            <div class="thank-you-content">
+
+                <div class="teacher-decoration">
+                    👩🏻‍🏫 🔬 🧪 📚 🌱
+                </div>
+
+                <h2>ขอบคุณ</h2>
+
+                <p class="thank-you-text">
+                    ขอบคุณที่เข้ามาเยี่ยมชมแฟ้มสะสมผลงาน
+                </p>
+
+                <div class="dream-box">
+
+                    <h3>🌱 ความฝันของฉัน 🌱</h3>
+
+                    <p>
+                        ฉันมีความตั้งใจที่จะศึกษาต่อ
+                        <strong>คณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป</strong>
+                    </p>
+
+                    <p>
+                        และมุ่งมั่นที่จะก้าวไปสู่การเป็น
+                        <strong>ครูวิทยาศาสตร์</strong>
+                        ที่สามารถถ่ายทอดความรู้
+                        สร้างแรงบันดาลใจ และทำให้นักเรียนสนุกกับการเรียนรู้
+                    </p>
+
+                </div>
+
+                <div class="science-decoration">
+                    ⚗️　🔬　🧬　🧪
+                </div>
+
+                <p class="thank-name">
+                    นางสาวสิริลักษณ์ ผาดผ่อง
+                </p>
+
+            </div>
+
+        </section>
 
     </div>
 
-
-    <!-- รางวัลที่ 2 -->
-    <div class="award-card">
-
-        <h3>🎖️ รางวัล “นักเรียนประพฤติดี”</h3>
-
-        <p class="award-subtitle">
-            ประจำปีการศึกษา 2568
-        </p>
-
-        <p class="award-result">
-            ⭐ ได้รับรางวัลจากการมีคะแนนความประพฤติดี มีระเบียบวินัย มีความรับผิดชอบต่อสถานศึกษา
-        </p>
-
-        <div class="award-images">
-
-            <img src="IMG_3586.jpeg"
-                 alt="รางวัลนักเรียนประพฤติดี รูปที่ 1">
-
-            <img src="IMG_6499.png"
-                 alt="รางวัลนักเรียนประพฤติดี รูปที่ 2">
-
-        </div>
-
-        <div class="award-description">
-
-            <h4>🌟 ทักษะและสิ่งที่ได้รับ</h4>
-
-            <p>
-                รางวัลนี้สะท้อนถึงความรับผิดชอบ ความมีวินัย
-                และการปฏิบัติตนตามกฎระเบียบของสถานศึกษา
-                ทำให้ได้ฝึกความรับผิดชอบต่อตนเองและส่วนรวม
-                รวมถึงการมีระเบียบวินัยและการประพฤติตนอย่างเหมาะสม
-            </p>
-
-        </div>
-
- 
-
-</section>
-   <!-- ========================= -->
-<!-- หน้า 5 : ขอบคุณ -->
-<!-- ========================= -->
-
-<section class="page thank-you-page" id="page5">
-
-    <div class="thank-you-content">
-
-        <!-- ตกแต่งอาชีพครูวิทยาศาสตร์ -->
-        <div class="teacher-decoration">
-            👩🏻‍🏫 🔬 🧪 📚 🌱
-        </div>
-
-        <!-- ข้อความกลางหน้า -->
-        <h2>ขอบคุณ</h2>
-
-        <p class="thank-you-text">
-            ขอบคุณที่เข้ามาเยี่ยมชมแฟ้มสะสมผลงาน
-        </p>
-
-        <div class="dream-box">
-
-            <h3>🌱 ความฝันของฉัน 🌱</h3>
-
-            <p>
-                ฉันมีความตั้งใจที่จะศึกษาต่อ
-                <strong>คณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป</strong>
-            </p>
-
-            <p>
-                และมุ่งมั่นที่จะก้าวไปสู่การเป็น
-                <strong>ครูวิทยาศาสตร์</strong>
-                ที่สามารถถ่ายทอดความรู้
-                สร้างแรงบันดาลใจ และทำให้นักเรียนสนุกกับการเรียนรู้
-            </p>
-
-        </div>
-
-        <!-- ตกแต่งด้านล่าง -->
-        <div class="science-decoration">
-            ⚗️　🔬　🧬　🧪
-        </div>
-
-        <p class="thank-name">
-            นางสาวสิริลักษณ์ ผาดผ่อง
-        </p>
-</section>
-
-
-<!-- ========================= -->
-<!-- CSS หน้า 5 -->
-<!-- ========================= -->
-
-<style>
-
-.thank-you-page {
-    min-height: 650px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(
-        135deg,
-        #FFFFFF,
-        #F0FAFF,
-        #E6F4FF
-    );
-    overflow: hidden;
-}
-
-/* เนื้อหากลางหน้า */
-.thank-you-content {
-    width: 100%;
-    max-width: 800px;
-    padding: 30px;
-}
-
-/* รูปตกแต่งครูวิทยาศาสตร์ */
-.teacher-decoration {
-    font-size: 55px;
-    margin-bottom: 20px;
-    letter-spacing: 8px;
-}
-
-/* คำว่า ขอบคุณ */
-.thank-you-page h2 {
-    color: #3182B8;
-    font-size: 70px;
-    margin-bottom: 20px;
-    letter-spacing: 8px;
-}
-
-/* ข้อความขอบคุณ */
-.thank-you-text {
-    color: #527F9B;
-    font-size: 22px !important;
-    margin-bottom: 30px;
-}
-
-/* กล่องความฝัน */
-.dream-box {
-    background: rgba(255,255,255,0.95);
-    border: 2px solid #BFE7FA;
-    border-radius: 25px;
-    padding: 25px 35px;
-    box-shadow: 0 8px 25px rgba(70,150,200,0.12);
-}
-
-/* หัวข้อความฝัน */
-.dream-box h3 {
-    color: #3B8FC4;
-    font-size: 25px;
-    margin-bottom: 15px;
-}
-
-/* ข้อความในกล่อง */
-.dream-box p {
-    color: #4F7188;
-    font-size: 18px !important;
-    line-height: 1.9 !important;
-    margin-top: 10px;
-}
-
-/* เน้นคำว่าครูวิทยาศาสตร์ */
-.dream-box strong {
-    color: #3182B8;
-}
-
-/* ไอคอนวิทยาศาสตร์ */
-.science-decoration {
-    color: #5AA9D6;
-    font-size: 35px;
-    margin: 30px 0 20px;
-    letter-spacing: 8px;
-}
-
-/* ชื่อ */
-.thank-name {
-    color: #5798BC;
-    font-size: 19px !important;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-
-/* ========================= */
-/* ปุ่มย้อนกลับ */
-/* ========================= */
-
-.thank-you-page .navigation {
-    margin-top: 10px;
-}
-
-
-/* ========================= */
-/* มือถือ */
-/* ========================= */
-
-@media (max-width: 600px) {
-
-    .thank-you-page {
-        min-height: 600px;
-    }
-
-    .thank-you-content {
-        padding: 20px 15px;
-    }
-
-    .teacher-decoration {
-        font-size: 40px;
-        letter-spacing: 3px;
-    }
-
-    .thank-you-page h2 {
-        font-size: 48px;
-        letter-spacing: 4px;
-    }
-
-    .thank-you-text {
-        font-size: 18px !important;
-    }
-
-    .dream-box {
-        padding: 20px;
-    }
-
-    .dream-box h3 {
-        font-size: 21px;
-    }
-
-    .dream-box p {
-        font-size: 16px !important;
-    }
-
-    .science-decoration {
-        font-size: 27px;
-        letter-spacing: 3px;
-    }
-
-}
-
-</style>
-
-
+</body>
+</html>

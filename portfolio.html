@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html lang="th">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | นางสาว สิริลักษณ์ ผาดผ่อง</title>
+</head>
 <body>
-
-<!-- เมนูมุมขวา -->
-<nav class="top-menu">
-    <a href="#page1">คำนำ</a>
-    <a href="#page2">About Me</a>
-    <a href="#page3">มหาวิทยาลัย</a>
-    <a href="#page4">ผลงาน</a>
-    <a href="#page5">ขอบคุณ</a>
-</nav>
-
 <header>
     <style>
+        /* เมนูมุมขวา */
+.top-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(255,255,255,0.95);
+    padding: 12px;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(70,150,200,0.2);
+}
+
+.top-menu a {
+    text-decoration: none;
+    color: #3182B8;
+    background: #EAF8FF;
+    padding: 8px 14px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.top-menu a:hover {
+    background: #BFE7FA;
+}
         * {
             box-sizing: border-box;
             margin: 0;
@@ -586,7 +609,7 @@
 .thank-you-page {
     min-height: 650px;
     position: relative;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -597,11 +620,6 @@
         #E6F4FF
     );
     overflow: hidden;
-}
-
-.thank-you-page.active {
-    display: flex;
-    flex-direction: column;
 }
 
 /* เนื้อหากลางหน้า */

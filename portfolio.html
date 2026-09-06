@@ -16,7 +16,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 20px;
+            scroll-padding-top: 100px;
         }
 
         body {
@@ -24,10 +24,6 @@
             color: #52738C;
             min-height: 100vh;
         }
-
-        /* ========================= */
-        /* เมนูด้านบน */
-        /* ========================= */
 
         .top-menu {
             width: 100%;
@@ -66,10 +62,6 @@
             border-color: #9DDCF5;
             transform: translateY(-3px);
         }
-
-        /* ========================= */
-        /* ส่วนหัว */
-        /* ========================= */
 
         header {
             background: linear-gradient(135deg, #F3A9C8, #9DDCF5);
@@ -116,10 +108,6 @@
             position: relative;
             z-index: 2;
         }
-
-        /* ========================= */
-        /* กล่องเนื้อหา */
-        /* ========================= */
 
         .container {
             max-width: 1000px;
@@ -190,10 +178,6 @@
             padding-left: 30px;
         }
 
-        /* ========================= */
-        /* หน้าคำนำ */
-        /* ========================= */
-
         #page1 {
             background: linear-gradient(135deg, #FFFFFF, #FFF5FA, #F0FAFF);
         }
@@ -201,11 +185,8 @@
         #page1 p {
             position: relative;
             z-index: 2;
+            text-align: justify;
         }
-
-        /* ========================= */
-        /* About Me */
-        /* ========================= */
 
         .profile {
             text-align: center;
@@ -213,23 +194,69 @@
             z-index: 2;
         }
 
+        /* ========================= */
+        /* รูปโปรไฟล์ เส้นปะ + วิ้ง */
+        /* ========================= */
+
         .profile-img {
             width: 160px;
             height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 7px solid #F3A9C8;
+            border: 4px dashed #F3A9C8;
             outline: 5px solid #DDF4FF;
-            outline-offset: 4px;
+            outline-offset: 8px;
             margin-bottom: 25px;
             box-shadow:
-                0 0 0 9px #FFF0F7,
+                0 0 0 13px #FFF0F7,
+                0 0 15px #F3A9C8,
+                0 0 30px #9DDCF5,
                 0 8px 25px rgba(220, 150, 190, 0.25);
-            transition: 0.3s ease;
+            animation:
+                profileFloat 3s ease-in-out infinite,
+                profileGlow 2s ease-in-out infinite;
+            transition: 0.4s ease;
         }
 
         .profile-img:hover {
-            transform: scale(1.05) rotate(2deg);
+            transform: scale(1.08) rotate(3deg);
+            border-color: #9DDCF5;
+        }
+
+        .profile::before {
+            content: "✦   ✧   ✦";
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #F3A9C8;
+            font-size: 25px;
+            letter-spacing: 8px;
+            white-space: nowrap;
+            z-index: 5;
+            animation: sparkleTop 1.8s ease-in-out infinite;
+            text-shadow:
+                0 0 5px #FFFFFF,
+                0 0 12px #F3A9C8,
+                0 0 20px #9DDCF5;
+        }
+
+        .profile::after {
+            content: "✧   ✦   ✧";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #9DDCF5;
+            font-size: 23px;
+            letter-spacing: 8px;
+            white-space: nowrap;
+            z-index: 5;
+            animation: sparkleBottom 2s ease-in-out infinite;
+            text-shadow:
+                0 0 5px #FFFFFF,
+                0 0 12px #9DDCF5,
+                0 0 20px #F3A9C8;
         }
 
         .profile-info {
@@ -250,10 +277,6 @@
             font-size: 18px;
             margin-bottom: 8px;
         }
-
-        /* ========================= */
-        /* มหาวิทยาลัย */
-        /* ========================= */
 
         .university {
             text-align: center;
@@ -324,10 +347,6 @@
             color: #52738C;
         }
 
-        /* ========================= */
-        /* ผลงานและรางวัล */
-        /* ========================= */
-
         .award-card {
             background: linear-gradient(135deg, #FFF8FB, #F0FAFF);
             border: 3px solid #F3C1D8;
@@ -368,31 +387,34 @@
             margin: 25px 0 30px;
         }
 
+        /* ========================= */
+        /* รูปผลงาน เส้นปะ + วิ้ง */
+        /* ========================= */
+
         .award-images img {
             width: 48%;
             height: 250px;
             object-fit: contain;
             background: #FFFFFF;
             border-radius: 20px;
-            border: 5px solid #F3A9C8;
+            border: 4px dashed #F3A9C8;
             outline: 4px solid #DDF4FF;
-            outline-offset: 4px;
+            outline-offset: 5px;
             padding: 7px;
             box-shadow:
-                0 0 0 9px #FFF0F7,
+                0 0 0 10px #FFF0F7,
+                0 0 15px #F3A9C8,
+                0 0 28px #9DDCF5,
                 0 8px 22px rgba(220, 150, 190, 0.22);
-            transition: 0.3s ease;
+            animation: awardGlow 2.5s ease-in-out infinite;
+            transition: 0.4s ease;
         }
 
         .award-images img:hover {
-            transform: translateY(-6px) scale(1.03);
+            transform: translateY(-10px) scale(1.05) rotate(1deg);
             border-color: #9DDCF5;
-            box-shadow:
-                0 0 0 9px #EAF7FF,
-                0 10px 25px rgba(150, 210, 240, 0.25);
+            filter: brightness(1.08);
         }
-
-        /* รูปภาพเดี่ยวของผลงานที่ 3 */
 
         .award-images.single-image img {
             width: 70%;
@@ -420,10 +442,6 @@
             font-size: 16px !important;
             line-height: 1.7;
         }
-
-        /* ========================= */
-        /* หน้าขอบคุณ */
-        /* ========================= */
 
         .thank-you-page {
             min-height: 700px;
@@ -608,12 +626,118 @@
             animation-delay: 3.5s;
         }
 
+        .back-home {
+            margin-top: 30px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .back-home a {
+            display: inline-block;
+            text-decoration: none;
+            color: #FFFFFF;
+            background: linear-gradient(135deg, #F3A9C8, #9DDCF5);
+            padding: 13px 28px;
+            border-radius: 30px;
+            border: 3px solid #FFFFFF;
+            box-shadow:
+                0 0 0 3px #F8C7DC,
+                0 6px 18px rgba(150, 210, 240, 0.25);
+            font-size: 17px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .back-home a:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #D96C9B, #6BAFD2);
+        }
+
         /* ========================= */
         /* Animation */
         /* ========================= */
 
+        @keyframes profileFloat {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes profileGlow {
+            0%,
+            100% {
+                box-shadow:
+                    0 0 0 13px #FFF0F7,
+                    0 0 12px #F3A9C8,
+                    0 0 25px #9DDCF5,
+                    0 8px 25px rgba(220, 150, 190, 0.25);
+            }
+
+            50% {
+                box-shadow:
+                    0 0 0 13px #FFFFFF,
+                    0 0 22px #FFFFFF,
+                    0 0 40px #F3A9C8,
+                    0 0 55px #9DDCF5;
+            }
+        }
+
+        @keyframes awardGlow {
+            0%,
+            100% {
+                filter: brightness(1);
+                box-shadow:
+                    0 0 0 10px #FFF0F7,
+                    0 0 12px #F3A9C8,
+                    0 0 25px #9DDCF5,
+                    0 8px 22px rgba(220, 150, 190, 0.22);
+            }
+
+            50% {
+                filter: brightness(1.06);
+                box-shadow:
+                    0 0 0 10px #FFFFFF,
+                    0 0 22px #FFFFFF,
+                    0 0 38px #F3A9C8,
+                    0 0 48px #9DDCF5;
+            }
+        }
+
+        @keyframes sparkleTop {
+            0%,
+            100% {
+                opacity: 0.35;
+                transform: translateX(-50%) scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1.15);
+            }
+        }
+
+        @keyframes sparkleBottom {
+            0%,
+            100% {
+                opacity: 0.4;
+                transform: translateX(-50%) scale(0.8) rotate(-5deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1.15) rotate(5deg);
+            }
+        }
+
         @keyframes floatingCute {
-            0%, 100% {
+            0%,
+            100% {
                 transform: translateY(20px) rotate(-6deg);
                 opacity: 0.65;
             }
@@ -625,7 +749,8 @@
         }
 
         @keyframes personMove {
-            0%, 100% {
+            0%,
+            100% {
                 transform: translateY(0);
             }
 
@@ -635,7 +760,8 @@
         }
 
         @keyframes textBounce {
-            0%, 100% {
+            0%,
+            100% {
                 transform: translateY(0);
             }
 
@@ -656,12 +782,7 @@
             }
         }
 
-        /* ========================= */
-        /* โทรศัพท์ */
-        /* ========================= */
-
         @media (max-width: 600px) {
-
             .top-menu {
                 gap: 5px;
                 padding: 10px 8px;
@@ -732,7 +853,7 @@
             .award-images img {
                 width: 50%;
                 height: 190px;
-                border: 4px solid #F3A9C8;
+                border: 4px dashed #F3A9C8;
                 outline: 3px solid #DDF4FF;
                 outline-offset: 3px;
                 padding: 5px;
@@ -802,15 +923,16 @@
             .thank-you-page .floating-item {
                 font-size: 30px;
             }
+
+            .back-home a {
+                font-size: 15px;
+                padding: 12px 22px;
+            }
         }
     </style>
 </head>
 
 <body>
-
-    <!-- ========================= -->
-    <!-- เมนูด้านบน -->
-    <!-- ========================= -->
 
     <nav class="top-menu">
         <a href="index.html">🏠 หน้าหลัก 🏠</a>
@@ -821,10 +943,6 @@
         <a href="#page5">💙 ขอบคุณ 💙</a>
     </nav>
 
-    <!-- ========================= -->
-    <!-- ส่วนหัว -->
-    <!-- ========================= -->
-
     <header>
         <h1>✨แฟ้มสะสมผลงาน (Portfolio)✨</h1>
         <p>💫นางสาว สิริลักษณ์ ผาดผ่อง💫</p>
@@ -832,35 +950,31 @@
 
     <div class="container">
 
-        <!-- ========================= -->
-        <!-- หน้า 1 : คำนำ -->
-        <!-- ========================= -->
-
         <section class="page" id="page1">
 
             <h2>📖 คำนำ 📖</h2>
 
             <p>
-                แฟ้มสะสมผลงาน (Portfolio) ฉบับนี้จัดทำขึ้นเพื่อรวบรวม
-                ประวัติส่วนตัว ประวัติการศึกษา ผลงาน โครงงาน และกิจกรรมต่าง ๆ
-                ที่แสดงถึงความสามารถ ความสนใจ และความตั้งใจของข้าพเจ้า
+                แฟ้มสะสมผลงาน (Portfolio) ฉบับนี้จัดทำขึ้นเพื่อใช้ประกอบการสมัครเข้าศึกษาต่อในคณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป มหาวิทยาลัยที่ข้าพเจ้ามุ่งหวัง โดยมีวัตถุประสงค์เพื่อแสดงให้เห็นถึงความสนใจ ความตั้งใจ และความพร้อมในการศึกษาต่อในสาขาที่เกี่ยวข้องกับวิทยาศาสตร์และการเรียนการสอน
             </p>
 
             <p style="margin-top:20px;">
-                ข้าพเจ้าหวังเป็นอย่างยิ่งว่าแฟ้มสะสมผลงานเล่มนี้จะช่วยให้ผู้อ่านได้รู้จักตัวตน
-                ความสามารถ และเป้าหมายในการศึกษาต่อของข้าพเจ้ามากยิ่งขึ้น
-                และเป็นส่วนหนึ่งที่แสดงถึงความมุ่งมั่นในการพัฒนาตนเองเพื่อก้าวไปสู่ความสำเร็จในอนาคต
+                ข้าพเจ้าเป็นผู้ที่มีความสนใจในวิชาวิทยาศาสตร์ ชื่นชอบการทดลอง การวิเคราะห์ข้อมูล และการแก้ปัญหาอย่างเป็นขั้นตอน ข้าพเจ้ามีความสุขกับการค้นหาคำตอบจากสิ่งที่สงสัย และต้องการพัฒนาความรู้ความสามารถของตนเอง เพื่อนำไปต่อยอดสู่การเป็นครูวิทยาศาสตร์ที่สามารถถ่ายทอดความรู้และสร้างแรงบันดาลใจให้แก่ผู้เรียนได้
             </p>
 
-            <p style="margin-top:20px; text-align:right;">
+            <p style="margin-top:20px;">
+                ภายในแฟ้มสะสมผลงานฉบับนี้ประกอบด้วยประวัติส่วนตัว ประวัติการศึกษา ความสนใจ เป้าหมายในการศึกษาต่อ ผลงาน กิจกรรม และเกียรติบัตรต่าง ๆ ที่สะท้อนถึงความรู้ ทักษะ ความรับผิดชอบ และประสบการณ์ที่ข้าพเจ้าได้รับ โดยหวังว่าข้อมูลเหล่านี้จะช่วยให้คณะกรรมการได้รู้จักตัวตน ความสามารถ และความมุ่งมั่นของข้าพเจ้ามากยิ่งขึ้น
+            </p>
+
+            <p style="margin-top:20px;">
+                ข้าพเจ้าขอขอบพระคุณคณะกรรมการทุกท่านที่กรุณาสละเวลาอ่านแฟ้มสะสมผลงานฉบับนี้ รวมถึงครอบครัว คุณครู และผู้มีส่วนเกี่ยวข้องทุกท่านที่ให้คำแนะนำ สนับสนุน และส่งเสริมข้าพเจ้าในการพัฒนาตนเองมาโดยตลอด ข้าพเจ้าหวังเป็นอย่างยิ่งว่าแฟ้มสะสมผลงานฉบับนี้จะเป็นส่วนหนึ่งในการแสดงถึงความตั้งใจและความเหมาะสมในการเข้าศึกษาต่อในคณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป
+            </p>
+
+            <p style="margin-top:25px; text-align:right;">
                 นางสาว สิริลักษณ์ ผาดผ่อง
             </p>
 
         </section>
-
-        <!-- ========================= -->
-        <!-- หน้า 2 : About Me -->
-        <!-- ========================= -->
 
         <section class="page" id="page2">
 
@@ -875,7 +989,6 @@
                 >
 
                 <div class="profile-info">
-
                     <div>ชื่อ-สกุล : นางสาวสิริลักษณ์ ผาดผ่อง</div>
                     <div>ชื่อเล่น : ปอ</div>
                     <div>วัน/เดือน/ปีเกิด : 18 ตุลาคม พ.ศ.2551</div>
@@ -885,16 +998,11 @@
                     <div>เบอร์โทรศัพท์ : 090-199-4740 ☎️</div>
                     <div>FACEBOOK : Sirilak Phartpong 📨</div>
                     <div>GMail : por99srl@gmail.com 📧</div>
-
                 </div>
 
             </div>
 
         </section>
-
-        <!-- ========================= -->
-        <!-- หน้า 3 : มหาวิทยาลัย -->
-        <!-- ========================= -->
 
         <section class="page" id="page3">
 
@@ -903,7 +1011,6 @@
             <div class="university">
 
                 <div class="university-name">
-
                     <h3>🌱 มหาวิทยาลัยเกษตรศาสตร์ บางเขน 🌱</h3>
 
                     <p>
@@ -913,7 +1020,6 @@
                     <p>
                         สาขาวิชาวิทยาศาสตร์ทั่วไป
                     </p>
-
                 </div>
 
                 <div class="reason-box">
@@ -960,17 +1066,9 @@
 
         </section>
 
-        <!-- ========================= -->
-        <!-- หน้า 4 : ผลงานและรางวัล -->
-        <!-- ========================= -->
-
         <section class="page" id="page4">
 
             <h2>🏆 ผลงานและรางวัล 🏆</h2>
-
-            <!-- ========================= -->
-            <!-- ผลงานที่ 1 -->
-            <!-- ========================= -->
 
             <div class="award-card">
 
@@ -1012,10 +1110,6 @@
                 </div>
 
             </div>
-
-            <!-- ========================= -->
-            <!-- ผลงานที่ 2 -->
-            <!-- ========================= -->
 
             <div class="award-card">
 
@@ -1060,10 +1154,6 @@
 
             </div>
 
-            <!-- ========================= -->
-            <!-- ผลงานที่ 3 -->
-            <!-- ========================= -->
-
             <div class="award-card">
 
                 <h3>🏆 การแข่งขัน Science Team 🏆</h3>
@@ -1104,10 +1194,6 @@
             </div>
 
         </section>
-
-        <!-- ========================= -->
-        <!-- หน้า 5 : ขอบคุณ -->
-        <!-- ========================= -->
 
         <section class="page thank-you-page" id="page5">
 
@@ -1170,6 +1256,7 @@
                 <p class="thank-you-text">
                     หวังว่าทุกคนจะชื่นชอบแฟ้มสะสมผลงานนี้นะคะ ✨
                 </p>
+
                 <div class="thank-you-decoration">
                     🌷 📚 🔬 🌷
                 </div>
@@ -1177,6 +1264,12 @@
                 <p class="thank-you-subtext">
                     💙 นางสาว สิริลักษณ์ ผาดผ่อง 💙
                 </p>
+
+                <div class="back-home">
+                    <a href="index.html">
+                        🏠 กลับไปยังหน้าหลัก
+                    </a>
+                </div>
 
             </div>
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>หน้าหลักเว็บไซต์ของฉัน</title>
 
     <!-- ข้อมูลสำหรับตอนแชร์ลิงก์ -->
@@ -26,61 +26,68 @@
     <meta name="twitter:image" content="https://34601sirilak.github.io/45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png">
 
     <style>
-    <style>
         * {
             box-sizing: border-box;
         }
+
+        html {
+            width: 100%;
+        }
+
         body {
             margin: 0;
             min-height: 100vh;
-            background: linear-gradient(
-                135deg,
-                #e8f7ff,
-                #c9edff,
-                #b9e5fa
-            );
-            color: #333;
+            background:
+                radial-gradient(circle at 10% 20%, #ffffff 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, #ffdff0 0%, transparent 25%),
+                linear-gradient(135deg, #dff6ff, #f8e4ff, #ffe5f1);
+            color: #555;
             text-align: center;
             padding: 50px 20px;
             font-family: Arial, Tahoma, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow-x: hidden;
         }
+
         .card {
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.94);
             border-radius: 40px;
             box-shadow:
-                0 12px 35px rgba(74, 157, 196, 0.20);
+                0 15px 40px rgba(150, 120, 190, 0.18);
             max-width: 700px;
             width: 100%;
             margin: auto;
             padding: 45px 35px;
-            border: 3px solid rgba(255,255,255,0.9);
+            border: 3px solid rgba(255, 255, 255, 0.9);
             position: relative;
             overflow: hidden;
         }
+
         /* วงกลมตกแต่ง */
         .card::before {
             content: "";
             position: absolute;
-            width: 130px;
-            height: 130px;
-            background: #e0f5ff;
+            width: 160px;
+            height: 160px;
+            background: #dff6ff;
             border-radius: 50%;
-            top: -65px;
-            left: -50px;
+            top: -80px;
+            left: -60px;
         }
+
         .card::after {
             content: "";
             position: absolute;
-            width: 110px;
-            height: 110px;
-            background: #d5f1ff;
+            width: 130px;
+            height: 130px;
+            background: #ffe1ef;
             border-radius: 50%;
-            bottom: -55px;
-            right: -40px;
+            bottom: -65px;
+            right: -45px;
         }
+
         .decoration {
             position: relative;
             z-index: 2;
@@ -88,60 +95,101 @@
             margin-bottom: 10px;
             letter-spacing: 8px;
         }
+
         h1 {
             position: relative;
             z-index: 2;
-            color: #2f91cc;
+            color: #6daed6;
             font-size: 34px;
             line-height: 1.5;
             margin: 0 0 28px;
             font-weight: bold;
+            text-shadow: 2px 2px 0 #ffe1ef;
         }
+
+        /* กรอบรูปตรงกลาง */
+        .profile-frame {
+            position: relative;
+            z-index: 2;
+            width: 205px;
+            height: 205px;
+            padding: 8px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #aee5ff, #ffc6df);
+            border-radius: 50%;
+            box-shadow:
+                0 8px 25px rgba(150, 120, 190, 0.22),
+                0 0 0 8px rgba(255, 255, 255, 0.8);
+        }
+
+        /* ภาพโปรไฟล์ */
+        .profile-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+
         p {
             position: relative;
             z-index: 2;
             font-size: 18px;
             line-height: 1.8;
-            color: #444;
+            color: #555;
             margin: 18px 0;
         }
+
         strong {
-            color: #2589c1;
+            color: #e58bb5;
         }
+
         .btn {
             position: relative;
             z-index: 3;
             display: inline-block;
             margin-top: 18px;
             padding: 14px 28px;
-            background: #55afe0;
+            background: linear-gradient(135deg, #75c9ed, #e9a9cf);
             color: white;
             text-decoration: none;
             font-size: 17px;
             font-weight: bold;
-            border-radius: 15px;
+            border-radius: 18px;
             box-shadow:
-                0 6px 16px rgba(65, 155, 200, 0.22);
+                0 6px 16px rgba(180, 140, 190, 0.22);
             transition: 0.25s;
         }
+
         .btn:hover {
-            background: #3d9ed2;
+            background: linear-gradient(135deg, #5eb8df, #dc8fbc);
             transform: translateY(-3px);
         }
+
         @media (max-width: 600px) {
             body {
                 padding: 25px 15px;
             }
+
             .card {
                 padding: 35px 20px;
                 border-radius: 30px;
             }
+
             h1 {
                 font-size: 27px;
             }
+
+            .profile-frame {
+                width: 185px;
+                height: 185px;
+            }
+
             p {
                 font-size: 17px;
             }
+
             .btn {
                 font-size: 16px;
                 padding: 13px 22px;
@@ -149,29 +197,46 @@
         }
     </style>
 </head>
+
 <body>
     <div class="card">
+
         <div class="decoration">
-            ☁️ 🦋 ✨
+            ☁️🫧☁️🫧
         </div>
+
         <h1>
-            👑ยินดีต้อนรับสู่โปรไฟล์ของฉัน👑
+            🙌🏻ยินดีต้อนรับสู่โปรไฟล์ของฉัน🙌🏻
         </h1>
+
+        <!-- ภาพโปรไฟล์ตรงกลาง -->
+        <div class="profile-frame">
+            <img
+                src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
+                alt="รูปโปรไฟล์ สิริลักษณ์ ผาดผ่อง"
+                class="profile-image"
+            >
+        </div>
+
         <p>
             สวัสดีค่ะ!🦋 ฉันชื่อ
             <strong>
-            🌟สิริลักษณ์ ผาดผ่อง (Sirilak Phartpong)🌟
+                🌟สิริลักษณ์ ผาดผ่อง (Sirilak Phartpong)🌟
             </strong>
         </p>
+
         <p>
-           📍ขณะนี้กำลังศึกษาชั้นมัธยมศึกษาปีที่6 แผนการเรียน เตรียมวิศวกรรมศาสตร์👷‍♀️
+            📍ขณะนี้กำลังศึกษาชั้นมัธยมศึกษาปีที่6 แผนการเรียน เตรียมวิศวกรรมศาสตร์👷‍♀️
         </p>
+
         <p>
-           🎯เป้าหมายในชีวิต คุณครูวิทยาศาสตร์
+            🎯เป้าหมายในชีวิต คุณครูวิทยาศาสตร์
         </p>
+
         <a href="portfolio.html" class="btn">
-          📚 🔎ดูแฟ้มสะสมงานของฉัน🔍📚
+            📚 🔎ดูแฟ้มสะสมงานของฉัน🔍📚
         </a>
+
     </div>
 </body>
 </html>

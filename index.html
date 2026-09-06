@@ -115,19 +115,19 @@
             width: 205px;
             height: 205px;
             padding: 9px;
-            margin: 0 auto 35px;
+            margin: 0 auto 70px;
             background: linear-gradient(135deg, #aee5ff, #ffc6df);
             border-radius: 50%;
 
             box-shadow:
                 0 8px 25px rgba(150, 120, 190, 0.22),
                 0 0 0 8px rgba(255, 255, 255, 0.8);
+
+            /* รูปและกรอบขยับขึ้นลง */
+            animation: profileFloat 3s ease-in-out infinite;
         }
 
-        /*
-            เส้นปะรอบรูป
-            อยู่นิ่ง ไม่หมุน
-        */
+        /* เส้นปะรอบรูป หมุน */
         .profile-frame::before {
             content: "";
             position: absolute;
@@ -138,28 +138,26 @@
             border: 3px dashed #f3a9c8;
             border-radius: 50%;
             pointer-events: none;
+
+            animation: dashedRotate 8s linear infinite;
         }
 
-        /*
-            วงแหวนวิ้ง ๆ รอบรูป
-            อยู่นิ่ง ไม่หมุน
-        */
+        /* วิ้ง ๆ อยู่ข้างล่างรูป ไม่หมุน */
         .profile-frame::after {
-            content: "✦  ✧  ✦  ✧  ✦  ✧  ✦  ✧";
+            content: "✦  ✧  ✦  ✧  ✦";
             position: absolute;
-            top: -42px;
+            top: auto;
+            bottom: -55px;
             left: 50%;
             width: 290px;
-            height: 290px;
+            height: 40px;
             transform: translateX(-50%);
-            border-radius: 50%;
             color: #f3a9c8;
             font-size: 22px;
             letter-spacing: 8px;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
-            padding-top: 0;
             white-space: nowrap;
             pointer-events: none;
             text-shadow:
@@ -178,9 +176,12 @@
             border: 5px solid white;
             position: relative;
             z-index: 3;
+
+            /* ภาพขยายเล็กน้อย */
+            animation: imagePulse 3s ease-in-out infinite;
         }
 
-        /* วิ้งเล็ก ๆ รอบรูป อยู่นิ่ง */
+        /* วิ้งเล็ก ๆ รอบกรอบ อยู่นิ่ง */
         .profile-frame .sparkle {
             position: absolute;
             z-index: 5;
@@ -249,6 +250,41 @@
             transform: translateY(-3px);
         }
 
+        /* กรอบรูปขยับขึ้นลง */
+        @keyframes profileFloat {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* เส้นปะหมุนรอบรูป */
+        @keyframes dashedRotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ภาพขยายเล็กน้อย */
+        @keyframes imagePulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
         @media (max-width: 600px) {
 
             body {
@@ -267,11 +303,15 @@
             .profile-frame {
                 width: 185px;
                 height: 185px;
+                margin-bottom: 65px;
             }
 
+            /* วิ้งด้านล่างบนมือถือ */
             .profile-frame::after {
                 width: 265px;
-                height: 265px;
+                height: 35px;
+                bottom: -48px;
+                top: auto;
                 font-size: 18px;
                 letter-spacing: 5px;
             }

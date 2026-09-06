@@ -32,7 +32,6 @@
         .top-menu {
             width: 100%;
             display: flex;
-            flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
@@ -369,27 +368,19 @@
             margin: 25px 0 30px;
         }
 
-        /* ========================= */
-        /* กรอบรูปผลงานชมพู–ฟ้า */
-        /* ========================= */
-
         .award-images img {
             width: 48%;
             height: 250px;
             object-fit: contain;
             background: #FFFFFF;
             border-radius: 20px;
-
             border: 5px solid #F3A9C8;
             outline: 4px solid #DDF4FF;
             outline-offset: 4px;
-
             padding: 7px;
-
             box-shadow:
                 0 0 0 9px #FFF0F7,
                 0 8px 22px rgba(220, 150, 190, 0.22);
-
             transition: 0.3s ease;
         }
 
@@ -399,6 +390,13 @@
             box-shadow:
                 0 0 0 9px #EAF7FF,
                 0 10px 25px rgba(150, 210, 240, 0.25);
+        }
+
+        /* รูปภาพเดี่ยวของผลงานที่ 3 */
+
+        .award-images.single-image img {
+            width: 70%;
+            height: 300px;
         }
 
         .award-description {
@@ -467,8 +465,6 @@
             animation: thankYouAppear 1s ease;
         }
 
-        /* รูปการ์ตูนครูกับนักเรียน */
-
         .teacher-picture {
             display: flex;
             justify-content: center;
@@ -536,8 +532,6 @@
             color: #70B5D4;
         }
 
-        /* ข้อความขอบคุณ */
-
         .thank-you-decoration {
             font-size: 32px;
             letter-spacing: 8px;
@@ -565,8 +559,6 @@
             font-size: 17px !important;
             margin-top: 12px;
         }
-
-        /* ของตกแต่งลอยเฉพาะหน้าขอบคุณ */
 
         .thank-you-page .floating-item {
             position: absolute;
@@ -744,6 +736,11 @@
                 outline: 3px solid #DDF4FF;
                 outline-offset: 3px;
                 padding: 5px;
+            }
+
+            .award-images.single-image img {
+                width: 90%;
+                height: 230px;
             }
 
             .award-description p {
@@ -971,7 +968,9 @@
 
             <h2>🏆 ผลงานและรางวัล 🏆</h2>
 
-            <!-- รางวัลที่ 1 -->
+            <!-- ========================= -->
+            <!-- ผลงานที่ 1 -->
+            <!-- ========================= -->
 
             <div class="award-card">
 
@@ -989,12 +988,12 @@
 
                     <img
                         src="IMG_6494.jpeg"
-                        alt="ภาพการแข่งขัน รูปที่ 1"
+                        alt="ภาพการแข่งขันศึกวัดเซียนปรากฏการณ์ธรรมชาติ รูปที่ 1"
                     >
 
                     <img
                         src="IMG_6497.jpeg"
-                        alt="ภาพการแข่งขัน รูปที่ 2"
+                        alt="ภาพการแข่งขันศึกวัดเซียนปรากฏการณ์ธรรมชาติ รูปที่ 2"
                     >
 
                 </div>
@@ -1014,7 +1013,9 @@
 
             </div>
 
-            <!-- รางวัลที่ 2 -->
+            <!-- ========================= -->
+            <!-- ผลงานที่ 2 -->
+            <!-- ========================= -->
 
             <div class="award-card">
 
@@ -1045,13 +1046,57 @@
 
                 <div class="award-description">
 
-                    <h4>🌟 ทักษะและสิ่งที่ได้รับ 🌟</h4>
+                    <h4>🌟 ทักษะที่ได้รับ 🌟</h4>
 
                     <p>
-                        รางวัลนี้สะท้อนถึงความรับผิดชอบ ความมีวินัย
-                        และการปฏิบัติตนตามกฎระเบียบของสถานศึกษา
-                        ทำให้ได้ฝึกความรับผิดชอบต่อตนเองและส่วนรวม
-                        รวมถึงการมีระเบียบวินัยและการประพฤติตนอย่างเหมาะสม
+                        ได้ฝึกความรับผิดชอบต่อตนเองและส่วนรวม
+                        มีระเบียบวินัย ปฏิบัติตามกฎระเบียบของสถานศึกษา
+                        รู้จักการวางตัวอย่างเหมาะสม และพัฒนาตนเอง
+                        ให้เป็นผู้ที่มีความประพฤติดีทั้งด้านการเรียน
+                        และการใช้ชีวิตร่วมกับผู้อื่น
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- ========================= -->
+            <!-- ผลงานที่ 3 -->
+            <!-- ========================= -->
+
+            <div class="award-card">
+
+                <h3>🏆 การแข่งขัน Science Team 🏆</h3>
+
+                <p class="award-subtitle">
+                    🔬 ระดับมัธยมศึกษาตอนปลาย 🔬
+                </p>
+
+                <p class="award-result">
+                    🥇 ได้รับรางวัลชนะเลิศ 🥇
+                </p>
+
+                <div class="award-images single-image">
+
+                    <img
+                        src="IMG_3752.jpeg"
+                        alt="เกียรติบัตรรางวัลชนะเลิศการแข่งขัน Science Team"
+                    >
+
+                </div>
+
+                <div class="award-description">
+
+                    <h4>✨ ทักษะที่ได้รับ ✨</h4>
+
+                    <p>
+                        ได้พัฒนาทักษะการคิดวิเคราะห์และการแก้ปัญหา
+                        โดยนำความรู้ด้านวิทยาศาสตร์มาใช้ในการแข่งขัน
+                        ฝึกการทำงานเป็นทีม การแบ่งหน้าที่และความรับผิดชอบ
+                        รวมถึงการสื่อสาร การวางแผน และการตัดสินใจร่วมกับผู้อื่น
+                        อีกทั้งยังได้เรียนรู้การทำงานอย่างมีเป้าหมาย
+                        และการนำความรู้ทางวิทยาศาสตร์ไปประยุกต์ใช้
+                        ในสถานการณ์ต่าง ๆ
                     </p>
 
                 </div>
@@ -1124,6 +1169,10 @@
 
                 <p class="thank-you-text">
                     หวังว่าทุกคนจะชื่นชอบแฟ้มสะสมผลงานนี้นะคะ ✨
+                </p>
+
+                <p class="thank-you-subtext">
+                    ด้วยความขอบคุณจากใจ 💐
                 </p>
 
                 <div class="thank-you-decoration">

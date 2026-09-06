@@ -88,13 +88,13 @@
             right: -45px;
         }
 
+        /* ลายตกแต่งอยู่นิ่ง */
         .decoration {
             position: relative;
             z-index: 2;
             font-size: 25px;
             margin-bottom: 10px;
             letter-spacing: 8px;
-            animation: decorationMove 3s ease-in-out infinite;
         }
 
         h1 {
@@ -122,13 +122,11 @@
             box-shadow:
                 0 8px 25px rgba(150, 120, 190, 0.22),
                 0 0 0 8px rgba(255, 255, 255, 0.8);
-
-            animation: profileFloat 3s ease-in-out infinite;
         }
 
         /*
             เส้นปะรอบรูป
-            ใช้ ::before เป็นวงกลมเส้นปะ
+            อยู่นิ่ง ไม่หมุน
         */
         .profile-frame::before {
             content: "";
@@ -139,12 +137,12 @@
             height: calc(100% + 34px);
             border: 3px dashed #f3a9c8;
             border-radius: 50%;
-            animation: dashedRotate 10s linear infinite;
             pointer-events: none;
         }
 
         /*
             วงแหวนวิ้ง ๆ รอบรูป
+            อยู่นิ่ง ไม่หมุน
         */
         .profile-frame::after {
             content: "✦  ✧  ✦  ✧  ✦  ✧  ✦  ✧";
@@ -163,7 +161,6 @@
             justify-content: center;
             padding-top: 0;
             white-space: nowrap;
-            animation: sparkleRotate 12s linear infinite;
             pointer-events: none;
             text-shadow:
                 0 0 5px #ffffff,
@@ -181,20 +178,19 @@
             border: 5px solid white;
             position: relative;
             z-index: 3;
-            animation: imagePulse 3s ease-in-out infinite;
         }
 
-        /* วิ้งเล็ก ๆ เพิ่มเติมรอบรูป */
+        /* วิ้งเล็ก ๆ รอบรูป อยู่นิ่ง */
         .profile-frame .sparkle {
             position: absolute;
             z-index: 5;
             color: #f3a9c8;
             font-size: 25px;
+            opacity: 0.8;
             text-shadow:
                 0 0 5px white,
                 0 0 12px #f3a9c8,
                 0 0 18px #9ddcf5;
-            animation: sparkleBlink 1.8s ease-in-out infinite;
             pointer-events: none;
         }
 
@@ -206,19 +202,16 @@
         .sparkle-2 {
             top: 25px;
             right: -35px;
-            animation-delay: 0.4s !important;
         }
 
         .sparkle-3 {
             bottom: -30px;
             right: 25px;
-            animation-delay: 0.8s !important;
         }
 
         .sparkle-4 {
             bottom: 25px;
             left: -35px;
-            animation-delay: 1.2s !important;
         }
 
         p {
@@ -254,73 +247,6 @@
         .btn:hover {
             background: linear-gradient(135deg, #5eb8df, #dc8fbc);
             transform: translateY(-3px);
-        }
-
-        /* รูปขยับขึ้นลงเบา ๆ */
-        @keyframes profileFloat {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-10px) rotate(2deg);
-            }
-        }
-
-        /* รูปขยายเบา ๆ */
-        @keyframes imagePulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.03);
-            }
-        }
-
-        /* เส้นปะหมุน */
-        @keyframes dashedRotate {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* วงแหวนวิ้งหมุน */
-        @keyframes sparkleRotate {
-            from {
-                transform: translateX(-50%) rotate(0deg);
-            }
-
-            to {
-                transform: translateX(-50%) rotate(360deg);
-            }
-        }
-
-        /* วิ้งกระพริบ */
-        @keyframes sparkleBlink {
-            0%, 100% {
-                opacity: 0.35;
-                transform: scale(0.7) rotate(0deg);
-            }
-
-            50% {
-                opacity: 1;
-                transform: scale(1.35) rotate(25deg);
-            }
-        }
-
-        @keyframes decorationMove {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-6px);
-            }
         }
 
         @media (max-width: 600px) {

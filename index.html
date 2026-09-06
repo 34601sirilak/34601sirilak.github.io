@@ -94,6 +94,7 @@
             font-size: 25px;
             margin-bottom: 10px;
             letter-spacing: 8px;
+            animation: decorationMove 3s ease-in-out infinite;
         }
 
         h1 {
@@ -113,13 +114,61 @@
             z-index: 2;
             width: 205px;
             height: 205px;
-            padding: 8px;
-            margin: 0 auto 30px;
+            padding: 9px;
+            margin: 0 auto 35px;
             background: linear-gradient(135deg, #aee5ff, #ffc6df);
             border-radius: 50%;
+
             box-shadow:
                 0 8px 25px rgba(150, 120, 190, 0.22),
                 0 0 0 8px rgba(255, 255, 255, 0.8);
+
+            animation: profileFloat 3s ease-in-out infinite;
+        }
+
+        /*
+            เส้นปะรอบรูป
+            ใช้ ::before เป็นวงกลมเส้นปะ
+        */
+        .profile-frame::before {
+            content: "";
+            position: absolute;
+            top: -17px;
+            left: -17px;
+            width: calc(100% + 34px);
+            height: calc(100% + 34px);
+            border: 3px dashed #f3a9c8;
+            border-radius: 50%;
+            animation: dashedRotate 10s linear infinite;
+            pointer-events: none;
+        }
+
+        /*
+            วงแหวนวิ้ง ๆ รอบรูป
+        */
+        .profile-frame::after {
+            content: "✦  ✧  ✦  ✧  ✦  ✧  ✦  ✧";
+            position: absolute;
+            top: -42px;
+            left: 50%;
+            width: 290px;
+            height: 290px;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            color: #f3a9c8;
+            font-size: 22px;
+            letter-spacing: 8px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 0;
+            white-space: nowrap;
+            animation: sparkleRotate 12s linear infinite;
+            pointer-events: none;
+            text-shadow:
+                0 0 5px #ffffff,
+                0 0 10px #f3a9c8,
+                0 0 15px #9ddcf5;
         }
 
         /* ภาพโปรไฟล์ */
@@ -130,6 +179,46 @@
             object-fit: cover;
             border-radius: 50%;
             border: 5px solid white;
+            position: relative;
+            z-index: 3;
+            animation: imagePulse 3s ease-in-out infinite;
+        }
+
+        /* วิ้งเล็ก ๆ เพิ่มเติมรอบรูป */
+        .profile-frame .sparkle {
+            position: absolute;
+            z-index: 5;
+            color: #f3a9c8;
+            font-size: 25px;
+            text-shadow:
+                0 0 5px white,
+                0 0 12px #f3a9c8,
+                0 0 18px #9ddcf5;
+            animation: sparkleBlink 1.8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .sparkle-1 {
+            top: -30px;
+            left: 20px;
+        }
+
+        .sparkle-2 {
+            top: 25px;
+            right: -35px;
+            animation-delay: 0.4s !important;
+        }
+
+        .sparkle-3 {
+            bottom: -30px;
+            right: 25px;
+            animation-delay: 0.8s !important;
+        }
+
+        .sparkle-4 {
+            bottom: 25px;
+            left: -35px;
+            animation-delay: 1.2s !important;
         }
 
         p {
@@ -167,7 +256,75 @@
             transform: translateY(-3px);
         }
 
+        /* รูปขยับขึ้นลงเบา ๆ */
+        @keyframes profileFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(2deg);
+            }
+        }
+
+        /* รูปขยายเบา ๆ */
+        @keyframes imagePulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        /* เส้นปะหมุน */
+        @keyframes dashedRotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* วงแหวนวิ้งหมุน */
+        @keyframes sparkleRotate {
+            from {
+                transform: translateX(-50%) rotate(0deg);
+            }
+
+            to {
+                transform: translateX(-50%) rotate(360deg);
+            }
+        }
+
+        /* วิ้งกระพริบ */
+        @keyframes sparkleBlink {
+            0%, 100% {
+                opacity: 0.35;
+                transform: scale(0.7) rotate(0deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.35) rotate(25deg);
+            }
+        }
+
+        @keyframes decorationMove {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
         @media (max-width: 600px) {
+
             body {
                 padding: 25px 15px;
             }
@@ -186,6 +343,42 @@
                 height: 185px;
             }
 
+            .profile-frame::after {
+                width: 265px;
+                height: 265px;
+                font-size: 18px;
+                letter-spacing: 5px;
+            }
+
+            .profile-frame::before {
+                top: -14px;
+                left: -14px;
+                width: calc(100% + 28px);
+                height: calc(100% + 28px);
+            }
+
+            .profile-frame .sparkle {
+                font-size: 20px;
+            }
+
+            .sparkle-1 {
+                top: -25px;
+                left: 15px;
+            }
+
+            .sparkle-2 {
+                right: -28px;
+            }
+
+            .sparkle-3 {
+                bottom: -25px;
+                right: 15px;
+            }
+
+            .sparkle-4 {
+                left: -28px;
+            }
+
             p {
                 font-size: 17px;
             }
@@ -199,6 +392,7 @@
 </head>
 
 <body>
+
     <div class="card">
 
         <div class="decoration">
@@ -209,13 +403,22 @@
             🙌🏻ยินดีต้อนรับสู่โปรไฟล์ของฉัน🙌🏻
         </h1>
 
-        <!-- ภาพโปรไฟล์ตรงกลาง -->
+        <!-- กรอบรูปโปรไฟล์ -->
         <div class="profile-frame">
+
+            <!-- ดาววิ้งรอบรูป -->
+            <span class="sparkle sparkle-1">✦</span>
+            <span class="sparkle sparkle-2">✧</span>
+            <span class="sparkle sparkle-3">✦</span>
+            <span class="sparkle sparkle-4">✧</span>
+
+            <!-- ภาพโปรไฟล์ -->
             <img
                 src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
                 alt="รูปโปรไฟล์ สิริลักษณ์ ผาดผ่อง"
                 class="profile-image"
             >
+
         </div>
 
         <p>
@@ -226,7 +429,8 @@
         </p>
 
         <p>
-            📍ขณะนี้กำลังศึกษาชั้นมัธยมศึกษาปีที่6 แผนการเรียน เตรียมวิศวกรรมศาสตร์👷‍♀️
+            📍ขณะนี้กำลังศึกษาชั้นมัธยมศึกษาปีที่6
+            แผนการเรียน เตรียมวิศวกรรมศาสตร์👷‍♀️
         </p>
 
         <p>
@@ -238,5 +442,6 @@
         </a>
 
     </div>
+
 </body>
 </html>

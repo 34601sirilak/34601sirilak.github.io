@@ -6,450 +6,1116 @@
 
 <title>Portfolio | นางสาว สิริลักษณ์ ผาดผ่อง</title>
 
-<meta property="og:title" content="Sirilak | Portfolio">
-<meta property="og:description" content="แฟ้มสะสมผลงานของนางสาวสิริลักษณ์ ผาดผ่อง">
-<meta property="og:image" content="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png">
-<meta property="og:type" content="website">
-
 <style>
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Tahoma", sans-serif;
+}
+
+html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
-    font-family: "Tahoma", "Arial", sans-serif;
-    background: linear-gradient(135deg, #fff5fb, #eefaff);
-    color: #555;
-    line-height: 1.8;
-    overflow-x: hidden;
+    background: linear-gradient(135deg, #FFF0F7, #EAF8FF);
+    color: #52738C;
+    min-height: 100vh;
 }
 
-/* พื้นหลังวิ้ง ๆ */
-body::before {
-    content: "✦  ˚  ✧  ⋆  ✦  ˚  ✧  ⋆  ✦  ˚  ✧  ⋆  ✦";
-    position: fixed;
-    top: 0;
-    left: 0;
+/* เมนูด้านบน */
+.top-menu {
     width: 100%;
-    height: 100%;
-    color: rgba(255, 170, 220, 0.25);
-    font-size: 28px;
-    letter-spacing: 35px;
-    line-height: 100px;
-    pointer-events: none;
-    z-index: -1;
-    animation: sparkle 5s linear infinite;
-}
-
-@keyframes sparkle {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(25px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* เมนู */
-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #FFF8FC, #F0FBFF);
+    padding: 15px 20px;
+    border-bottom: 4px solid #F3C1D8;
+    box-shadow: 0 5px 18px rgba(220,150,190,0.18);
     position: sticky;
     top: 0;
     z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 14px 20px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 4px 20px rgba(255, 160, 210, 0.2);
 }
 
-nav a {
+.top-menu a {
     text-decoration: none;
-    color: #e58bbd;
+    color: #D66C9B;
+    background: linear-gradient(135deg, #FFF0F7, #EAF7FF);
+    padding: 10px 17px;
+    border-radius: 20px;
+    font-size: 14px;
     font-weight: bold;
-    background: #fff;
-    border: 2px solid #ffd4ec;
-    border-radius: 25px;
-    padding: 7px 18px;
+    text-align: center;
+    white-space: nowrap;
     transition: 0.3s;
+    border: 2px solid #F5C5DA;
+    box-shadow: 0 3px 8px rgba(150,210,240,0.12);
 }
 
-nav a:hover {
-    color: white;
-    background: linear-gradient(135deg, #f5a8d0, #a9dff5);
+.top-menu a:hover {
+    color: #C65387;
+    background: linear-gradient(135deg, #FDDCEB, #DDF4FF);
+    border-color: #9DDCF5;
     transform: translateY(-3px);
 }
 
-/* ส่วนหลัก */
-section {
-    width: 92%;
-    max-width: 1100px;
-    margin: 45px auto;
-    padding: 45px 35px;
-    background: rgba(255, 255, 255, 0.88);
-    border: 2px solid #ffe0f0;
-    border-radius: 30px;
-    box-shadow: 0 8px 30px rgba(200, 170, 220, 0.15);
+/* ส่วนหัว */
+header {
+    background: linear-gradient(135deg, #F3A9C8, #9DDCF5);
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+    border-bottom: 5px solid #F8D5E5;
+    box-shadow: 0 4px 12px rgba(220,150,190,0.18);
     position: relative;
     overflow: hidden;
 }
 
-section::before {
-    content: "✧";
+header::before {
+    content: "✦  ♡  ✦  ♡  ✦";
     position: absolute;
     top: 10px;
-    right: 25px;
-    color: #f4a7d2;
-    font-size: 38px;
-    animation: twinkle 2s infinite;
-}
-
-section::after {
-    content: "✦";
-    position: absolute;
-    bottom: 10px;
     left: 25px;
-    color: #a8dff5;
-    font-size: 30px;
-    animation: twinkle 2.5s infinite;
+    color: #FFF0F7;
+    font-size: 25px;
+    letter-spacing: 8px;
+    animation: sparkle 2s ease-in-out infinite;
 }
 
-@keyframes twinkle {
+header::after {
+    content: "♡  ✦  ♡  ✦  ♡";
+    position: absolute;
+    bottom: 8px;
+    right: 25px;
+    color: #EAF8FF;
+    font-size: 25px;
+    letter-spacing: 8px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+header p {
+    font-size: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ส่วนเนื้อหา */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.page {
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.98),
+        rgba(255,247,252,0.96),
+        rgba(240,250,255,0.96)
+    );
+    border-radius: 30px;
+    padding: 45px 35px;
+    min-height: 520px;
+    margin-bottom: 35px;
+    border: 4px solid #F8C7DC;
+    box-shadow:
+        0 8px 25px rgba(220,150,190,0.15),
+        0 0 0 4px #DDF4FF;
+    display: block;
+    position: relative;
+    overflow: visible;
+}
+
+.line-decoration {
+    position: absolute;
+    inset: 14px;
+    border: 2px dashed rgba(243,169,200,0.45);
+    border-radius: 24px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.moving-line {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border: 3px solid #F3A9C8;
+    border-radius: 50%;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.moving-line.one {
+    top: 35px;
+    right: 35px;
+}
+
+.moving-line.two {
+    bottom: 35px;
+    left: 35px;
+    border-color: #9DDCF5;
+}
+
+.sparkle-page {
+    position: absolute;
+    color: #F3A9C8;
+    font-size: 28px;
+    pointer-events: none;
+    z-index: 4;
+    opacity: 0.4;
+    animation: sparklePage 2s ease-in-out infinite;
+    text-shadow:
+        0 0 5px #FFFFFF,
+        0 0 12px #F3A9C8,
+        0 0 20px #9DDCF5;
+}
+
+.sparkle-page.s1 {
+    top: 65px;
+    right: 70px;
+}
+
+.sparkle-page.s2 {
+    bottom: 70px;
+    left: 70px;
+    color: #9DDCF5;
+    animation-delay: 0.8s;
+}
+
+.sparkle-page.s3 {
+    top: 50%;
+    right: 25px;
+    animation-delay: 1.3s;
+}
+
+.page::before {
+    content: "♡     ✦     ♡     ✧     ♡";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    color: #F3A9C8;
+    font-size: 25px;
+    letter-spacing: 12px;
+    opacity: 0.28;
+    pointer-events: none;
+    z-index: 2;
+    text-shadow:
+        0 0 8px #FFFFFF,
+        0 0 15px #F3A9C8;
+}
+
+.page::after {
+    content: "✧     ♡     ✦     ♡     ✧";
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    color: #9DDCF5;
+    font-size: 25px;
+    letter-spacing: 12px;
+    opacity: 0.28;
+    pointer-events: none;
+    z-index: 2;
+    text-shadow:
+        0 0 8px #FFFFFF,
+        0 0 15px #9DDCF5;
+}
+
+/* หัวข้อ */
+.page h2 {
+    color: #D96C9B;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 5;
+    text-shadow: 2px 2px 0 #DDF4FF;
+}
+
+.page h2::before,
+.page h2::after {
+    position: absolute;
+    top: 50%;
+    color: #F3A9C8;
+    font-size: 25px;
+    opacity: 0.75;
+    text-shadow:
+        0 0 5px #FFFFFF,
+        0 0 10px #F3A9C8,
+        0 0 18px #9DDCF5;
+    animation: titleSparkle 1.8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.page h2::before {
+    content: "✦  ✧";
+    left: 3%;
+    transform: translateY(-50%);
+}
+
+.page h2::after {
+    content: "✧  ✦";
+    right: 3%;
+    transform: translateY(-50%);
+    animation-delay: 0.8s;
+}
+
+.page h3 {
+    color: #D66C9B;
+    margin: 20px 0 10px;
+}
+
+.page p,
+.page li {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.page ul {
+    padding-left: 30px;
+}
+
+#page1 {
+    background: linear-gradient(135deg, #FFFFFF, #FFF5FA, #F0FAFF);
+}
+
+#page1 p {
+    position: relative;
+    z-index: 5;
+    text-align: justify;
+}
+
+/* โปรไฟล์ */
+.profile {
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px dashed #F3A9C8;
+    outline: 5px solid #DDF4FF;
+    outline-offset: 8px;
+    margin-bottom: 25px;
+    box-shadow:
+        0 0 0 13px #FFF0F7,
+        0 0 15px #F3A9C8,
+        0 0 30px #9DDCF5,
+        0 8px 25px rgba(220,150,190,0.25);
+    animation:
+        profileFloat 3s ease-in-out infinite,
+        profileGlow 2s ease-in-out infinite;
+    transition: 0.4s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.profile::before {
+    content: "✦   ✧   ✦   ✧   ✦";
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #F3A9C8;
+    font-size: 25px;
+    letter-spacing: 8px;
+    white-space: nowrap;
+    z-index: 5;
+    animation: sparkleTop 1.8s ease-in-out infinite;
+}
+
+.profile::after {
+    content: "✧   ✦   ✧   ✦   ✧";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #9DDCF5;
+    font-size: 23px;
+    letter-spacing: 8px;
+    white-space: nowrap;
+    z-index: 5;
+    animation: sparkleBottom 2s ease-in-out infinite;
+}
+
+.profile-info {
+    background: linear-gradient(135deg, #FFF5FA, #F0FAFF);
+    border: 3px solid #F8C7DC;
+    border-radius: 25px;
+    padding: 25px;
+    line-height: 2;
+    text-align: left;
+    max-width: 600px;
+    margin: auto;
+    box-shadow:
+        0 0 0 3px #DDF4FF,
+        0 6px 18px rgba(220,150,190,0.14);
+}
+
+.profile-info div {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* กล่องข้อมูล */
+.info-box {
+    background: linear-gradient(135deg, #FFF5FA, #F0FAFF);
+    border: 3px solid #F3C1D8;
+    border-left: 7px solid #9DDCF5;
+    border-radius: 25px;
+    padding: 25px;
+    margin: 30px auto;
+    max-width: 700px;
+    text-align: left;
+    position: relative;
+    z-index: 5;
+    box-shadow:
+        0 0 0 3px #DDF4FF,
+        0 8px 22px rgba(220,150,190,0.16);
+    animation: boxFloat 4s ease-in-out infinite;
+}
+
+.info-box h3 {
+    color: #D66C9B;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.info-box p {
+    color: #52738C;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.info-box strong {
+    color: #D66C9B;
+}
+
+.info-box::before {
+    content: "✦  ✧  ✦  ✧  ✦";
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #F3A9C8;
+    font-size: 20px;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    animation: sparkleTop 1.8s ease-in-out infinite;
+}
+
+/* มหาวิทยาลัย */
+.university {
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.university-name {
+    background: linear-gradient(135deg, #FFF0F7, #EAF7FF);
+    border-radius: 25px;
+    padding: 25px;
+    margin: 15px 0;
+    border: 3px solid #F3C1D8;
+    box-shadow:
+        0 0 0 3px #DDF4FF,
+        0 6px 18px rgba(150,210,240,0.15);
+}
+
+.university-name h3 {
+    color: #D66C9B;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.university-name p {
+    color: #52738C;
+    font-size: 18px;
+}
+
+.reason-box,
+.university-goal {
+    background: linear-gradient(135deg, #FFF8FB, #F0FAFF);
+    border-radius: 20px;
+    padding: 20px 25px;
+    margin-top: 20px;
+    border: 3px solid #BFE7FA;
+    box-shadow:
+        0 0 0 3px #F8C7DC,
+        0 6px 18px rgba(150,210,240,0.14);
+    text-align: left;
+}
+
+.reason-box {
+    border-left: 7px solid #F3A9C8;
+}
+
+.reason-box h3,
+.university-goal h3 {
+    color: #6BAFD2;
+    margin-bottom: 10px;
+}
+
+.reason-box p,
+.university-goal p {
+    color: #52738C;
+}
+
+/* ผลงาน */
+.award-card {
+    background: linear-gradient(135deg, #FFF8FB, #F0FAFF);
+    border: 3px solid #F3C1D8;
+    border-radius: 25px;
+    padding: 22px;
+    margin-bottom: 25px;
+    box-shadow:
+        0 0 0 3px #DDF4FF,
+        0 6px 20px rgba(220,150,190,0.16);
+    position: relative;
+    z-index: 5;
+}
+
+.award-card h3 {
+    color: #D66C9B;
+    font-size: 23px;
+    margin: 0 0 8px;
+}
+
+.award-subtitle {
+    color: #6C91A5;
+    font-size: 17px !important;
+    margin-bottom: 8px;
+}
+
+.award-result {
+    color: #D66C9B;
+    font-weight: bold;
+    font-size: 18px !important;
+    margin-bottom: 18px;
+}
+
+/* แสดงเกียรติบัตรเต็มแผ่น */
+.award-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 25px 0 30px;
+}
+
+.award-images img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 4px dashed #F3A9C8;
+    outline: 4px solid #DDF4FF;
+    outline-offset: 5px;
+    padding: 7px;
+    box-shadow:
+        0 0 0 10px #FFF0F7,
+        0 0 15px #F3A9C8,
+        0 0 28px #9DDCF5,
+        0 8px 22px rgba(220,150,190,0.22);
+    animation: awardGlow 2.5s ease-in-out infinite;
+    transition: 0.4s ease;
+}
+
+.award-images img:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #9DDCF5;
+}
+
+.award-images.single-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.award-description {
+    background: linear-gradient(135deg, #FFFFFF, #FFF5FA);
+    border-left: 6px solid #9DDCF5;
+    border-top: 2px solid #F8C7DC;
+    border-right: 2px solid #F8C7DC;
+    border-bottom: 2px solid #F8C7DC;
+    border-radius: 12px;
+    padding: 15px 18px;
+}
+
+.award-description h4 {
+    color: #D66C9B;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.award-description p {
+    color: #52738C;
+    font-size: 16px !important;
+    line-height: 1.7;
+}
+
+/* หน้าขอบคุณ */
+.thank-you-page {
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #FFF0F7, #F0FAFF, #DDF4FF);
+    position: relative;
+    overflow: hidden;
+}
+
+.thank-you-content {
+    width: 100%;
+    max-width: 800px;
+    padding: 40px 25px;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.98),
+        rgba(255,245,250,0.96),
+        rgba(240,250,255,0.96)
+    );
+    border: 4px solid #F3C1D8;
+    border-radius: 35px;
+    box-shadow:
+        0 0 0 4px #DDF4FF,
+        0 12px 35px rgba(220,150,190,0.18);
+    position: relative;
+    z-index: 5;
+    animation: thankYouAppear 1s ease;
+}
+
+.teacher-picture {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 35px;
+    margin-bottom: 20px;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: personMove 3s ease-in-out infinite;
+}
+
+.person:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.person-head {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #FFD8B8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    border: 4px solid #F8C7DC;
+    box-shadow: 0 0 0 3px #DDF4FF;
+}
+
+.person-body {
+    width: 125px;
+    height: 130px;
+    border-radius: 45px 45px 20px 20px;
+    background: linear-gradient(135deg, #F3A9C8, #9DDCF5);
+    margin-top: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    border: 4px solid white;
+    box-shadow: 0 0 0 3px #F8C7DC;
+}
+
+.student .person-body {
+    width: 105px;
+    height: 115px;
+    background: linear-gradient(135deg, #BFE7FA, #F8C7DC);
+}
+
+.teacher-name,
+.student-name {
+    margin-top: 10px;
+    color: #D66C9B;
+    font-size: 18px;
+}
+
+.student-name {
+    color: #70B5D4;
+}
+
+.thank-you-decoration {
+    font-size: 32px;
+    letter-spacing: 8px;
+    margin: 15px 0;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.thank-you-content h2 {
+    color: #D96C9B;
+    font-size: clamp(45px, 8vw, 75px);
+    margin: 15px 0;
+    letter-spacing: 5px;
+    animation: textBounce 2s ease-in-out infinite;
+    text-shadow: 2px 2px 0 #DDF4FF;
+}
+
+.thank-you-text {
+    color: #527F9B;
+    font-size: 22px !important;
+    line-height: 1.8 !important;
+    margin: 10px 0;
+}
+
+.thank-you-subtext {
+    color: #82B5CC;
+    font-size: 17px !important;
+    margin-top: 12px;
+}
+
+.floating-item {
+    position: absolute;
+    z-index: 2;
+    font-size: 45px;
+    animation: floatingCute 5s ease-in-out infinite;
+}
+
+.item1 {
+    top: 12%;
+    left: 12%;
+}
+
+.item2 {
+    top: 25%;
+    right: 12%;
+    animation-delay: 1s;
+}
+
+.item3 {
+    bottom: 15%;
+    left: 18%;
+    animation-delay: 2s;
+}
+
+.item4 {
+    bottom: 18%;
+    right: 18%;
+    animation-delay: 3s;
+}
+
+.item5 {
+    top: 10%;
+    right: 35%;
+    animation-delay: 1.5s;
+}
+
+.item6 {
+    bottom: 12%;
+    left: 45%;
+    animation-delay: 2.5s;
+}
+
+.item7 {
+    top: 45%;
+    left: 7%;
+    animation-delay: 3.5s;
+}
+
+/* ปุ่มกลับหน้าหลัก */
+.back-home {
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.back-home a {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #F3A9C8, #9DDCF5);
+    padding: 13px 28px;
+    border-radius: 30px;
+    border: 3px solid #FFFFFF;
+    box-shadow:
+        0 0 0 3px #F8C7DC,
+        0 6px 18px rgba(150,210,240,0.25);
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.back-home a:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, #D96C9B, #6BAFD2);
+}
+
+/* Animation */
+@keyframes profileFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes profileGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 0 13px #FFF0F7,
+            0 0 12px #F3A9C8,
+            0 0 25px #9DDCF5,
+            0 8px 25px rgba(220,150,190,0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 13px #FFFFFF,
+            0 0 22px #FFFFFF,
+            0 0 40px #F3A9C8,
+            0 0 55px #9DDCF5;
+    }
+}
+
+@keyframes awardGlow {
+    0%, 100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.06);
+    }
+}
+
+@keyframes sparkle {
     0%, 100% {
         opacity: 0.4;
-        transform: scale(1);
+        transform: scale(0.85);
     }
 
     50% {
         opacity: 1;
-        transform: scale(1.3);
+        transform: scale(1.15);
     }
 }
 
-h1 {
-    text-align: center;
-    color: #e58bbd;
-    font-size: 38px;
-    margin-bottom: 12px;
+@keyframes sparkleTop {
+    0%, 100% {
+        opacity: 0.35;
+        transform: translateX(-50%) scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.15);
+    }
 }
 
-h2 {
-    text-align: center;
-    color: #e58bbd;
-    font-size: 30px;
-    margin-bottom: 25px;
+@keyframes sparkleBottom {
+    0%, 100% {
+        opacity: 0.4;
+        transform: translateX(-50%) scale(0.8) rotate(-5deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.15) rotate(5deg);
+    }
 }
 
-h3 {
-    color: #d987b7;
-    font-size: 23px;
-    margin-bottom: 12px;
+@keyframes sparklePage {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.7) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.35) rotate(25deg);
+    }
 }
 
-p {
-    font-size: 17px;
-    margin-bottom: 12px;
+@keyframes titleSparkle {
+    0%, 100% {
+        opacity: 0.25;
+        transform: translateY(-50%) scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.3);
+    }
 }
 
-.highlight {
-    color: #e58bbd;
-    font-weight: bold;
+@keyframes boxFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
-/* หน้าแรก */
-.hero {
-    text-align: center;
-    padding-top: 55px;
-    padding-bottom: 55px;
+@keyframes floatingCute {
+    0%, 100% {
+        transform: translateY(20px) rotate(-6deg);
+        opacity: 0.65;
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(6deg);
+        opacity: 1;
+    }
 }
 
-.hero img {
-    width: 210px;
-    height: 210px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 8px solid white;
-    outline: 4px solid #ffd1e8;
-    box-shadow: 0 0 25px rgba(255, 160, 210, 0.4);
-    margin-bottom: 20px;
+@keyframes personMove {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
 }
 
-.hero .subtitle {
-    color: #91cce7;
-    font-size: 21px;
-    font-weight: bold;
+@keyframes textBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
-.sparkle-text {
-    color: #f0a1cd;
-    font-size: 24px;
-    margin: 15px 0;
-    letter-spacing: 5px;
+@keyframes thankYouAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-/* กล่องข้อมูล */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-}
+/* หน้าจอมือถือ */
+@media (max-width: 600px) {
+    .top-menu {
+        gap: 5px;
+        padding: 10px 8px;
+    }
 
-.info-box {
-    background: linear-gradient(135deg, #fff6fb, #f1fbff);
-    border: 2px solid #f8d9eb;
-    border-radius: 20px;
-    padding: 22px;
-    transition: 0.3s;
-}
+    .top-menu a {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
 
-.info-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(240, 160, 210, 0.2);
-}
+    header {
+        padding: 30px 15px;
+    }
 
-.info-box strong {
-    color: #dc8db9;
-}
+    header h1 {
+        font-size: 22px;
+    }
 
-/* รูปมหาวิทยาลัย */
-.university-image {
-    display: block;
-    width: 100%;
-    max-width: 700px;
-    margin: 25px auto;
-    border-radius: 22px;
-    border: 5px solid white;
-    box-shadow: 0 5px 20px rgba(180, 210, 230, 0.4);
-}
+    header p {
+        font-size: 14px;
+    }
 
-/* ป้ายหมวดหมู่ */
-.category-title {
-    text-align: center;
-    margin: 35px 0 25px;
-    padding: 15px;
-    border-radius: 20px;
-    color: white;
-    font-size: 26px;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(200, 150, 200, 0.15);
-}
-
-.category-title.academic {
-    background: linear-gradient(135deg, #f3a7d0, #c7a8ef);
-}
-
-.category-title.behavior {
-    background: linear-gradient(135deg, #8ed9ef, #9dc7f5);
-}
-
-.category-title.volunteer {
-    background: linear-gradient(135deg, #a9dfc1, #8fd6e8);
-}
-
-/* การ์ดผลงาน */
-.award-card {
-    background: #fff;
-    border: 2px solid #f5dceb;
-    border-radius: 25px;
-    padding: 25px;
-    margin: 25px 0;
-    box-shadow: 0 6px 20px rgba(200, 170, 220, 0.12);
-    transition: 0.3s;
-}
-
-.award-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(230, 150, 205, 0.2);
-}
-
-.award-card h3 {
-    text-align: center;
-    color: #df8db9;
-    margin-bottom: 20px;
-}
-
-/* รูปเกียรติบัตรเต็มแผ่น */
-.award-images.single-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0 30px;
-    overflow: visible;
-}
-
-.award-images.single-image img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    max-height: none;
-    object-fit: contain;
-    padding: 8px;
-    border-radius: 15px;
-    border: 3px solid #ffe0ef;
-    background: white;
-}
-
-/* รายการทักษะ */
-.skills {
-    background: linear-gradient(135deg, #fff8fc, #f4fbff);
-    border-radius: 18px;
-    padding: 20px 25px;
-    border: 2px dashed #f2c8df;
-}
-
-.skills h4 {
-    color: #91cce7;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.skills ul {
-    padding-left: 25px;
-}
-
-.skills li {
-    margin-bottom: 7px;
-    font-size: 16px;
-}
-
-/* ปุ่ม */
-.button {
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(135deg, #f2a6cf, #a9dff5);
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-weight: bold;
-    margin-top: 15px;
-    box-shadow: 0 5px 15px rgba(230, 160, 210, 0.2);
-    transition: 0.3s;
-}
-
-.button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(230, 160, 210, 0.3);
-}
-
-/* หน้าขอบคุณ */
-.thank-you {
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.thank-you h1 {
-    font-size: 42px;
-}
-
-.thank-you p {
-    font-size: 20px;
-    color: #8cbdd5;
-}
-
-.thank-you .big-star {
-    font-size: 55px;
-    color: #f2a6cf;
-    margin-bottom: 15px;
-    animation: twinkle 2s infinite;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #b68ca9;
-    font-size: 15px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    nav {
-        gap: 6px;
+    .container {
+        margin: 20px auto;
         padding: 10px;
     }
 
-    nav a {
-        font-size: 13px;
-        padding: 6px 12px;
+    .page {
+        padding: 30px 20px;
+        margin-bottom: 25px;
     }
 
-    section {
-        width: 94%;
-        padding: 30px 18px;
-        margin: 25px auto;
+    .page h2 {
+        font-size: 26px;
+        padding: 0 25px;
     }
 
-    h1 {
-        font-size: 29px;
+    .page h2::before {
+        left: -5px;
+        font-size: 18px;
     }
 
-    h2 {
-        font-size: 25px;
+    .page h2::after {
+        right: -5px;
+        font-size: 18px;
     }
 
-    h3 {
-        font-size: 20px;
+    .page p,
+    .page li {
+        font-size: 16px;
     }
 
-    p {
-        font-size: 15px;
+    .profile-img {
+        width: 140px;
+        height: 140px;
     }
 
-    .hero img {
-        width: 170px;
-        height: 170px;
+    .profile-info {
+        padding: 18px;
     }
 
-    .info-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    .profile-info div {
+        font-size: 16px;
     }
 
-    .category-title {
+    .info-box {
+        padding: 20px 18px;
+    }
+
+    .info-box h3 {
         font-size: 22px;
-        padding: 12px;
+    }
+
+    .info-box p {
+        font-size: 16px;
+    }
+
+    .moving-line {
+        width: 55px;
+        height: 55px;
+    }
+
+    .sparkle-page {
+        font-size: 22px;
     }
 
     .award-card {
-        padding: 15px;
+        padding: 16px;
+    }
+
+    .award-card h3 {
+        font-size: 19px;
+    }
+
+    .award-images {
+        gap: 8px;
+        margin: 20px 0 25px;
+    }
+
+    .award-images img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        border: 4px dashed #F3A9C8;
+        outline: 3px solid #DDF4FF;
+        outline-offset: 3px;
+        padding: 5px;
     }
 
     .award-images.single-image img {
         width: 100%;
-        max-width: 100%;
         height: auto;
-        max-height: none;
-        object-fit: contain;
-        padding: 5px;
+        max-width: 100%;
     }
 
-    .skills {
-        padding: 15px;
+    .award-description p {
+        font-size: 15px !important;
     }
 
-    .skills li {
-        font-size: 14px;
+    .thank-you-page {
+        min-height: 650px;
     }
 
-    .thank-you h1 {
-        font-size: 32px;
+    .thank-you-content {
+        padding: 30px 15px;
     }
 
-    .thank-you p {
-        font-size: 17px;
+    .teacher-picture {
+        gap: 15px;
+    }
+
+    .person-head {
+        width: 65px;
+        height: 65px;
+        font-size: 35px;
+    }
+
+    .person-body {
+        width: 95px;
+        height: 105px;
+        font-size: 38px;
+    }
+
+    .student .person-body {
+        width: 80px;
+        height: 95px;
+    }
+
+    .teacher-name,
+    .student-name {
+        font-size: 15px;
+    }
+
+    .thank-you-decoration {
+        font-size: 25px;
+        letter-spacing: 3px;
+    }
+
+    .thank-you-content h2 {
+        font-size: 48px;
+        letter-spacing: 4px;
+    }
+
+    .thank-you-text {
+        font-size: 18px !important;
+    }
+
+    .thank-you-subtext {
+        font-size: 15px !important;
+    }
+
+    .floating-item {
+        font-size: 30px;
+    }
+
+    .back-home a {
+        font-size: 15px;
+        padding: 12px 22px;
     }
 }
 </style>
@@ -457,271 +1123,509 @@ footer {
 
 <body>
 
-<!-- เมนู -->
-<nav>
-    <a href="#home">หน้าหลัก</a>
-    <a href="#about">ประวัติส่วนตัว</a>
-    <a href="#university">มหาวิทยาลัย</a>
-    <a href="#portfolio">ผลงาน</a>
-    <a href="#thankyou">ขอบคุณ</a>
+<nav class="top-menu">
+    <a href="index.html">🏠 หน้าหลัก 🏠</a>
+    <a href="#page1">📖 คำนำ 📖</a>
+    <a href="#page2">🦋 About Me 🦋</a>
+    <a href="#page3">🎓 มหาวิทยาลัย 🎓</a>
+    <a href="#page4">🏆 ผลงาน 🏆</a>
+    <a href="#page5">💙 ขอบคุณ 💙</a>
 </nav>
 
-<!-- หน้า 1 : หน้าหลัก -->
-<section id="home" class="hero">
-    <img src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
-         alt="รูปโปรไฟล์">
+<header>
+    <h1>✨แฟ้มสะสมผลงาน (Portfolio)✨</h1>
+    <p>💫นางสาว สิริลักษณ์ ผาดผ่อง💫</p>
+</header>
 
-    <div class="sparkle-text">✦ ˚ ✧ ⋆ ✦ ˚ ✧ ⋆ ✦</div>
+<div class="container">
 
-    <h1>แฟ้มสะสมผลงาน</h1>
+<!-- หน้า 1 -->
+<section class="page" id="page1">
 
-    <p class="subtitle">
-        PORTFOLIO
-    </p>
+    <div class="line-decoration"></div>
+    <div class="moving-line one"></div>
+    <div class="moving-line two"></div>
+
+    <div class="sparkle-page s1">✦</div>
+    <div class="sparkle-page s2">✧</div>
+    <div class="sparkle-page s3">✦</div>
+
+    <h2>📖 คำนำ 📖</h2>
 
     <p>
-        <span class="highlight">นางสาว สิริลักษณ์ ผาดผ่อง</span>
+        แฟ้มสะสมผลงาน (Portfolio) ฉบับนี้จัดทำขึ้นเพื่อใช้ประกอบการสมัครเข้าศึกษาต่อในคณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป มหาวิทยาลัยที่ข้าพเจ้ามุ่งหวัง โดยมีวัตถุประสงค์เพื่อแสดงให้เห็นถึงความสนใจ ความตั้งใจ และความพร้อมในการศึกษาต่อในสาขาที่เกี่ยวข้องกับวิทยาศาสตร์และการเรียนการสอน
     </p>
 
-    <p>
-        นักเรียนชั้นมัธยมศึกษาปีที่ 6
+    <p style="margin-top:20px;">
+        ข้าพเจ้าเป็นผู้ที่มีความสนใจในวิชาวิทยาศาสตร์ ชื่นชอบการทดลอง การวิเคราะห์ข้อมูล และการแก้ปัญหาอย่างเป็นขั้นตอน ข้าพเจ้ามีความสุขกับการค้นหาคำตอบจากสิ่งที่สงสัย และต้องการพัฒนาความรู้ความสามารถของตนเอง เพื่อนำไปต่อยอดสู่การเป็นครูวิทยาศาสตร์ที่สามารถถ่ายทอดความรู้และสร้างแรงบันดาลใจให้แก่ผู้เรียนได้
     </p>
 
-    <p>
-        โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+    <p style="margin-top:20px;">
+        ภายในแฟ้มสะสมผลงานฉบับนี้ประกอบด้วยประวัติส่วนตัว ประวัติการศึกษา ความสนใจ เป้าหมายในการศึกษาต่อ ผลงาน กิจกรรม และเกียรติบัตรต่าง ๆ ที่สะท้อนถึงความรู้ ทักษะ ความรับผิดชอบ และประสบการณ์ที่ข้าพเจ้าได้รับ โดยหวังว่าข้อมูลเหล่านี้จะช่วยให้คณะกรรมการได้รู้จักตัวตน ความสามารถ และความมุ่งมั่นของข้าพเจ้ามากยิ่งขึ้น
     </p>
 
-    <a href="#about" class="button">เริ่มต้นชมผลงาน ✨</a>
+    <p style="margin-top:20px;">
+        ข้าพเจ้าขอขอบพระคุณคณะกรรมการทุกท่านที่กรุณาสละเวลาอ่านแฟ้มสะสมผลงานฉบับนี้ รวมถึงครอบครัว คุณครู และผู้มีส่วนเกี่ยวข้องทุกท่านที่ให้คำแนะนำ สนับสนุน และส่งเสริมข้าพเจ้าในการพัฒนาตนเองมาโดยตลอด ข้าพเจ้าหวังเป็นอย่างยิ่งว่าแฟ้มสะสมผลงานฉบับนี้จะเป็นส่วนหนึ่งในการแสดงถึงความตั้งใจและความเหมาะสมในการเข้าศึกษาต่อในคณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป
+    </p>
+
+    <p style="margin-top:25px; text-align:right;">
+        นางสาว สิริลักษณ์ ผาดผ่อง
+    </p>
+
 </section>
 
-<!-- หน้า 2 : ประวัติส่วนตัว -->
-<section id="about">
-    <h2>ประวัติส่วนตัว ✧</h2>
+<!-- หน้า 2 -->
+<section class="page" id="page2">
 
-    <div class="info-grid">
+    <div class="line-decoration"></div>
+    <div class="moving-line one"></div>
+    <div class="moving-line two"></div>
 
-        <div class="info-box">
-            <h3>ข้อมูลส่วนตัว</h3>
-            <p><strong>ชื่อ - นามสกุล :</strong> นางสาว สิริลักษณ์ ผาดผ่อง</p>
-            <p><strong>ชื่อเล่น :</strong> ปอ</p>
-            <p><strong>ระดับชั้น :</strong> มัธยมศึกษาปีที่ 6</p>
-            <p><strong>แผนการเรียน :</strong> เตรียมวิศวกรรมศาสตร์</p>
+    <div class="sparkle-page s1">✦</div>
+    <div class="sparkle-page s2">✧</div>
+    <div class="sparkle-page s3">✦</div>
+
+    <h2>🦋 About Me 🦋</h2>
+
+    <div class="profile">
+
+        <img
+            src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
+            alt="รูปโปรไฟล์"
+            class="profile-img"
+        >
+
+        <div class="profile-info">
+            <div>ชื่อ-สกุล : นางสาวสิริลักษณ์ ผาดผ่อง</div>
+            <div>ชื่อเล่น : ปอ</div>
+            <div>วัน/เดือน/ปีเกิด : 18 ตุลาคม พ.ศ.2551</div>
+            <div>อายุ : 17 ปี</div>
+            <div>แผนการเรียน : เตรียมวิศวกรรมศาสตร์</div>
+            <div>📩 ช่องทางการติดต่อ 📩</div>
+            <div>เบอร์โทรศัพท์ : 090-199-4740 ☎️</div>
+            <div>FACEBOOK : Sirilak Phartpong 📨</div>
+            <div>GMail : por99srl@gmail.com 📧</div>
         </div>
 
         <div class="info-box">
-            <h3>ความสนใจ</h3>
+            <h3>💙 ความสนใจ 💙</h3>
+
             <p>
-                สนใจวิชาวิทยาศาสตร์ ชอบการทดลอง
-                การค้นคว้า และการเรียนรู้สิ่งใหม่ ๆ
+                <strong>1. วิทยาศาสตร์</strong><br>
+                สนใจการทดลองด้านวิทยาศาสตร์
+                ชอบเรียนรู้จากการลงมือปฏิบัติจริง
+                การสังเกตผล และการค้นหาคำตอบจากสิ่งต่าง ๆ รอบตัว
             </p>
+
             <p>
-                มีความตั้งใจศึกษาต่อในสายครู
-                เพื่อถ่ายทอดความรู้ให้กับผู้อื่น
+                <strong>2. การเรียนรู้</strong><br>
+                ชอบเรียนรู้สิ่งต่าง ๆ อยู่เสมอ
+                พร้อมเปิดรับความรู้ใหม่ ๆ
+                และนำความรู้ที่ได้รับมาพัฒนาตนเองให้ดีขึ้น
             </p>
         </div>
 
         <div class="info-box">
-            <h3>ความสามารถ</h3>
-            <p>✦ การคิดวิเคราะห์</p>
-            <p>✦ การทำงานเป็นทีม</p>
-            <p>✦ การนำเสนอผลงาน</p>
-            <p>✦ การใช้เทคโนโลยี</p>
-        </div>
+            <h3>⭐ จุดเด่นของฉัน ⭐</h3>
 
-        <div class="info-box">
-            <h3>เป้าหมายในอนาคต</h3>
             <p>
-                ต้องการศึกษาต่อคณะศึกษาศาสตร์
-                สาขาวิชาวิทยาศาสตร์ทั่วไป
-                และประกอบอาชีพครูวิทยาศาสตร์
+                <strong>1. มีความรับผิดชอบต่องาน</strong><br>
+                ตั้งใจทำงานที่ได้รับมอบหมายให้สำเร็จ
+                และส่งงานตรงตามเวลาที่กำหนด
+            </p>
+
+            <p>
+                <strong>2. มีความอดทนสูง</strong><br>
+                สามารถพยายามทำสิ่งต่าง ๆ
+                แม้จะพบอุปสรรคหรือปัญหา
+                และไม่ยอมแพ้ง่าย ๆ
+            </p>
+
+            <p>
+                <strong>3. ชอบช่วยเหลือผู้อื่น</strong><br>
+                ยินดีให้ความช่วยเหลือและแบ่งปันความรู้
+                พร้อมทำงานร่วมกับผู้อื่นอย่างมีความสุข
             </p>
         </div>
 
     </div>
 </section>
 
-<!-- หน้า 3 : มหาวิทยาลัย -->
-<section id="university">
-    <h2>มหาวิทยาลัยที่ใฝ่ฝัน ✧</h2>
+<!-- หน้า 3 -->
+<section class="page" id="page3">
 
-    <img
-        src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
-        alt="ภาพประกอบมหาวิทยาลัย"
-        class="university-image"
-    >
+    <div class="line-decoration"></div>
+    <div class="moving-line one"></div>
+    <div class="moving-line two"></div>
+
+    <div class="sparkle-page s1">✦</div>
+    <div class="sparkle-page s2">✧</div>
+    <div class="sparkle-page s3">✦</div>
+
+    <h2>🎓 มหาวิทยาลัยที่ฉันสนใจอยากจะเข้าศึกษาต่อ 🎓</h2>
+
+    <div class="university">
+
+        <div class="university-name">
+            <h3>🌱 มหาวิทยาลัยเกษตรศาสตร์ บางเขน 🌱</h3>
+
+            <p><strong>คณะศึกษาศาสตร์</strong></p>
+            <p>สาขาวิชาวิทยาศาสตร์ทั่วไป</p>
+        </div>
+
+        <div class="reason-box">
+            <h3>💙 เหตุผลที่ฉันสนใจ 💙</h3>
+
+            <p>
+                ฉันมีความสนใจในวิชาวิทยาศาสตร์ เพราะเป็นวิชาที่ทำให้ได้เรียนรู้
+                และค้นหาคำตอบจากสิ่งต่าง ๆ รอบตัว อีกทั้งยังชอบการทดลอง
+                เพราะทำให้ได้ลงมือปฏิบัติจริง ได้สังเกตผล
+                และเรียนรู้จากประสบการณ์
+            </p>
+
+            <p style="margin-top:15px;">
+                นอกจากนี้ ฉันยังชอบการวิเคราะห์และการแก้ปัญหา
+                เพราะทำให้ได้ฝึกคิดอย่างเป็นระบบ ใช้เหตุผล
+                และค้นหาวิธีแก้ไขปัญหาอย่างเหมาะสม
+            </p>
+
+            <p style="margin-top:15px;">
+                ฉันจึงมีความตั้งใจที่จะศึกษาต่อใน
+                <strong>คณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป</strong>
+                เพื่อพัฒนาความรู้และทักษะด้านวิทยาศาสตร์
+                รวมถึงเรียนรู้การถ่ายทอดความรู้ให้ผู้อื่นเข้าใจได้ง่าย
+                และนำความรู้ไปต่อยอดในอนาคต
+            </p>
+        </div>
+
+        <div class="university-goal">
+            <h3>🎓 เป้าหมายของฉัน 🎓</h3>
+
+            <p>
+                ตั้งใจเรียน พัฒนาทักษะด้านวิทยาศาสตร์
+                ฝึกการทดลอง การคิดวิเคราะห์ และการแก้ปัญหา
+                เพื่อก้าวไปสู่เป้าหมายในการศึกษาต่อ
+                และเติบโตเป็นครูวิทยาศาสตร์ที่ดีในอนาคต
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================================== -->
+<!-- หน้า 4 : ผลงานและรางวัล -->
+<!-- ================================================== -->
+
+<section class="page" id="page4">
+
+    <div class="line-decoration"></div>
+    <div class="moving-line one"></div>
+    <div class="moving-line two"></div>
+
+    <div class="sparkle-page s1">✦</div>
+    <div class="sparkle-page s2">✧</div>
+    <div class="sparkle-page s3">✦</div>
+
+    <h2>🏆 ผลงานและรางวัล 🏆</h2>
+
+
+    <!-- ========================= -->
+    <!-- หมวดที่ 1 : ด้านวิชาการ -->
+    <!-- ========================= -->
 
     <div class="info-box">
-        <h3>มหาวิทยาลัยเกษตรศาสตร์ บางเขน</h3>
+        <h3>📚 ด้านวิชาการ 📚</h3>
 
         <p>
-            มหาวิทยาลัยที่ข้าพเจ้ามีความตั้งใจอยากเข้าศึกษาต่อ
-            คือ มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตบางเขน
-        </p>
-
-        <p>
-            <strong>คณะที่สนใจ :</strong>
-            คณะศึกษาศาสตร์
-        </p>
-
-        <p>
-            <strong>สาขาที่สนใจ :</strong>
-            สาขาวิชาวิทยาศาสตร์ทั่วไป
-        </p>
-
-        <p>
-            ข้าพเจ้ามีความสนใจในวิชาวิทยาศาสตร์
-            และมีความฝันอยากเป็นครูวิทยาศาสตร์
-            เพื่อถ่ายทอดความรู้และสร้างแรงบันดาลใจ
-            ให้แก่นักเรียนในอนาคต
+            ผลงานที่สะท้อนถึงความรู้ ความสามารถ
+            การคิดวิเคราะห์ ความคิดสร้างสรรค์
+            และการนำความรู้ไปประยุกต์ใช้
         </p>
     </div>
-</section>
 
-<!-- หน้า 4 : ผลงาน -->
-<section id="portfolio">
-    <h2>ผลงานและกิจกรรม ✧</h2>
-
-    <p style="text-align:center;">
-        ผลงานที่สะท้อนถึงความรู้ ความสามารถ
-        ความประพฤติ และการมีจิตสาธารณะ
-    </p>
-
-    <!-- หมวดวิชาการ -->
-    <div class="category-title academic">
-        📚 ด้านวิชาการ
-    </div>
 
     <!-- ผลงานวิชาการที่ 1 -->
     <div class="award-card">
+
         <h3>
-            ผลงานที่ 1 : การแข่งขันศึกวัดเซียนปรากฏการณ์ธรรมชาติ
+            🏆 การแข่งขันศึกวัดเซียน
+            ปรากฏการณ์ธรรมชาติ 🏆
         </h3>
 
+        <p class="award-subtitle">
+            🔬 ระดับมัธยมศึกษาตอนปลาย 🔬
+        </p>
+
+        <p class="award-result">
+            🥈 ได้รับรางวัลรองชนะเลิศ อันดับ 1 🥈
+        </p>
+
+        <p class="award-subtitle">
+            📅 เนื่องในงานวันวิทยาศาสตร์แห่งชาติ
+            ประจำปีการศึกษา 2567 📅
+        </p>
+
         <div class="award-images single-image">
-            <img src="IMG_6577.jpeg"
-                 alt="เกียรติบัตรด้านวิชาการ ผลงานที่ 1">
+            <img
+                src="IMG_6577.jpeg"
+                alt="เกียรติบัตรการแข่งขันศึกวัดเซียน ปรากฏการณ์ธรรมชาติ"
+            >
         </div>
 
-        <div class="skills">
-            <h4>ทักษะที่ได้รับ</h4>
-            <ul>
-                <li>ทักษะการคิดวิเคราะห์และแก้ไขปัญหา</li>
-                <li>ทักษะการนำความรู้ทางวิทยาศาสตร์มาใช้</li>
-                <li>ทักษะการทำงานร่วมกับผู้อื่น</li>
-                <li>ทักษะการวางแผนและการเตรียมตัวแข่งขัน</li>
-                <li>ทักษะการกล้าแสดงออกและการนำเสนอ</li>
-            </ul>
+        <div class="award-description">
+
+            <h4>✨ ทักษะที่ได้รับ ✨</h4>
+
+            <p>
+                • พัฒนาทักษะการคิดวิเคราะห์และการใช้เหตุผล<br>
+                • ฝึกการแก้ปัญหาอย่างเป็นระบบ<br>
+                • ได้ประยุกต์ใช้ความรู้ด้านวิทยาศาสตร์ในการแข่งขัน<br>
+                • ฝึกการสังเกตและการวิเคราะห์ปรากฏการณ์ธรรมชาติ<br>
+                • พัฒนาทักษะการทำงานร่วมกับผู้อื่น<br>
+                • ฝึกการวางแผนและการตัดสินใจ
+            </p>
+
         </div>
+
     </div>
+
 
     <!-- ผลงานวิชาการที่ 2 -->
     <div class="award-card">
+
         <h3>
-            ผลงานที่ 2 : การแข่งขัน Science Team
+            🏆 การแข่งขันประดิษฐ์ดอกไม้ใบตอง
+            บายศรีสู่ขวัญ 🏆
         </h3>
 
+        <p class="award-subtitle">
+            📚 งานศิลปหัตถกรรมนักเรียน ครั้งที่ 73
+            ปีการศึกษา 2568 📚
+        </p>
+
+        <p class="award-subtitle">
+            🏫 ระดับสำนักงานเขตพื้นที่การศึกษา
+            ระดับชั้น ม.4 - ม.6 🏫
+        </p>
+
+        <p class="award-result">
+            🥇 ได้รับรางวัลระดับเหรียญทอง
+            รองชนะเลิศอันดับที่ 1 🥇
+        </p>
+
         <div class="award-images single-image">
-            <img src="IMG_6578.jpeg"
-                 alt="เกียรติบัตรด้านวิชาการ ผลงานที่ 2">
+            <img
+                src="IMG_6578.jpeg"
+                alt="เกียรติบัตรการแข่งขันประดิษฐ์ดอกไม้ใบตอง บายศรีสู่ขวัญ"
+            >
         </div>
 
-        <div class="skills">
-            <h4>ทักษะที่ได้รับ</h4>
-            <ul>
-                <li>ทักษะการทำงานเป็นทีม</li>
-                <li>ทักษะการสื่อสารและการแบ่งหน้าที่</li>
-                <li>ทักษะการคิดอย่างเป็นระบบ</li>
-                <li>ทักษะการแก้ปัญหาเฉพาะหน้า</li>
-                <li>ทักษะการใช้ความรู้ทางวิทยาศาสตร์</li>
-            </ul>
+        <div class="award-description">
+
+            <h4>✨ ทักษะที่ได้รับ ✨</h4>
+
+            <p>
+                • พัฒนาทักษะด้านศิลปะและความคิดสร้างสรรค์<br>
+                • ฝึกความประณีตและความละเอียดรอบคอบ<br>
+                • เรียนรู้การประดิษฐ์ดอกไม้ใบตองและบายศรีสู่ขวัญ<br>
+                • ฝึกการทำงานร่วมกับผู้อื่น<br>
+                • พัฒนาทักษะการวางแผนและการแบ่งหน้าที่<br>
+                • ฝึกความอดทนและความรับผิดชอบ<br>
+                • ได้เรียนรู้และอนุรักษ์ศิลปวัฒนธรรมไทย
+            </p>
+
         </div>
+
     </div>
 
-    <!-- หมวดความประพฤติ -->
-    <div class="category-title behavior">
-        🌷 ด้านความประพฤติ
+
+    <!-- ========================= -->
+    <!-- หมวดที่ 2 : ด้านความประพฤติ -->
+    <!-- ========================= -->
+
+    <div class="info-box">
+        <h3>💙 ด้านความประพฤติ 💙</h3>
+
+        <p>
+            ผลงานที่สะท้อนถึงความมีระเบียบวินัย
+            ความรับผิดชอบ และการปฏิบัติตนอย่างเหมาะสม
+        </p>
     </div>
 
-    <!-- ผลงานความประพฤติ -->
+
+    <!-- ผลงานความประพฤติที่ 1 -->
     <div class="award-card">
+
         <h3>
-            ผลงานที่ 1 : นักเรียนประพฤติดี
+            🎖️ รางวัล “นักเรียนประพฤติดี” 🎖️
         </h3>
 
+        <p class="award-subtitle">
+            📅 ประจำปีการศึกษา 2568 📅
+        </p>
+
+        <p class="award-result">
+            ⭐ ได้รับรางวัล “นักเรียนประพฤติดี” ⭐
+        </p>
+
         <div class="award-images single-image">
-            <img src="IMG_6576.jpeg"
-                 alt="เกียรติบัตรด้านความประพฤติ">
+            <img
+                src="IMG_6576.jpeg"
+                alt="เกียรติบัตรรางวัลนักเรียนประพฤติดี"
+            >
         </div>
 
-        <div class="skills">
-            <h4>ทักษะและคุณลักษณะที่ได้รับ</h4>
-            <ul>
-                <li>มีความรับผิดชอบต่อตนเองและส่วนรวม</li>
-                <li>มีระเบียบวินัยและปฏิบัติตามกฎของโรงเรียน</li>
-                <li>มีความซื่อสัตย์สุจริต</li>
-                <li>มีความเคารพต่อครูและผู้อื่น</li>
-                <li>เป็นแบบอย่างที่ดีให้กับเพื่อนนักเรียน</li>
-            </ul>
+        <div class="award-description">
+
+            <h4>🌟 ทักษะที่ได้รับ 🌟</h4>
+
+            <p>
+                • พัฒนาความมีระเบียบวินัย<br>
+                • ฝึกความรับผิดชอบต่อตนเองและส่วนรวม<br>
+                • เรียนรู้การปฏิบัติตามกฎระเบียบของสถานศึกษา<br>
+                • ฝึกการวางตัวอย่างเหมาะสม<br>
+                • พัฒนาความซื่อสัตย์และความมีคุณธรรม<br>
+                • เรียนรู้การอยู่ร่วมกับผู้อื่นอย่างมีความสุข
+            </p>
+
         </div>
+
     </div>
 
-    <!-- หมวดจิตอาสา -->
-    <div class="category-title volunteer">
-        💚 ด้านจิตอาสา
+
+    <!-- ========================= -->
+    <!-- หมวดที่ 3 : ด้านจิตอาสา -->
+    <!-- ========================= -->
+
+    <div class="info-box">
+        <h3>🌷 ด้านจิตอาสา 🌷</h3>
+
+        <p>
+            กิจกรรมที่สะท้อนถึงการมีส่วนร่วม
+            การช่วยเหลือผู้อื่น และการทำงานเพื่อส่วนรวม
+        </p>
     </div>
 
-    <!-- ผลงานจิตอาสา -->
+
+    <!-- ผลงานจิตอาสาที่ 1 -->
     <div class="award-card">
+
         <h3>
-            ผลงานที่ 1 : กิจกรรมจิตอาสา
+            🤝 ปฏิบัติหน้าที่คณะกรรมการ
+            จัดกิจกรรมการแข่งขันทักษะวิชาการ 🤝
         </h3>
 
+        <p class="award-subtitle">
+            📚 กิจกรรมเปิดบ้านวิชาการ
+            “BBU JOB FAIR” 📚
+        </p>
+
+        <p class="award-subtitle">
+            📅 วันที่ 29 มกราคม พ.ศ. 2569 📅
+        </p>
+
+        <p class="award-result">
+            ⭐ ได้ปฏิบัติหน้าที่คณะกรรมการ
+            จัดกิจกรรมการแข่งขันทักษะวิชาการ ⭐
+        </p>
+
         <div class="award-images single-image">
-            <img src="IMG_6579.jpeg"
-                 alt="เกียรติบัตรด้านจิตอาสา">
+            <img
+                src="IMG_6579.jpeg"
+                alt="เกียรติบัตรปฏิบัติหน้าที่คณะกรรมการจัดกิจกรรมการแข่งขันทักษะวิชาการ"
+            >
         </div>
 
-        <div class="skills">
-            <h4>ทักษะและคุณลักษณะที่ได้รับ</h4>
-            <ul>
-                <li>มีจิตสาธารณะและเสียสละเพื่อส่วนรวม</li>
-                <li>มีความรับผิดชอบในการทำกิจกรรม</li>
-                <li>มีทักษะการทำงานร่วมกับผู้อื่น</li>
-                <li>มีน้ำใจและช่วยเหลือผู้อื่น</li>
-                <li>รู้จักใช้เวลาว่างให้เกิดประโยชน์</li>
-            </ul>
+        <div class="award-description">
+
+            <h4>💙 ทักษะที่ได้รับ 💙</h4>
+
+            <p>
+                • พัฒนาทักษะการทำงานร่วมกับผู้อื่น<br>
+                • ฝึกความรับผิดชอบต่อหน้าที่ที่ได้รับมอบหมาย<br>
+                • เรียนรู้การช่วยเหลือและการทำงานเพื่อส่วนรวม<br>
+                • พัฒนาทักษะการสื่อสารและการประสานงาน<br>
+                • ฝึกการวางแผนและการจัดกิจกรรม<br>
+                • เรียนรู้การแก้ปัญหาเฉพาะหน้า<br>
+                • พัฒนาความมีน้ำใจและจิตสาธารณะ
+            </p>
+
         </div>
+
     </div>
 
 </section>
 
-<!-- หน้า 5 : ขอบคุณ -->
-<section id="thankyou" class="thank-you">
-    <div class="big-star">✦</div>
 
-    <h1>ขอบคุณที่เข้าชม</h1>
+<!-- หน้า 5 -->
+<section class="page thank-you-page" id="page5">
 
-    <p>
-        ขอบคุณสำหรับเวลาและความสนใจ
-        ในแฟ้มสะสมผลงานของข้าพเจ้า
-    </p>
+    <div class="line-decoration"></div>
 
-    <p>
-        หวังว่าแฟ้มสะสมผลงานฉบับนี้
-        จะสะท้อนถึงความตั้งใจ ความสามารถ
-        และความมุ่งมั่นของข้าพเจ้าได้เป็นอย่างดี
-    </p>
+    <div class="sparkle-page s1">✦</div>
+    <div class="sparkle-page s2">✧</div>
+    <div class="sparkle-page s3">✦</div>
 
-    <div class="sparkle-text">
-        ✧ ˚ ✦ ขอบคุณค่ะ ✦ ˚ ✧
+    <div class="floating-item item1">📚</div>
+    <div class="floating-item item2">✏️</div>
+    <div class="floating-item item3">🔬</div>
+    <div class="floating-item item4">🧪</div>
+    <div class="floating-item item5">⭐</div>
+    <div class="floating-item item6">💙</div>
+    <div class="floating-item item7">🍎</div>
+
+    <div class="thank-you-content">
+
+        <div class="teacher-picture">
+
+            <div class="person teacher">
+                <div class="person-head">👩🏻‍🏫</div>
+                <div class="person-body">📚</div>
+                <div class="teacher-name">👩🏻‍🏫 คุณครู</div>
+            </div>
+
+            <div class="person student">
+                <div class="person-head">👩🏻‍🎓</div>
+                <div class="person-body">📖</div>
+                <div class="student-name">👩🏻‍🎓 นักเรียน</div>
+            </div>
+
+        </div>
+
+        <div class="thank-you-decoration">
+            ✨ 💙 ✨
+        </div>
+
+        <h2>💙 ขอบคุณ 💙</h2>
+
+        <p class="thank-you-text">
+            ขอบคุณที่รับชมผลงานของฉันนะคะ 💙
+        </p>
+
+        <p class="thank-you-text">
+            หวังว่าทุกคนจะชื่นชอบแฟ้มสะสมผลงานนี้นะคะ ✨
+        </p>
+
+        <div class="thank-you-decoration">
+            🌷 📚 🔬 🌷
+        </div>
+
+        <p class="thank-you-subtext">
+            💙 นางสาว สิริลักษณ์ ผาดผ่อง 💙
+        </p>
+
+        <div class="back-home">
+            <a href="index.html">
+                🏠 กลับไปยังหน้าหลัก
+            </a>
+        </div>
+
     </div>
 
-    <a href="#home" class="button">กลับสู่หน้าหลัก ⌂</a>
 </section>
 
-<footer>
-    © 2026 Portfolio | นางสาว สิริลักษณ์ ผาดผ่อง
-</footer>
+</div>
 
 </body>
 </html>

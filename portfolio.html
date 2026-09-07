@@ -7,6 +7,7 @@
 <title>Portfolio | นางสาว สิริลักษณ์ ผาดผ่อง</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,7 +17,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
 }
 
 body {
@@ -25,13 +25,15 @@ body {
     min-height: 100vh;
 }
 
-/* เมนูด้านบน */
+/* =========================
+   เมนูด้านบน
+========================= */
+
 .top-menu {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
     background: linear-gradient(135deg, #FFF8FC, #F0FBFF);
     padding: 15px 20px;
     border-bottom: 4px solid #F3C1D8;
@@ -41,29 +43,16 @@ body {
     z-index: 1000;
 }
 
-.top-menu a {
-    text-decoration: none;
+.top-menu span {
     color: #D66C9B;
-    background: linear-gradient(135deg, #FFF0F7, #EAF7FF);
-    padding: 10px 17px;
-    border-radius: 20px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
-    text-align: center;
-    white-space: nowrap;
-    transition: 0.3s;
-    border: 2px solid #F5C5DA;
-    box-shadow: 0 3px 8px rgba(150,210,240,0.12);
 }
 
-.top-menu a:hover {
-    color: #C65387;
-    background: linear-gradient(135deg, #FDDCEB, #DDF4FF);
-    border-color: #9DDCF5;
-    transform: translateY(-3px);
-}
+/* =========================
+   ส่วนหัว
+========================= */
 
-/* ส่วนหัว */
 header {
     background: linear-gradient(135deg, #F3A9C8, #9DDCF5);
     color: white;
@@ -110,94 +99,48 @@ header p {
     z-index: 2;
 }
 
-/* ส่วนเนื้อหา */
+/* =========================
+   Container
+========================= */
+
 .container {
     max-width: 1000px;
     margin: 40px auto;
     padding: 20px;
 }
 
+/* =========================
+   ระบบแยกหน้า
+========================= */
+
 .page {
+    display: none;
+
     background: linear-gradient(
         135deg,
         rgba(255,255,255,0.98),
         rgba(255,247,252,0.96),
         rgba(240,250,255,0.96)
     );
+
     border-radius: 30px;
     padding: 45px 35px;
     min-height: 520px;
     margin-bottom: 35px;
+
     border: 4px solid #F8C7DC;
+
     box-shadow:
         0 8px 25px rgba(220,150,190,0.15),
         0 0 0 4px #DDF4FF;
-    display: block;
+
     position: relative;
     overflow: visible;
 }
 
-.line-decoration {
-    position: absolute;
-    inset: 14px;
-    border: 2px dashed rgba(243,169,200,0.45);
-    border-radius: 24px;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.moving-line {
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    border: 3px solid #F3A9C8;
-    border-radius: 50%;
-    opacity: 0.25;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.moving-line.one {
-    top: 35px;
-    right: 35px;
-}
-
-.moving-line.two {
-    bottom: 35px;
-    left: 35px;
-    border-color: #9DDCF5;
-}
-
-.sparkle-page {
-    position: absolute;
-    color: #F3A9C8;
-    font-size: 28px;
-    pointer-events: none;
-    z-index: 4;
-    opacity: 0.4;
-    animation: sparklePage 2s ease-in-out infinite;
-    text-shadow:
-        0 0 5px #FFFFFF,
-        0 0 12px #F3A9C8,
-        0 0 20px #9DDCF5;
-}
-
-.sparkle-page.s1 {
-    top: 65px;
-    right: 70px;
-}
-
-.sparkle-page.s2 {
-    bottom: 70px;
-    left: 70px;
-    color: #9DDCF5;
-    animation-delay: 0.8s;
-}
-
-.sparkle-page.s3 {
-    top: 50%;
-    right: 25px;
-    animation-delay: 1.3s;
+.page.active {
+    display: block;
+    animation: pageAppear 0.6s ease;
 }
 
 .page::before {
@@ -238,7 +181,80 @@ header p {
         0 0 15px #9DDCF5;
 }
 
-/* หัวข้อ */
+/* =========================
+   เส้นตกแต่ง
+========================= */
+
+.line-decoration {
+    position: absolute;
+    inset: 14px;
+    border: 2px dashed rgba(243,169,200,0.45);
+    border-radius: 24px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.moving-line {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border: 3px solid #F3A9C8;
+    border-radius: 50%;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.moving-line.one {
+    top: 35px;
+    right: 35px;
+}
+
+.moving-line.two {
+    bottom: 35px;
+    left: 35px;
+    border-color: #9DDCF5;
+}
+
+.sparkle-page {
+    position: absolute;
+    color: #F3A9C8;
+    font-size: 28px;
+    pointer-events: none;
+    z-index: 4;
+    opacity: 0.4;
+
+    animation:
+        sparklePage 2s ease-in-out infinite;
+
+    text-shadow:
+        0 0 5px #FFFFFF,
+        0 0 12px #F3A9C8,
+        0 0 20px #9DDCF5;
+}
+
+.sparkle-page.s1 {
+    top: 65px;
+    right: 70px;
+}
+
+.sparkle-page.s2 {
+    bottom: 70px;
+    left: 70px;
+    color: #9DDCF5;
+    animation-delay: 0.8s;
+}
+
+.sparkle-page.s3 {
+    top: 50%;
+    right: 25px;
+    animation-delay: 1.3s;
+}
+
+/* =========================
+   หัวข้อ
+========================= */
+
 .page h2 {
     color: #D96C9B;
     text-align: center;
@@ -256,11 +272,15 @@ header p {
     color: #F3A9C8;
     font-size: 25px;
     opacity: 0.75;
+
     text-shadow:
         0 0 5px #FFFFFF,
         0 0 10px #F3A9C8,
         0 0 18px #9DDCF5;
-    animation: titleSparkle 1.8s ease-in-out infinite;
+
+    animation:
+        titleSparkle 1.8s ease-in-out infinite;
+
     pointer-events: none;
 }
 
@@ -292,8 +312,17 @@ header p {
     padding-left: 30px;
 }
 
+/* =========================
+   หน้า 1
+========================= */
+
 #page1 {
-    background: linear-gradient(135deg, #FFFFFF, #FFF5FA, #F0FAFF);
+    background: linear-gradient(
+        135deg,
+        #FFFFFF,
+        #FFF5FA,
+        #F0FAFF
+    );
 }
 
 #page1 p {
@@ -302,7 +331,10 @@ header p {
     text-align: justify;
 }
 
-/* โปรไฟล์ */
+/* =========================
+   Profile
+========================= */
+
 .profile {
     text-align: center;
     position: relative;
@@ -314,18 +346,23 @@ header p {
     height: 160px;
     border-radius: 50%;
     object-fit: cover;
+
     border: 4px dashed #F3A9C8;
     outline: 5px solid #DDF4FF;
     outline-offset: 8px;
+
     margin-bottom: 25px;
+
     box-shadow:
         0 0 0 13px #FFF0F7,
         0 0 15px #F3A9C8,
         0 0 30px #9DDCF5,
         0 8px 25px rgba(220,150,190,0.25);
+
     animation:
         profileFloat 3s ease-in-out infinite,
         profileGlow 2s ease-in-out infinite;
+
     transition: 0.4s ease;
 }
 
@@ -333,43 +370,23 @@ header p {
     transform: scale(1.08) rotate(3deg);
 }
 
-.profile::before {
-    content: "✦   ✧   ✦   ✧   ✦";
-    position: absolute;
-    top: -35px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #F3A9C8;
-    font-size: 25px;
-    letter-spacing: 8px;
-    white-space: nowrap;
-    z-index: 5;
-    animation: sparkleTop 1.8s ease-in-out infinite;
-}
-
-.profile::after {
-    content: "✧   ✦   ✧   ✦   ✧";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #9DDCF5;
-    font-size: 23px;
-    letter-spacing: 8px;
-    white-space: nowrap;
-    z-index: 5;
-    animation: sparkleBottom 2s ease-in-out infinite;
-}
-
 .profile-info {
-    background: linear-gradient(135deg, #FFF5FA, #F0FAFF);
+    background: linear-gradient(
+        135deg,
+        #FFF5FA,
+        #F0FAFF
+    );
+
     border: 3px solid #F8C7DC;
     border-radius: 25px;
+
     padding: 25px;
     line-height: 2;
     text-align: left;
+
     max-width: 600px;
     margin: auto;
+
     box-shadow:
         0 0 0 3px #DDF4FF,
         0 6px 18px rgba(220,150,190,0.14);
@@ -380,22 +397,38 @@ header p {
     margin-bottom: 8px;
 }
 
-/* กล่องข้อมูล */
+/* =========================
+   กล่องข้อมูล
+========================= */
+
 .info-box {
-    background: linear-gradient(135deg, #FFF5FA, #F0FAFF);
+    background: linear-gradient(
+        135deg,
+        #FFF5FA,
+        #F0FAFF
+    );
+
     border: 3px solid #F3C1D8;
     border-left: 7px solid #9DDCF5;
+
     border-radius: 25px;
+
     padding: 25px;
     margin: 30px auto;
+
     max-width: 700px;
+
     text-align: left;
+
     position: relative;
     z-index: 5;
+
     box-shadow:
         0 0 0 3px #DDF4FF,
         0 8px 22px rgba(220,150,190,0.16);
-    animation: boxFloat 4s ease-in-out infinite;
+
+    animation:
+        boxFloat 4s ease-in-out infinite;
 }
 
 .info-box h3 {
@@ -416,46 +449,45 @@ header p {
     color: #D66C9B;
 }
 
-.info-box::before {
-    content: "✦  ✧  ✦  ✧  ✦";
-    position: absolute;
-    top: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #F3A9C8;
-    font-size: 20px;
-    letter-spacing: 6px;
-    white-space: nowrap;
-    animation: sparkleTop 1.8s ease-in-out infinite;
-}
+/* =========================
+   มหาวิทยาลัย
+========================= */
 
-/* มหาวิทยาลัย */
 .university {
     text-align: center;
     position: relative;
     z-index: 5;
 }
 
-/* ปกมหาวิทยาลัย */
 .university-cover {
     width: 300px;
     height: 300px;
+
     margin: 25px auto 35px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     background: #FFFFFF;
+
     border-radius: 25px;
+
     border: 4px dashed #F3A9C8;
     outline: 4px solid #DDF4FF;
     outline-offset: 5px;
+
     padding: 7px;
+
     box-shadow:
         0 0 0 10px #FFF0F7,
         0 0 15px #F3A9C8,
         0 0 28px #9DDCF5,
         0 8px 22px rgba(220,150,190,0.22);
-    animation: awardGlow 2.5s ease-in-out infinite;
+
+    animation:
+        awardGlow 2.5s ease-in-out infinite;
+
     transition: 0.4s ease;
 }
 
@@ -473,11 +505,18 @@ header p {
 }
 
 .university-name {
-    background: linear-gradient(135deg, #FFF0F7, #EAF7FF);
+    background: linear-gradient(
+        135deg,
+        #FFF0F7,
+        #EAF7FF
+    );
+
     border-radius: 25px;
     padding: 25px;
     margin: 15px 0;
+
     border: 3px solid #F3C1D8;
+
     box-shadow:
         0 0 0 3px #DDF4FF,
         0 6px 18px rgba(150,210,240,0.15);
@@ -496,14 +535,22 @@ header p {
 
 .reason-box,
 .university-goal {
-    background: linear-gradient(135deg, #FFF8FB, #F0FAFF);
+    background: linear-gradient(
+        135deg,
+        #FFF8FB,
+        #F0FAFF
+    );
+
     border-radius: 20px;
     padding: 20px 25px;
     margin-top: 20px;
+
     border: 3px solid #BFE7FA;
+
     box-shadow:
         0 0 0 3px #F8C7DC,
         0 6px 18px rgba(150,210,240,0.14);
+
     text-align: left;
 }
 
@@ -522,16 +569,27 @@ header p {
     color: #52738C;
 }
 
-/* ผลงาน */
+/* =========================
+   ผลงาน
+========================= */
+
 .award-card {
-    background: linear-gradient(135deg, #FFF8FB, #F0FAFF);
+    background: linear-gradient(
+        135deg,
+        #FFF8FB,
+        #F0FAFF
+    );
+
     border: 3px solid #F3C1D8;
     border-radius: 25px;
+
     padding: 22px;
     margin-bottom: 25px;
+
     box-shadow:
         0 0 0 3px #DDF4FF,
         0 6px 20px rgba(220,150,190,0.16);
+
     position: relative;
     z-index: 5;
 }
@@ -555,32 +613,46 @@ header p {
     margin-bottom: 18px;
 }
 
-/* แสดงรูปผลงาน 2 รูป ขนาดเท่ากัน เห็นทั้งหมด */
+/* รูปผลงาน */
+
 .award-images {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
+
     margin: 25px 0 30px;
+
     align-items: stretch;
 }
 
 .award-images img {
     width: 100%;
     height: 320px;
+
     object-fit: contain;
+
     display: block;
+
     background: #FFFFFF;
+
     border-radius: 20px;
+
     border: 4px dashed #F3A9C8;
+
     outline: 4px solid #DDF4FF;
     outline-offset: 5px;
+
     padding: 7px;
+
     box-shadow:
         0 0 0 10px #FFF0F7,
         0 0 15px #F3A9C8,
         0 0 28px #9DDCF5,
         0 8px 22px rgba(220,150,190,0.22);
-    animation: awardGlow 2.5s ease-in-out infinite;
+
+    animation:
+        awardGlow 2.5s ease-in-out infinite;
+
     transition: 0.4s ease;
 }
 
@@ -589,7 +661,8 @@ header p {
     border-color: #9DDCF5;
 }
 
-/* กรณีมีภาพเดียว */
+/* รูปเดียว */
+
 .award-images.single-image {
     display: flex;
     justify-content: center;
@@ -602,13 +675,23 @@ header p {
     max-width: 100%;
 }
 
+/* รายละเอียดผลงาน */
+
 .award-description {
-    background: linear-gradient(135deg, #FFFFFF, #FFF5FA);
+    background: linear-gradient(
+        135deg,
+        #FFFFFF,
+        #FFF5FA
+    );
+
     border-left: 6px solid #9DDCF4;
+
     border-top: 2px solid #F8C7DC;
     border-right: 2px solid #F8C7DC;
     border-bottom: 2px solid #F8C7DC;
+
     border-radius: 12px;
+
     padding: 15px 18px;
 }
 
@@ -624,52 +707,85 @@ header p {
     line-height: 1.7;
 }
 
-/* หน้าขอบคุณ */
+/* =========================
+   หน้าขอบคุณ
+========================= */
+
 .thank-you-page {
     min-height: 600px;
-    display: flex;
+
+    display: none;
+
     align-items: center;
     justify-content: center;
+
     text-align: center;
-    background: linear-gradient(135deg, #FFF0F7, #F0FAFF, #DDF4FF);
+
+    background: linear-gradient(
+        135deg,
+        #FFF0F7,
+        #F0FAFF,
+        #DDF4FF
+    );
+
     position: relative;
     overflow: hidden;
+}
+
+.thank-you-page.active {
+    display: flex;
 }
 
 .thank-you-content {
     width: 100%;
     max-width: 800px;
+
     padding: 50px 30px;
+
     background: linear-gradient(
         135deg,
         rgba(255,255,255,0.98),
         rgba(255,245,250,0.96),
         rgba(240,250,255,0.96)
     );
+
     border: 4px solid #F3C1D8;
     border-radius: 35px;
+
     box-shadow:
         0 0 0 4px #DDF4FF,
         0 12px 35px rgba(220,150,190,0.18);
+
     position: relative;
     z-index: 5;
-    animation: thankYouAppear 1s ease;
+
+    animation:
+        thankYouAppear 1s ease;
 }
 
 .thank-you-decoration {
     font-size: 32px;
     letter-spacing: 8px;
     margin: 15px 0;
-    animation: sparkle 2s ease-in-out infinite;
+
+    animation:
+        sparkle 2s ease-in-out infinite;
 }
 
 .thank-you-content h2 {
     color: #D96C9B;
+
     font-size: clamp(45px, 8vw, 75px);
+
     margin: 20px 0;
+
     letter-spacing: 5px;
-    animation: textBounce 2s ease-in-out infinite;
-    text-shadow: 2px 2px 0 #DDF4FF;
+
+    animation:
+        textBounce 2s ease-in-out infinite;
+
+    text-shadow:
+        2px 2px 0 #DDF4FF;
 }
 
 .thank-you-text {
@@ -685,37 +801,149 @@ header p {
     margin-top: 20px;
 }
 
-/* ปุ่มกลับหน้าหลัก */
+/* =========================
+   ปุ่มนำทาง
+========================= */
+
+.page-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 40px;
+
+    position: relative;
+    z-index: 20;
+
+    flex-wrap: wrap;
+}
+
+.next-btn,
+.prev-btn,
+.home-btn {
+    display: inline-block;
+
+    text-decoration: none;
+
+    border: none;
+    cursor: pointer;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #F3A9C8,
+        #9DDCF5
+    );
+
+    padding: 13px 28px;
+
+    border-radius: 30px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    border: 3px solid white;
+
+    box-shadow:
+        0 0 0 3px #F8C7DC,
+        0 6px 18px rgba(150,210,240,0.25);
+
+    transition: 0.3s ease;
+}
+
+.next-btn:hover,
+.prev-btn:hover,
+.home-btn:hover {
+    transform: translateY(-5px);
+
+    background: linear-gradient(
+        135deg,
+        #D96C9B,
+        #6BAFD2
+    );
+}
+
+.page-number {
+    color: #D66C9B;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* =========================
+   ปุ่มกลับหน้าหลัก
+========================= */
+
 .back-home {
     margin-top: 30px;
+
     text-align: center;
+
     position: relative;
     z-index: 10;
 }
 
 .back-home a {
     display: inline-block;
+
     text-decoration: none;
+
     color: #FFFFFF;
-    background: linear-gradient(135deg, #F3A9C8, #9DDCF5);
+
+    background: linear-gradient(
+        135deg,
+        #F3A9C8,
+        #9DDCF5
+    );
+
     padding: 13px 28px;
+
     border-radius: 30px;
+
     border: 3px solid #FFFFFF;
+
     box-shadow:
         0 0 0 3px #F8C7DC,
         0 6px 18px rgba(150,210,240,0.25);
+
     font-size: 17px;
     font-weight: bold;
+
     transition: 0.3s ease;
 }
 
 .back-home a:hover {
     transform: translateY(-5px);
-    background: linear-gradient(135deg, #D96C9B, #6BAFD2);
+
+    background: linear-gradient(
+        135deg,
+        #D96C9B,
+        #6BAFD2
+    );
 }
 
-/* Animation */
+/* =========================
+   Animation
+========================= */
+
+@keyframes pageAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
 @keyframes profileFloat {
+
     0%, 100% {
         transform: translateY(0) rotate(0deg);
     }
@@ -723,9 +951,11 @@ header p {
     50% {
         transform: translateY(-10px) rotate(2deg);
     }
+
 }
 
 @keyframes profileGlow {
+
     0%, 100% {
         box-shadow:
             0 0 0 13px #FFF0F7,
@@ -741,9 +971,11 @@ header p {
             0 0 40px #F3A9C8,
             0 0 55px #9DDCF5;
     }
+
 }
 
 @keyframes awardGlow {
+
     0%, 100% {
         filter: brightness(1);
     }
@@ -751,9 +983,11 @@ header p {
     50% {
         filter: brightness(1.06);
     }
+
 }
 
 @keyframes sparkle {
+
     0%, 100% {
         opacity: 0.4;
         transform: scale(0.85);
@@ -763,33 +997,11 @@ header p {
         opacity: 1;
         transform: scale(1.15);
     }
-}
 
-@keyframes sparkleTop {
-    0%, 100% {
-        opacity: 0.35;
-        transform: translateX(-50%) scale(0.8);
-    }
-
-    50% {
-        opacity: 1;
-        transform: translateX(-50%) scale(1.15);
-    }
-}
-
-@keyframes sparkleBottom {
-    0%, 100% {
-        opacity: 0.4;
-        transform: translateX(-50%) scale(0.8) rotate(-5deg);
-    }
-
-    50% {
-        opacity: 1;
-        transform: translateX(-50%) scale(1.15) rotate(5deg);
-    }
 }
 
 @keyframes sparklePage {
+
     0%, 100% {
         opacity: 0.2;
         transform: scale(0.7) rotate(0deg);
@@ -799,9 +1011,11 @@ header p {
         opacity: 1;
         transform: scale(1.35) rotate(25deg);
     }
+
 }
 
 @keyframes titleSparkle {
+
     0%, 100% {
         opacity: 0.25;
         transform: translateY(-50%) scale(0.8);
@@ -811,9 +1025,11 @@ header p {
         opacity: 1;
         transform: translateY(-50%) scale(1.3);
     }
+
 }
 
 @keyframes boxFloat {
+
     0%, 100% {
         transform: translateY(0);
     }
@@ -821,9 +1037,11 @@ header p {
     50% {
         transform: translateY(-5px);
     }
+
 }
 
 @keyframes thankYouAppear {
+
     from {
         opacity: 0;
         transform: scale(0.9);
@@ -833,9 +1051,11 @@ header p {
         opacity: 1;
         transform: scale(1);
     }
+
 }
 
 @keyframes textBounce {
+
     0%, 100% {
         transform: translateY(0);
     }
@@ -843,19 +1063,21 @@ header p {
     50% {
         transform: translateY(-8px);
     }
+
 }
 
-/* หน้าจอมือถือ */
+/* =========================
+   มือถือ
+========================= */
+
 @media (max-width: 600px) {
 
     .top-menu {
-        gap: 5px;
-        padding: 10px 8px;
+        padding: 12px 8px;
     }
 
-    .top-menu a {
-        font-size: 12px;
-        padding: 8px 10px;
+    .top-menu span {
+        font-size: 15px;
     }
 
     header {
@@ -934,7 +1156,6 @@ header p {
         font-size: 22px;
     }
 
-    /* ปกมหาวิทยาลัยมือถือ */
     .university-cover {
         width: 240px;
         height: 240px;
@@ -948,7 +1169,6 @@ header p {
         font-size: 19px;
     }
 
-    /* รูปผลงานมือถือยังเป็น 2 รูปเท่ากัน */
     .award-images {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8px;
@@ -958,10 +1178,14 @@ header p {
     .award-images img {
         width: 100%;
         height: 200px;
+
         object-fit: contain;
+
         border: 4px dashed #F3A9C8;
+
         outline: 3px solid #DDF4FF;
         outline-offset: 3px;
+
         padding: 5px;
     }
 
@@ -1005,36 +1229,68 @@ header p {
         font-size: 15px !important;
     }
 
+    .next-btn,
+    .prev-btn,
+    .home-btn {
+        font-size: 14px;
+        padding: 11px 20px;
+    }
+
+    .page-number {
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+    }
+
     .back-home a {
         font-size: 15px;
         padding: 12px 22px;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- =========================
+     เมนูด้านบน
+========================= -->
+
 <nav class="top-menu">
-    <a href="index.html">🏠 หน้าหลัก 🏠</a>
-    <a href="#page1">📖 คำนำ 📖</a>
-    <a href="#page2">🦋 About Me 🦋</a>
-    <a href="#page3">🎓 มหาวิทยาลัย 🎓</a>
-    <a href="#page4">🏆 ผลงาน 🏆</a>
-    <a href="#page5">💙 ขอบคุณ 💙</a>
+    <span>✨ Portfolio ของฉัน ✨</span>
 </nav>
 
+
+<!-- =========================
+     Header
+========================= -->
+
 <header>
-    <h1>✨แฟ้มสะสมผลงาน (Portfolio)✨</h1>
-    <p>💫นางสาว สิริลักษณ์ ผาดผ่อง💫</p>
+
+    <h1>
+        ✨แฟ้มสะสมผลงาน (Portfolio)✨
+    </h1>
+
+    <p>
+        💫นางสาว สิริลักษณ์ ผาดผ่อง💫
+    </p>
+
 </header>
+
 
 <div class="container">
 
-<!-- หน้า 1 -->
-<section class="page" id="page1">
+
+<!-- =====================================================
+     หน้า 1 : คำนำ
+===================================================== -->
+
+<section class="page active" id="page1">
 
     <div class="line-decoration"></div>
+
     <div class="moving-line one"></div>
     <div class="moving-line two"></div>
 
@@ -1042,26 +1298,74 @@ header p {
     <div class="sparkle-page s2">✧</div>
     <div class="sparkle-page s3">✦</div>
 
-    <h2>📖 คำนำ 📖</h2>
+
+    <h2>
+        📖 คำนำ 📖
+    </h2>
+
 
     <p>
-        แฟ้มสะสมผลงาน (Portfolio) ฉบับนี้จัดทำขึ้นเพื่อรวบรวมข้อมูลประวัติส่วนตัว ประวัติการศึกษา ผลงาน กิจกรรม และเกียรติบัตรต่าง ๆ ของข้าพเจ้า เพื่อใช้ประกอบการสมัครเข้าศึกษาต่อในคณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป และเพื่อแสดงถึงความรู้ ความสามารถ ความสนใจ และความตั้งใจในการศึกษาต่อ
+
+        แฟ้มสะสมผลงาน (Portfolio) ฉบับนี้จัดทำขึ้นเพื่อรวบรวม
+        ข้อมูลประวัติส่วนตัว ประวัติการศึกษา ผลงาน กิจกรรม
+        และเกียรติบัตรต่าง ๆ ของข้าพเจ้า
+        เพื่อใช้ประกอบการสมัครเข้าศึกษาต่อในคณะศึกษาศาสตร์
+        สาขาวิชาวิทยาศาสตร์ทั่วไป
+        และเพื่อแสดงถึงความรู้ ความสามารถ
+        ความสนใจ และความตั้งใจในการศึกษาต่อ
+
     </p>
+
 
     <p style="margin-top:20px;">
-        ขอขอบคุณทุกท่านที่ให้ความสนใจและรับชมแฟ้มสะสมผลงานฉบับนี้ หวังเป็นอย่างยิ่งว่าแฟ้มสะสมผลงานฉบับนี้จะช่วยให้คณะกรรมการได้รู้จักตัวตน ความสามารถ และความมุ่งมั่นของข้าพเจ้ามากยิ่งขึ้น
+
+        ขอขอบคุณทุกท่านที่ให้ความสนใจและรับชม
+        แฟ้มสะสมผลงานฉบับนี้
+        หวังเป็นอย่างยิ่งว่าแฟ้มสะสมผลงานฉบับนี้
+        จะช่วยให้คณะกรรมการได้รู้จักตัวตน
+        ความสามารถ และความมุ่งมั่นของข้าพเจ้า
+        มากยิ่งขึ้น
+
     </p>
 
+
     <p style="margin-top:25px; text-align:right;">
+
         นางสาว สิริลักษณ์ ผาดผ่อง
+
     </p>
+
+
+    <!-- ปุ่มไปหน้า 2 -->
+
+    <div class="page-navigation">
+
+        <button
+            class="next-btn"
+            onclick="nextPage()">
+
+            ถัดไป ➜
+
+        </button>
+
+        <span class="page-number">
+            หน้า 1 / 5
+        </span>
+
+    </div>
 
 </section>
 
-<!-- หน้า 2 -->
+
+
+<!-- =====================================================
+     หน้า 2 : About Me
+===================================================== -->
+
 <section class="page" id="page2">
 
     <div class="line-decoration"></div>
+
     <div class="moving-line one"></div>
     <div class="moving-line two"></div>
 
@@ -1069,9 +1373,14 @@ header p {
     <div class="sparkle-page s2">✧</div>
     <div class="sparkle-page s3">✦</div>
 
-    <h2>🦋 About Me 🦋</h2>
+
+    <h2>
+        🦋 About Me 🦋
+    </h2>
+
 
     <div class="profile">
+
 
         <img
             src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
@@ -1079,66 +1388,198 @@ header p {
             class="profile-img"
         >
 
+
         <div class="profile-info">
-            <div>ชื่อ-สกุล : นางสาวสิริลักษณ์ ผาดผ่อง</div>
-            <div>ชื่อเล่น : ปอ</div>
-            <div>วัน/เดือน/ปีเกิด : 18 ตุลาคม พ.ศ.2551</div>
-            <div>อายุ : 17 ปี</div>
-            <div>แผนการเรียน : เตรียมวิศวกรรมศาสตร์</div>
-            <div>📩 ช่องทางการติดต่อ 📩</div>
-            <div>เบอร์โทรศัพท์ : 090-199-4740 ☎️</div>
-            <div>FACEBOOK : Sirilak Phartpong 📨</div>
-            <div>GMail : por99srl@gmail.com 📧</div>
+
+            <div>
+                ชื่อ-สกุล :
+                นางสาวสิริลักษณ์ ผาดผ่อง
+            </div>
+
+            <div>
+                ชื่อเล่น : ปอ
+            </div>
+
+            <div>
+                วัน/เดือน/ปีเกิด :
+                18 ตุลาคม พ.ศ.2551
+            </div>
+
+            <div>
+                อายุ : 17 ปี
+            </div>
+
+            <div>
+                แผนการเรียน :
+                เตรียมวิศวกรรมศาสตร์
+            </div>
+
+            <div>
+                📩 ช่องทางการติดต่อ 📩
+            </div>
+
+            <div>
+                เบอร์โทรศัพท์ :
+                090-199-4740 ☎️
+            </div>
+
+            <div>
+                FACEBOOK :
+                Sirilak Phartpong 📨
+            </div>
+
+            <div>
+                GMail :
+                por99srl@gmail.com 📧
+            </div>
+
         </div>
 
+
+        <!-- ความสนใจ -->
+
         <div class="info-box">
-            <h3>🔍 ความสนใจ 🔎 </h3>
+
+            <h3>
+                🔍 ความสนใจ 🔎
+            </h3>
+
 
             <p>
-                <strong>1. วิทยาศาสตร์</strong><br>
+
+                <strong>
+                    1. วิทยาศาสตร์
+                </strong>
+
+                <br>
+
                 สนใจการทดลองด้านวิทยาศาสตร์
                 ชอบเรียนรู้จากการลงมือปฏิบัติจริง
-                การสังเกตผล และการค้นหาคำตอบจากสิ่งต่าง ๆ รอบตัว
+                การสังเกตผล
+                และการค้นหาคำตอบจากสิ่งต่าง ๆ รอบตัว
+
             </p>
 
+
             <p>
-                <strong>2. การเรียนรู้</strong><br>
+
+                <strong>
+                    2. การเรียนรู้
+                </strong>
+
+                <br>
+
                 ชอบเรียนรู้สิ่งต่าง ๆ อยู่เสมอ
                 พร้อมเปิดรับความรู้ใหม่ ๆ
-                และนำความรู้ที่ได้รับมาพัฒนาตนเองให้ดีขึ้น
+                และนำความรู้ที่ได้รับ
+                มาพัฒนาตนเองให้ดีขึ้น
+
             </p>
+
         </div>
 
+
+        <!-- จุดเด่น -->
+
         <div class="info-box">
-            <h3>⭐ จุดเด่นของฉัน ⭐</h3>
+
+            <h3>
+                ⭐ จุดเด่นของฉัน ⭐
+            </h3>
+
 
             <p>
-                <strong>1. มีความรับผิดชอบต่องาน</strong><br>
-                ตั้งใจทำงานที่ได้รับมอบหมายให้สำเร็จ
+
+                <strong>
+                    1. มีความรับผิดชอบต่องาน
+                </strong>
+
+                <br>
+
+                ตั้งใจทำงานที่ได้รับมอบหมาย
+                ให้สำเร็จ
                 และส่งงานตรงตามเวลาที่กำหนด
+
             </p>
 
+
             <p>
-                <strong>2. มีความอดทนสูง</strong><br>
+
+                <strong>
+                    2. มีความอดทนสูง
+                </strong>
+
+                <br>
+
                 สามารถพยายามทำสิ่งต่าง ๆ
                 แม้จะพบอุปสรรคหรือปัญหา
                 และไม่ยอมแพ้ง่าย ๆ
+
             </p>
+
 
             <p>
-                <strong>3. ชอบช่วยเหลือผู้อื่น</strong><br>
-                ยินดีให้ความช่วยเหลือและแบ่งปันความรู้
-                พร้อมทำงานร่วมกับผู้อื่นอย่างมีความสุข
+
+                <strong>
+                    3. ชอบช่วยเหลือผู้อื่น
+                </strong>
+
+                <br>
+
+                ยินดีให้ความช่วยเหลือ
+                และแบ่งปันความรู้
+                พร้อมทำงานร่วมกับผู้อื่น
+                อย่างมีความสุข
+
             </p>
+
         </div>
 
+
     </div>
+
+
+    <!-- ปุ่มนำทาง -->
+
+    <div class="page-navigation">
+
+        <button
+            class="prev-btn"
+            onclick="prevPage()">
+
+            ← ย้อนกลับ
+
+        </button>
+
+
+        <button
+            class="next-btn"
+            onclick="nextPage()">
+
+            ถัดไป ➜
+
+        </button>
+
+
+        <span class="page-number">
+            หน้า 2 / 5
+        </span>
+
+    </div>
+
+
 </section>
 
-<!-- หน้า 3 -->
+
+
+<!-- =====================================================
+     หน้า 3 : มหาวิทยาลัย
+===================================================== -->
+
 <section class="page" id="page3">
 
     <div class="line-decoration"></div>
+
     <div class="moving-line one"></div>
     <div class="moving-line two"></div>
 
@@ -1146,68 +1587,162 @@ header p {
     <div class="sparkle-page s2">✧</div>
     <div class="sparkle-page s3">✦</div>
 
-    <h2>🎓 มหาวิทยาลัยที่ฉันสนใจอยากจะเข้าศึกษาต่อ 🎓</h2>
+
+    <h2>
+        🎓 มหาวิทยาลัยที่ฉันสนใจอยากจะเข้าศึกษาต่อ 🎓
+    </h2>
+
 
     <div class="university">
 
-        <!-- ปกมหาวิทยาลัย -->
+
         <div class="university-cover">
+
             <img
                 src="IMG_6475.png"
                 alt="ปกมหาวิทยาลัยเกษตรศาสตร์"
             >
+
         </div>
+
 
         <div class="university-name">
-            <h3> มหาวิทยาลัยเกษตรศาสตร์ บางเขน </h3>
 
-            <p><strong>คณะศึกษาศาสตร์</strong></p>
-            <p>สาขาวิชาวิทยาศาสตร์ทั่วไป</p>
+            <h3>
+                มหาวิทยาลัยเกษตรศาสตร์ บางเขน
+            </h3>
+
+            <p>
+                <strong>
+                    คณะศึกษาศาสตร์
+                </strong>
+            </p>
+
+            <p>
+                สาขาวิชาวิทยาศาสตร์ทั่วไป
+            </p>
+
         </div>
+
 
         <div class="reason-box">
-            <h3> เหตุผลที่ฉันสนใจ </h3>
+
+            <h3>
+                เหตุผลที่ฉันสนใจ
+            </h3>
+
 
             <p>
-                ฉันมีความสนใจในวิชาวิทยาศาสตร์ เพราะเป็นวิชาที่ทำให้ได้เรียนรู้
-                และค้นหาคำตอบจากสิ่งต่าง ๆ รอบตัว อีกทั้งยังชอบการทดลอง
-                เพราะทำให้ได้ลงมือปฏิบัติจริง ได้สังเกตผล
+
+                ฉันมีความสนใจในวิชาวิทยาศาสตร์
+                เพราะเป็นวิชาที่ทำให้ได้เรียนรู้
+                และค้นหาคำตอบจากสิ่งต่าง ๆ รอบตัว
+                อีกทั้งยังชอบการทดลอง
+                เพราะทำให้ได้ลงมือปฏิบัติจริง
+                ได้สังเกตผล
                 และเรียนรู้จากประสบการณ์
+
             </p>
 
-            <p style="margin-top:15px;">
-                นอกจากนี้ ฉันยังชอบการวิเคราะห์และการแก้ปัญหา
-                เพราะทำให้ได้ฝึกคิดอย่างเป็นระบบ ใช้เหตุผล
-                และค้นหาวิธีแก้ไขปัญหาอย่างเหมาะสม
-            </p>
 
             <p style="margin-top:15px;">
+
+                นอกจากนี้ ฉันยังชอบการวิเคราะห์
+                และการแก้ปัญหา
+                เพราะทำให้ได้ฝึกคิดอย่างเป็นระบบ
+                ใช้เหตุผล
+                และค้นหาวิธีแก้ไขปัญหา
+                อย่างเหมาะสม
+
+            </p>
+
+
+            <p style="margin-top:15px;">
+
                 ฉันจึงมีความตั้งใจที่จะศึกษาต่อใน
-                <strong>คณะศึกษาศาสตร์ สาขาวิชาวิทยาศาสตร์ทั่วไป</strong>
-                เพื่อพัฒนาความรู้และทักษะด้านวิทยาศาสตร์
-                รวมถึงเรียนรู้การถ่ายทอดความรู้ให้ผู้อื่นเข้าใจได้ง่าย
+                <strong>
+                    คณะศึกษาศาสตร์
+                    สาขาวิชาวิทยาศาสตร์ทั่วไป
+                </strong>
+
+                เพื่อพัฒนาความรู้และทักษะ
+                ด้านวิทยาศาสตร์
+                รวมถึงเรียนรู้การถ่ายทอดความรู้
+                ให้ผู้อื่นเข้าใจได้ง่าย
                 และนำความรู้ไปต่อยอดในอนาคต
+
             </p>
+
         </div>
+
 
         <div class="university-goal">
-            <h3>🎓 เป้าหมายของฉัน 🎓</h3>
+
+            <h3>
+                🎓 เป้าหมายของฉัน 🎓
+            </h3>
+
 
             <p>
-                ตั้งใจเรียน พัฒนาทักษะด้านวิทยาศาสตร์
-                ฝึกการทดลอง การคิดวิเคราะห์ และการแก้ปัญหา
+
+                ตั้งใจเรียน
+                พัฒนาทักษะด้านวิทยาศาสตร์
+                ฝึกการทดลอง
+                การคิดวิเคราะห์
+                และการแก้ปัญหา
                 เพื่อก้าวไปสู่เป้าหมายในการศึกษาต่อ
-                และเติบโตเป็นครูวิทยาศาสตร์ที่ดีในอนาคต
+                และเติบโตเป็นครูวิทยาศาสตร์ที่ดี
+                ในอนาคต
+
             </p>
+
         </div>
 
+
     </div>
+
+
+    <!-- ปุ่มนำทาง -->
+
+    <div class="page-navigation">
+
+        <button
+            class="prev-btn"
+            onclick="prevPage()">
+
+            ← ย้อนกลับ
+
+        </button>
+
+
+        <button
+            class="next-btn"
+            onclick="nextPage()">
+
+            ถัดไป ➜
+
+        </button>
+
+
+        <span class="page-number">
+            หน้า 3 / 5
+        </span>
+
+    </div>
+
+
 </section>
 
-<!-- หน้า 4 -->
+
+
+<!-- =====================================================
+     หน้า 4 : ผลงาน
+===================================================== -->
+
 <section class="page" id="page4">
 
     <div class="line-decoration"></div>
+
     <div class="moving-line one"></div>
     <div class="moving-line two"></div>
 
@@ -1215,25 +1750,35 @@ header p {
     <div class="sparkle-page s2">✧</div>
     <div class="sparkle-page s3">✦</div>
 
-    <h2>🏆 ผลงานและรางวัล 🏆</h2>
+
+    <h2>
+        🏆 ผลงานและรางวัล 🏆
+    </h2>
 
 
-    <!-- ================================================= -->
     <!-- ด้านวิชาการ -->
-    <!-- ================================================= -->
 
     <div class="info-box">
-        <h3>📚 ด้านวิชาการ 📚</h3>
+
+        <h3>
+            📚 ด้านวิชาการ 📚
+        </h3>
 
         <p>
-            ผลงานที่สะท้อนถึงความรู้ ความสามารถ
-            การคิดวิเคราะห์ ความคิดสร้างสรรค์
+
+            ผลงานที่สะท้อนถึงความรู้
+            ความสามารถ
+            การคิดวิเคราะห์
+            ความคิดสร้างสรรค์
             และการนำความรู้ไปประยุกต์ใช้
+
         </p>
+
     </div>
 
 
-    <!-- ผลงานวิชาการที่ 1 -->
+    <!-- ผลงานที่ 1 -->
+
     <div class="award-card">
 
         <h3>
@@ -1245,12 +1790,14 @@ header p {
         </p>
 
         <p class="award-subtitle">
-            รายการ เอ็ดดูพลอยส์ ครอสเวิร์ดเกม ชิงแชมป์ประเทศไทย ประจำปี 2568
+            รายการ เอ็ดดูพลอยส์ ครอสเวิร์ดเกม
+            ชิงแชมป์ประเทศไทย ประจำปี 2568
         </p>
 
         <p class="award-result">
             ⭐ ได้รับรางวัลอันดับที่ 77 ⭐
         </p>
+
 
         <div class="award-images">
 
@@ -1266,17 +1813,25 @@ header p {
 
         </div>
 
+
         <div class="award-description">
 
-            <h4>✨ ทักษะที่ได้รับ ✨</h4>
+            <h4>
+                ✨ ทักษะที่ได้รับ ✨
+            </h4>
 
             <p>
-                การใช้ภาษา การคิดวิเคราะห์ ความจำ และการแก้ปัญหา
+                การใช้ภาษา การคิดวิเคราะห์
+                ความจำ และการแก้ปัญหา
             </p>
 
             <p>
-                การจะศึกษาต่อเข้าคณะนี้ต้องใช้ภาษาในการถ่ายทอดความรู้
-                การแข่งขันนี้จึงสะท้อนทักษะการสื่อสารและการคิดอย่างเป็นระบบ
+
+                การจะศึกษาต่อเข้าคณะนี้
+                ต้องใช้ภาษาในการถ่ายทอดความรู้
+                การแข่งขันนี้จึงสะท้อนทักษะการสื่อสาร
+                และการคิดอย่างเป็นระบบ
+
             </p>
 
         </div>
@@ -1284,7 +1839,8 @@ header p {
     </div>
 
 
-    <!-- ผลงานวิชาการที่ 2 -->
+    <!-- ผลงานที่ 2 -->
+
     <div class="award-card">
 
         <h3>
@@ -1296,12 +1852,14 @@ header p {
         </p>
 
         <p class="award-subtitle">
-            เนื่องในงานวันวิทยาศาสตร์แห่งชาติ ประจำปีการศึกษา 2567
+            เนื่องในงานวันวิทยาศาสตร์แห่งชาติ
+            ประจำปีการศึกษา 2567
         </p>
 
         <p class="award-result">
             🥈 ได้รับรางวัลรองชนะเลิศ อันดับ 1 🥈
         </p>
+
 
         <div class="award-images">
 
@@ -1317,19 +1875,28 @@ header p {
 
         </div>
 
+
         <div class="award-description">
 
-            <h4>✨ ทักษะที่ได้รับ ✨</h4>
+            <h4>
+                ✨ ทักษะที่ได้รับ ✨
+            </h4>
 
             <p>
-                ความรู้ทางวิทยาศาสตร์ ความสนใจในปรากฏการณ์ธรรมชาติ
+
+                ความรู้ทางวิทยาศาสตร์
+                ความสนใจในปรากฏการณ์ธรรมชาติ
                 และการคิดหาคำตอบ
+
             </p>
 
             <p>
-                เพราะแสดงให้เห็นว่ามีความสนใจและประสบการณ์ด้านวิทยาศาสตร์
+
+                เพราะแสดงให้เห็นว่ามีความสนใจ
+                และประสบการณ์ด้านวิทยาศาสตร์
                 ซึ่งสามารถต่อยอดไปสู่การเรียนวิทยาศาสตร์
                 และการจัดการเรียนรู้ให้ผู้อื่นได้
+
             </p>
 
         </div>
@@ -1337,7 +1904,8 @@ header p {
     </div>
 
 
-    <!-- ผลงานวิชาการที่ 3 -->
+    <!-- ผลงานที่ 3 -->
+
     <div class="award-card">
 
         <h3>
@@ -1349,12 +1917,14 @@ header p {
         </p>
 
         <p class="award-subtitle">
-            เนื่องในงานวันวิทยาศาสตร์แห่งชาติ ประจำปีการศึกษา 2567
+            เนื่องในงานวันวิทยาศาสตร์แห่งชาติ
+            ประจำปีการศึกษา 2567
         </p>
 
         <p class="award-result">
             ⭐ ได้เข้าร่วมการแข่งขัน ⭐
         </p>
+
 
         <div class="award-images">
 
@@ -1370,21 +1940,33 @@ header p {
 
         </div>
 
+
         <div class="award-description">
 
-            <h4>✨ ทักษะที่ได้รับ ✨</h4>
+            <h4>
+                ✨ ทักษะที่ได้รับ ✨
+            </h4>
 
             <p>
-                ความรู้ทางวิทยาศาสตร์ การคิดวิเคราะห์ การแก้ปัญหา
+
+                ความรู้ทางวิทยาศาสตร์
+                การคิดวิเคราะห์
+                การแก้ปัญหา
                 และการนำความรู้ไปประยุกต์ใช้
+
             </p>
 
             <p>
-                ฉันสามารถนำการช่วยพัฒนาพื้นฐานความรู้และทักษะการคิดอย่างเป็นระบบ
+
+                ฉันสามารถนำการช่วยพัฒนา
+                พื้นฐานความรู้และทักษะการคิดอย่างเป็นระบบ
                 ซึ่งเป็นทักษะสำคัญในการเรียนวิทยาศาสตร์
-                และสามารถนำไปต่อยอดในการอธิบายหลักการทางวิทยาศาสตร์
-                ออกแบบกิจกรรมการเรียนรู้ และถ่ายทอดความรู้ให้นักเรียนเข้าใจได้ง่ายขึ้น
+                และสามารถนำไปต่อยอด
+                ในการอธิบายหลักการทางวิทยาศาสตร์
+                ออกแบบกิจกรรมการเรียนรู้
+                และถ่ายทอดความรู้ให้นักเรียนเข้าใจได้ง่ายขึ้น
                 ในคณะที่ฉันสนใจเข้าศึกษาค่ะ
+
             </p>
 
         </div>
@@ -1392,21 +1974,27 @@ header p {
     </div>
 
 
-    <!-- ================================================= -->
     <!-- ด้านความประพฤติ -->
-    <!-- ================================================= -->
 
     <div class="info-box">
-        <h3>ด้านความประพฤติ</h3>
+
+        <h3>
+            🎖️ ด้านความประพฤติ 🎖️
+        </h3>
 
         <p>
+
             ผลงานที่สะท้อนถึงความมีระเบียบวินัย
-            ความรับผิดชอบ และการปฏิบัติตนอย่างเหมาะสม
+            ความรับผิดชอบ
+            และการปฏิบัติตนอย่างเหมาะสม
+
         </p>
+
     </div>
 
 
-    <!-- ผลงานความประพฤติที่ 1 -->
+    <!-- นักเรียนประพฤติดี -->
+
     <div class="award-card">
 
         <h3>
@@ -1420,6 +2008,7 @@ header p {
         <p class="award-result">
             ⭐ ได้รับรางวัล “นักเรียนประพฤติดี” ⭐
         </p>
+
 
         <div class="award-images">
 
@@ -1435,19 +2024,30 @@ header p {
 
         </div>
 
+
         <div class="award-description">
 
-            <h4>🌟 ทักษะที่ได้รับ 🌟</h4>
+            <h4>
+                🌟 ทักษะที่ได้รับ 🌟
+            </h4>
 
             <p>
-                ความรับผิดชอบ วินัย คุณธรรม และการปฏิบัติตนอย่างเหมาะสม
+
+                ความรับผิดชอบ
+                วินัย
+                คุณธรรม
+                และการปฏิบัติตนอย่างเหมาะสม
+
             </p>
 
             <p>
-                เป็นคุณลักษณะสำคัญของผู้ประกอบวิชาชีพครู
+
+                เป็นคุณลักษณะสำคัญ
+                ของผู้ประกอบวิชาชีพครู
                 เพราะครูไม่ได้มีหน้าที่แค่ถ่ายทอดความรู้
                 แต่ยังเป็นแบบอย่างที่ดีให้แก่นักเรียน
                 และมีความรับผิดชอบต่อหน้าที่ของตัวเองค่ะ
+
             </p>
 
         </div>
@@ -1455,41 +2055,59 @@ header p {
     </div>
 
 
-    <!-- ================================================= -->
     <!-- ด้านจิตอาสา -->
-    <!-- ================================================= -->
 
     <div class="info-box">
-        <h3>🎯 ด้านจิตอาสา 🎯</h3>
+
+        <h3>
+            🎯 ด้านจิตอาสา 🎯
+        </h3>
 
         <p>
+
             กิจกรรมที่สะท้อนถึงการมีส่วนร่วม
-            การช่วยเหลือผู้อื่น และการทำงานเพื่อส่วนรวม
+            การช่วยเหลือผู้อื่น
+            และการทำงานเพื่อส่วนรวม
+
         </p>
+
     </div>
 
 
-    <!-- ผลงานจิตอาสาที่ 1 -->
+    <!-- คณะกรรมการ -->
+
     <div class="award-card">
 
         <h3>
+
             🤝 ปฏิบัติหน้าที่คณะกรรมการ
             จัดกิจกรรมการแข่งขันทักษะวิชาการ 🤝
+
         </h3>
 
+
         <p class="award-subtitle">
+
             📚 กิจกรรมเปิดบ้านวิชาการ
             “BBU JOB FAIR” 📚
+
         </p>
+
 
         <p class="award-subtitle">
+
             วันที่ 29 มกราคม พ.ศ. 2569
+
         </p>
 
+
         <p class="award-result">
+
             ⭐ ได้ปฏิบัติหน้าที่คณะกรรมการ
             จัดกิจกรรมการแข่งขันทักษะวิชาการ ⭐
+
         </p>
+
 
         <div class="award-images single-image">
 
@@ -1500,67 +2118,239 @@ header p {
 
         </div>
 
+
         <div class="award-description">
 
-            <h4>ทักษะที่ได้รับ</h4>
+            <h4>
+                ✨ ทักษะที่ได้รับ ✨
+            </h4>
+
 
             <p>
+
                 • พัฒนาทักษะการทำงานร่วมกับผู้อื่น<br>
+
                 • ฝึกความรับผิดชอบต่อหน้าที่ที่ได้รับมอบหมาย<br>
+
                 • เรียนรู้การช่วยเหลือและการทำงานเพื่อส่วนรวม<br>
+
                 • พัฒนาทักษะการสื่อสารและการประสานงาน<br>
+
                 • ฝึกการวางแผนและการจัดกิจกรรม<br>
+
                 • เรียนรู้การแก้ปัญหาเฉพาะหน้า<br>
+
                 • พัฒนาความมีน้ำใจและจิตสาธารณะ
+
             </p>
 
         </div>
 
     </div>
 
+
+    <!-- ปุ่มนำทาง -->
+
+    <div class="page-navigation">
+
+        <button
+            class="prev-btn"
+            onclick="prevPage()">
+
+            ← ย้อนกลับ
+
+        </button>
+
+
+        <button
+            class="next-btn"
+            onclick="nextPage()">
+
+            ถัดไป ➜
+
+        </button>
+
+
+        <span class="page-number">
+            หน้า 4 / 5
+        </span>
+
+    </div>
+
+
 </section>
 
 
-<!-- หน้า 5 : ขอบคุณ -->
+
+<!-- =====================================================
+     หน้า 5 : ขอบคุณ
+===================================================== -->
+
 <section class="page thank-you-page" id="page5">
 
     <div class="line-decoration"></div>
 
+
     <div class="thank-you-content">
+
 
         <div class="thank-you-decoration">
             ✨ 🌟 ✨
         </div>
 
-        <h2>ขอบคุณ</h2>
+
+        <h2>
+            ขอบคุณ
+        </h2>
+
 
         <p class="thank-you-text">
             ขอบคุณที่รับชมผลงานของฉันนะคะ
         </p>
 
+
         <p class="thank-you-text">
-            หวังว่าทุกคนจะชื่นชอบแฟ้มสะสมผลงานนี้นะคะ ✨
+            หวังว่าทุกคนจะชื่นชอบ
+            แฟ้มสะสมผลงานนี้นะคะ ✨
         </p>
+
 
         <div class="thank-you-decoration">
             🙌🏻🎓🙌🏻
         </div>
 
+
         <p class="thank-you-subtext">
             นางสาว สิริลักษณ์ ผาดผ่อง
         </p>
 
+
+        <!-- กลับหน้าหลัก -->
+
         <div class="back-home">
+
             <a href="index.html">
+
                 🏠 กลับไปยังหน้าหลัก
+
             </a>
+
         </div>
+
+
+        <!-- ปุ่มย้อนกลับ -->
+
+        <div class="page-navigation">
+
+            <button
+                class="prev-btn"
+                onclick="prevPage()">
+
+                ← ย้อนกลับ
+
+            </button>
+
+            <span class="page-number">
+                หน้า 5 / 5
+            </span>
+
+        </div>
+
 
     </div>
 
 </section>
 
+
 </div>
+
+
+
+<!-- =====================================================
+     JavaScript ระบบเปลี่ยนหน้า
+===================================================== -->
+
+<script>
+
+let currentPage = 0;
+
+const pages = document.querySelectorAll(".page");
+
+
+/* แสดงหน้าที่เลือก */
+
+function showPage(index) {
+
+    if (index < 0 || index >= pages.length) {
+        return;
+    }
+
+
+    /* ซ่อนทุกหน้า */
+
+    pages.forEach(function(page) {
+
+        page.classList.remove("active");
+
+    });
+
+
+    /* แสดงหน้าปัจจุบัน */
+
+    pages[index].classList.add("active");
+
+
+    /* กลับขึ้นด้านบน */
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+
+    currentPage = index;
+
+}
+
+
+/* =========================
+   ปุ่มถัดไป
+========================= */
+
+function nextPage() {
+
+    if (currentPage < pages.length - 1) {
+
+        showPage(currentPage + 1);
+
+    }
+
+}
+
+
+/* =========================
+   ปุ่มย้อนกลับ
+========================= */
+
+function prevPage() {
+
+    if (currentPage > 0) {
+
+        showPage(currentPage - 1);
+
+    }
+
+}
+
+
+/* =========================
+   เริ่มต้นที่หน้าคำนำ
+========================= */
+
+showPage(0);
+
+</script>
+
 
 </body>
 </html>

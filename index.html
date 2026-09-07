@@ -1,413 +1,500 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>หน้าหลักเว็บไซต์ของฉัน</title>
+<title>Sirilak | Portfolio</title>
 
-    <!-- ข้อมูลสำหรับตอนแชร์ลิงก์ -->
-    <meta property="og:title" content="Sirilak | Portfolio">
-    <meta property="og:description" content="แฟ้มสะสมผลงานของสิริลักษณ์ ผาดผ่อง">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://34601sirilak.github.io/">
+<meta property="og:title" content="Sirilak | Portfolio">
+<meta property="og:description" content="แฟ้มสะสมผลงานของสิริลักษณ์ ผาดผ่อง">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://34601sirilak.github.io/">
+<meta property="og:image" content="https://34601sirilak.github.io/45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png">
 
-    <!-- รูปหน้าปกตอนแชร์ -->
-    <meta property="og:image" content="https://34601sirilak.github.io/45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Sirilak Portfolio">
+<meta name="twitter:card" content="summary_large_image">
 
-    <!-- สำหรับ X/Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sirilak | Portfolio">
-    <meta name="twitter:description" content="แฟ้มสะสมผลงานของสิริลักษณ์ ผาดผ่อง">
-    <meta name="twitter:image" content="https://34601sirilak.github.io/45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png">
+<style>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        html {
-            width: 100%;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            background:
-                radial-gradient(circle at 10% 20%, #ffffff 0%, transparent 25%),
-                radial-gradient(circle at 90% 80%, #ffdff0 0%, transparent 25%),
-                linear-gradient(135deg, #dff6ff, #f8e4ff, #ffe5f1);
-            color: #555;
-            text-align: center;
-            padding: 50px 20px;
-            font-family: Arial, Tahoma, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow-x: hidden;
-        }
+body{
+    min-height:100vh;
+    font-family:"Tahoma","Arial",sans-serif;
+    color:#555;
+    background:
+        radial-gradient(circle at 10% 10%,#ffffff 0,transparent 25%),
+        radial-gradient(circle at 90% 90%,#ffddec 0,transparent 28%),
+        linear-gradient(135deg,#dff7ff,#f6e7ff,#ffe7f2);
 
-        .card {
-            background: rgba(255, 255, 255, 0.94);
-            border-radius: 40px;
-            box-shadow:
-                0 15px 40px rgba(150, 120, 190, 0.18);
-            max-width: 700px;
-            width: 100%;
-            margin: auto;
-            padding: 45px 35px;
-            border: 3px solid rgba(255, 255, 255, 0.9);
-            position: relative;
-            overflow: hidden;
-        }
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-        /* วงกลมตกแต่ง */
-        .card::before {
-            content: "";
-            position: absolute;
-            width: 160px;
-            height: 160px;
-            background: #dff6ff;
-            border-radius: 50%;
-            top: -80px;
-            left: -60px;
-        }
+    padding:30px 15px;
+    overflow-x:hidden;
+}
 
-        .card::after {
-            content: "";
-            position: absolute;
-            width: 130px;
-            height: 130px;
-            background: #ffe1ef;
-            border-radius: 50%;
-            bottom: -65px;
-            right: -45px;
-        }
+/* ==============================
+   MAIN CARD
+============================== */
 
-        /* ลายตกแต่งอยู่นิ่ง */
-        .decoration {
-            position: relative;
-            z-index: 2;
-            font-size: 25px;
-            margin-bottom: 10px;
-            letter-spacing: 8px;
-        }
+.main-card{
+    position:relative;
+    width:100%;
+    max-width:850px;
 
-        h1 {
-            position: relative;
-            z-index: 2;
-            color: #6daed6;
-            font-size: 34px;
-            line-height: 1.5;
-            margin: 0 0 28px;
-            font-weight: bold;
-            text-shadow: 2px 2px 0 #ffe1ef;
-        }
+    padding:55px 45px;
 
-        /* กรอบรูปตรงกลาง */
-        .profile-frame {
-            position: relative;
-            z-index: 2;
-            width: 205px;
-            height: 205px;
-            padding: 9px;
-            margin: 0 auto 70px;
-            background: linear-gradient(135deg, #aee5ff, #ffc6df);
-            border-radius: 50%;
+    background:rgba(255,255,255,.94);
 
-            box-shadow:
-                0 8px 25px rgba(150, 120, 190, 0.22),
-                0 0 0 8px rgba(255, 255, 255, 0.8);
+    border-radius:40px;
 
-            /* รูปและกรอบขยับขึ้นลง */
-            animation: profileFloat 3s ease-in-out infinite;
-        }
+    border:4px solid white;
 
-        /* เส้นปะรอบรูป หมุน */
-        .profile-frame::before {
-            content: "";
-            position: absolute;
-            top: -17px;
-            left: -17px;
-            width: calc(100% + 34px);
-            height: calc(100% + 34px);
-            border: 3px dashed #f3a9c8;
-            border-radius: 50%;
-            pointer-events: none;
+    box-shadow:
+        0 20px 50px rgba(130,110,170,.20);
 
-            animation: dashedRotate 8s linear infinite;
-        }
+    overflow:hidden;
 
-        /* วิ้ง ๆ อยู่ข้างล่างรูป ไม่หมุน */
-        .profile-frame::after {
-            content: "✦  ✧  ✦  ✧  ✦";
-            position: absolute;
-            top: auto;
-            bottom: -55px;
-            left: 50%;
-            width: 290px;
-            height: 40px;
-            transform: translateX(-50%);
-            color: #f3a9c8;
-            font-size: 22px;
-            letter-spacing: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            white-space: nowrap;
-            pointer-events: none;
-            text-shadow:
-                0 0 5px #ffffff,
-                0 0 10px #f3a9c8,
-                0 0 15px #9ddcf5;
-        }
+    text-align:center;
+}
 
-        /* ภาพโปรไฟล์ */
-        .profile-image {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid white;
-            position: relative;
-            z-index: 3;
+/* decoration */
 
-            /* ภาพขยายเล็กน้อย */
-            animation: imagePulse 3s ease-in-out infinite;
-        }
+.main-card::before{
+    content:"";
+    position:absolute;
 
-        /* วิ้งเล็ก ๆ รอบกรอบ อยู่นิ่ง */
-        .profile-frame .sparkle {
-            position: absolute;
-            z-index: 5;
-            color: #f3a9c8;
-            font-size: 25px;
-            opacity: 0.8;
-            text-shadow:
-                0 0 5px white,
-                0 0 12px #f3a9c8,
-                0 0 18px #9ddcf5;
-            pointer-events: none;
-        }
+    width:220px;
+    height:220px;
 
-        .sparkle-1 {
-            top: -30px;
-            left: 20px;
-        }
+    background:#def6ff;
 
-        .sparkle-2 {
-            top: 25px;
-            right: -35px;
-        }
+    border-radius:50%;
 
-        .sparkle-3 {
-            bottom: -30px;
-            right: 25px;
-        }
+    top:-110px;
+    left:-90px;
 
-        .sparkle-4 {
-            bottom: 25px;
-            left: -35px;
-        }
+    opacity:.8;
+}
 
-        p {
-            position: relative;
-            z-index: 2;
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-            margin: 18px 0;
-        }
+.main-card::after{
+    content:"";
+    position:absolute;
 
-        strong {
-            color: #e58bb5;
-        }
+    width:190px;
+    height:190px;
 
-        .btn {
-            position: relative;
-            z-index: 3;
-            display: inline-block;
-            margin-top: 18px;
-            padding: 14px 28px;
-            background: linear-gradient(135deg, #75c9ed, #e9a9cf);
-            color: white;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: bold;
-            border-radius: 18px;
-            box-shadow:
-                0 6px 16px rgba(180, 140, 190, 0.22);
-            transition: 0.25s;
-        }
+    background:#ffe0ee;
 
-        .btn:hover {
-            background: linear-gradient(135deg, #5eb8df, #dc8fbc);
-            transform: translateY(-3px);
-        }
+    border-radius:50%;
 
-        /* กรอบรูปขยับขึ้นลง */
-        @keyframes profileFloat {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
+    right:-90px;
+    bottom:-90px;
 
-            50% {
-                transform: translateY(-8px);
-            }
-        }
+    opacity:.8;
+}
 
-        /* เส้นปะหมุนรอบรูป */
-        @keyframes dashedRotate {
-            from {
-                transform: rotate(0deg);
-            }
+/* ==============================
+   CONTENT
+============================== */
 
-            to {
-                transform: rotate(360deg);
-            }
-        }
+.content{
+    position:relative;
+    z-index:5;
+}
 
-        /* ภาพขยายเล็กน้อย */
-        @keyframes imagePulse {
-            0%,
-            100% {
-                transform: scale(1);
-            }
+.top-decoration{
+    font-size:25px;
+    color:#e8a1c2;
+    letter-spacing:8px;
+    margin-bottom:20px;
+}
 
-            50% {
-                transform: scale(1.03);
-            }
-        }
+.title{
+    color:#6caed3;
 
-        @media (max-width: 600px) {
+    font-size:38px;
 
-            body {
-                padding: 25px 15px;
-            }
+    line-height:1.5;
 
-            .card {
-                padding: 35px 20px;
-                border-radius: 30px;
-            }
+    margin-bottom:40px;
 
-            h1 {
-                font-size: 27px;
-            }
+    text-shadow:
+        2px 2px 0 #ffe2ef;
+}
 
-            .profile-frame {
-                width: 185px;
-                height: 185px;
-                margin-bottom: 65px;
-            }
+.subtitle{
+    font-size:18px;
+    color:#888;
+}
 
-            /* วิ้งด้านล่างบนมือถือ */
-            .profile-frame::after {
-                width: 265px;
-                height: 35px;
-                bottom: -48px;
-                top: auto;
-                font-size: 18px;
-                letter-spacing: 5px;
-            }
+/* ==============================
+   PROFILE IMAGE
+============================== */
 
-            .profile-frame::before {
-                top: -14px;
-                left: -14px;
-                width: calc(100% + 28px);
-                height: calc(100% + 28px);
-            }
+.photo-box{
+    position:relative;
 
-            .profile-frame .sparkle {
-                font-size: 20px;
-            }
+    width:245px;
+    height:245px;
 
-            .sparkle-1 {
-                top: -25px;
-                left: 15px;
-            }
+    margin:0 auto 55px;
 
-            .sparkle-2 {
-                right: -28px;
-            }
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
-            .sparkle-3 {
-                bottom: -25px;
-                right: 15px;
-            }
+.photo-box::before{
+    content:"";
 
-            .sparkle-4 {
-                left: -28px;
-            }
+    position:absolute;
 
-            p {
-                font-size: 17px;
-            }
+    width:275px;
+    height:275px;
 
-            .btn {
-                font-size: 16px;
-                padding: 13px 22px;
-            }
-        }
-    </style>
+    border:3px dashed #efa5c6;
+
+    border-radius:50%;
+
+    animation:rotate 10s linear infinite;
+}
+
+.photo-box::after{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    border:7px solid #def5ff;
+
+    border-radius:50%;
+}
+
+.profile-photo{
+    position:relative;
+
+    z-index:5;
+
+    width:205px;
+    height:205px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:7px solid white;
+
+    box-shadow:
+        0 0 0 7px #f2abc9,
+        0 0 0 14px #fff0f7,
+        0 0 0 20px #dff5ff,
+        0 12px 30px rgba(170,130,180,.25);
+
+    animation:float 3s ease-in-out infinite;
+}
+
+/* stars */
+
+.star{
+    position:absolute;
+
+    z-index:10;
+
+    color:#efa5c6;
+
+    font-size:30px;
+
+    text-shadow:
+        0 0 8px white,
+        0 0 15px #efa5c6;
+}
+
+.star-a{
+    top:-20px;
+    left:5px;
+}
+
+.star-b{
+    top:25px;
+    right:-5px;
+}
+
+.star-c{
+    bottom:0;
+    left:-5px;
+}
+
+.star-d{
+    bottom:-10px;
+    right:20px;
+}
+
+/* ==============================
+   TEXT
+============================== */
+
+.introduction{
+    font-size:20px;
+
+    line-height:1.9;
+
+    margin:18px auto;
+
+    max-width:700px;
+}
+
+.name{
+    color:#df83ad;
+    font-weight:bold;
+}
+
+.info{
+    font-size:18px;
+
+    line-height:1.9;
+
+    margin:10px auto;
+}
+
+.goal{
+    margin-top:20px;
+
+    font-size:20px;
+
+    color:#666;
+}
+
+.goal span{
+    color:#d86c9e;
+    font-weight:bold;
+}
+
+/* ==============================
+   BUTTON
+============================== */
+
+.portfolio-button{
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:17px 35px;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    background:
+        linear-gradient(135deg,#72c8ec,#e49ac1);
+
+    box-shadow:
+        0 10px 25px rgba(160,140,190,.25);
+
+    transition:.3s;
+}
+
+.portfolio-button:hover{
+    transform:translateY(-5px) scale(1.03);
+
+    box-shadow:
+        0 15px 30px rgba(160,140,190,.35);
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+.footer{
+    margin-top:35px;
+
+    font-size:14px;
+
+    color:#8aa2b0;
+}
+
+/* ==============================
+   ANIMATION
+============================== */
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-9px);
+    }
+
+}
+
+@keyframes rotate{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media(max-width:600px){
+
+    body{
+        padding:15px;
+    }
+
+    .main-card{
+        padding:40px 20px;
+        border-radius:30px;
+    }
+
+    .top-decoration{
+        font-size:18px;
+        letter-spacing:4px;
+    }
+
+    .title{
+        font-size:27px;
+        margin-bottom:35px;
+    }
+
+    .photo-box{
+        width:205px;
+        height:205px;
+
+        margin-bottom:50px;
+    }
+
+    .photo-box::before{
+        width:230px;
+        height:230px;
+    }
+
+    .photo-box::after{
+        width:210px;
+        height:210px;
+    }
+
+    .profile-photo{
+        width:170px;
+        height:170px;
+    }
+
+    .star{
+        font-size:22px;
+    }
+
+    .introduction{
+        font-size:17px;
+    }
+
+    .info{
+        font-size:15px;
+    }
+
+    .goal{
+        font-size:17px;
+    }
+
+    .portfolio-button{
+        font-size:15px;
+        padding:14px 22px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-    <div class="card">
+<div class="main-card">
 
-        <div class="decoration">
-        ⋆🐾˚ ༘ ⋆｡˚⋆ ̊🐾˖°
+    <div class="content">
+
+        <div class="top-decoration">
+            ⋆🐾˚ ༘ ⋆｡˚⋆ ̊🐾˖°
         </div>
 
-        <h1>
-          📚  🙌🏻 ยินดีต้อนรับสู่โปรไฟล์ของฉัน 🙌🏻  📚
+        <h1 class="title">
+             ยินดีต้อนรับสู่โปรไฟล์ของฉัน 
         </h1>
 
-        <!-- กรอบรูปโปรไฟล์ -->
-        <div class="profile-frame">
+        <!-- รูปโปรไฟล์ -->
 
-            <!-- ดาววิ้งรอบรูป -->
-            <span class="sparkle sparkle-1">✦</span>
-            <span class="sparkle sparkle-2">✧</span>
-            <span class="sparkle sparkle-3">✦</span>
-            <span class="sparkle sparkle-4">✧</span>
+        <div class="photo-box">
 
-            <!-- ภาพโปรไฟล์ -->
+            <span class="star star-a">✦</span>
+            <span class="star star-b">✧</span>
+            <span class="star star-c">✦</span>
+            <span class="star star-d">✧</span>
+
             <img
                 src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
                 alt="รูปโปรไฟล์ สิริลักษณ์ ผาดผ่อง"
-                class="profile-image"
+                class="profile-photo"
             >
 
         </div>
 
-        <p>
-            สวัสดีค่ะ!📌 ฉันชื่อ
-            <strong>
-                🌟สิริลักษณ์ ผาดผ่อง (Sirilak Phartpong)🌟
-            </strong>
+        <!-- ข้อมูลเดิม -->
+
+        <p class="introduction">
+            สวัสดีค่ะ! ฉันชื่อ
+            <span class="name">
+                สิริลักษณ์ ผาดผ่อง (Sirilak Phartpong)
+            </span>
         </p>
 
-        <p>
-            📍ขณะนี้กำลังศึกษาชั้นมัธยมศึกษาปีที่6
+        <p class="info">
+            ขณะนี้กำลังศึกษาชั้นมัธยมศึกษาปีที่6
             แผนการเรียน เตรียมวิศวกรรมศาสตร์👷‍♀️
         </p>
 
-        <p>
-            🎯เป้าหมายในชีวิต คุณครูวิทยาศาสตร์
+        <p class="goal">
+            🎯เป้าหมายในชีวิต
+            <span>คุณครูวิทยาศาสตร์</span>
         </p>
 
-        <a href="portfolio.html" class="btn">
-            📚 🔎ดูแฟ้มสะสมงานของฉัน🔍📚
+        <!-- ไป Portfolio -->
+
+        <a href="portfolio.html" class="portfolio-button">
+            📚 🔎 ดูแฟ้มสะสมงานของฉัน 🔍 📚
         </a>
 
+        <div class="footer">
+            ✨ Sirilak Phartpong | Portfolio ✨
+        </div>
+
     </div>
+
+</div>
 
 </body>
 </html>

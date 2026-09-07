@@ -436,6 +436,42 @@ header p {
     z-index: 5;
 }
 
+/* ปกมหาวิทยาลัย */
+.university-cover {
+    width: 300px;
+    height: 300px;
+    margin: 25px auto 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 25px;
+    border: 4px dashed #F3A9C8;
+    outline: 4px solid #DDF4FF;
+    outline-offset: 5px;
+    padding: 7px;
+    box-shadow:
+        0 0 0 10px #FFF0F7,
+        0 0 15px #F3A9C8,
+        0 0 28px #9DDCF5,
+        0 8px 22px rgba(220,150,190,0.22);
+    animation: awardGlow 2.5s ease-in-out infinite;
+    transition: 0.4s ease;
+}
+
+.university-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 18px;
+    display: block;
+}
+
+.university-cover:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #9DDCF5;
+}
+
 .university-name {
     background: linear-gradient(135deg, #FFF0F7, #EAF7FF);
     border-radius: 25px;
@@ -519,19 +555,18 @@ header p {
     margin-bottom: 18px;
 }
 
-/* แสดงเกียรติบัตรเต็มแผ่น */
+/* แสดงรูปผลงาน 2 รูป ขนาดเท่ากัน เห็นทั้งหมด */
 .award-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
     margin: 25px 0 30px;
+    align-items: stretch;
 }
 
 .award-images img {
     width: 100%;
-    height: auto;
-    max-width: 100%;
+    height: 320px;
     object-fit: contain;
     display: block;
     background: #FFFFFF;
@@ -552,6 +587,13 @@ header p {
 .award-images img:hover {
     transform: translateY(-10px) scale(1.02);
     border-color: #9DDCF5;
+}
+
+/* กรณีมีภาพเดียว */
+.award-images.single-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .award-images.single-image img {
@@ -805,6 +847,7 @@ header p {
 
 /* หน้าจอมือถือ */
 @media (max-width: 600px) {
+
     .top-menu {
         gap: 5px;
         padding: 10px 8px;
@@ -891,6 +934,12 @@ header p {
         font-size: 22px;
     }
 
+    /* ปกมหาวิทยาลัยมือถือ */
+    .university-cover {
+        width: 240px;
+        height: 240px;
+    }
+
     .award-card {
         padding: 16px;
     }
@@ -899,19 +948,25 @@ header p {
         font-size: 19px;
     }
 
+    /* รูปผลงานมือถือยังเป็น 2 รูปเท่ากัน */
     .award-images {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8px;
         margin: 20px 0 25px;
     }
 
     .award-images img {
         width: 100%;
-        height: auto;
-        max-width: 100%;
+        height: 200px;
+        object-fit: contain;
         border: 4px dashed #F3A9C8;
         outline: 3px solid #DDF4FF;
         outline-offset: 3px;
         padding: 5px;
+    }
+
+    .award-images.single-image {
+        display: flex;
     }
 
     .award-images.single-image img {
@@ -1095,6 +1150,14 @@ header p {
 
     <div class="university">
 
+        <!-- ปกมหาวิทยาลัย -->
+        <div class="university-cover">
+            <img
+                src="IMG_6475.png"
+                alt="ปกมหาวิทยาลัยเกษตรศาสตร์"
+            >
+        </div>
+
         <div class="university-name">
             <h3> มหาวิทยาลัยเกษตรศาสตร์ บางเขน </h3>
 
@@ -1154,7 +1217,11 @@ header p {
 
     <h2>🏆 ผลงานและรางวัล 🏆</h2>
 
-    <!-- หมวดที่ 1 : ด้านวิชาการ -->
+
+    <!-- ================================================= -->
+    <!-- ด้านวิชาการ -->
+    <!-- ================================================= -->
+
     <div class="info-box">
         <h3>📚 ด้านวิชาการ 📚</h3>
 
@@ -1165,32 +1232,38 @@ header p {
         </p>
     </div>
 
-    <!-- ผลงานวิชาการที่ 1 : ปรากฏการณ์ธรรมชาติ -->
+
+    <!-- ผลงานวิชาการที่ 1 -->
     <div class="award-card">
 
         <h3>
-            🏆 การแข่งขันศึกวัดเซียน
-            ปรากฏการณ์ธรรมชาติ 🏆
+            🏆 อันดับที่ 77 คำคม เกมต่ออักษรภาษาไทย 🏆
         </h3>
 
         <p class="award-subtitle">
-             ระดับมัธยมศึกษาตอนปลาย 
+            รุ่นมัธยมศึกษาตอนปลาย
         </p>
 
         <p class="award-subtitle">
-            เนื่องในงานวันวิทยาศาสตร์แห่งชาติ
-            ประจำปีการศึกษา 2567 
+            รายการ เอ็ดดูพลอยส์ ครอสเวิร์ดเกม ชิงแชมป์ประเทศไทย ประจำปี 2568
         </p>
 
         <p class="award-result">
-            🥈 ได้รับรางวัลรองชนะเลิศ อันดับ 1 🥈
+            ⭐ ได้รับรางวัลอันดับที่ 77 ⭐
         </p>
 
-        <div class="award-images single-image">
+        <div class="award-images">
+
             <img
-                src="IMG_6578.jpeg"
-                alt="เกียรติบัตรการแข่งขันศึกวัดเซียน ปรากฏการณ์ธรรมชาติ"
+                src="IMG_3751.jpeg"
+                alt="เกียรติบัตรการแข่งขันคำคม เกมต่ออักษรภาษาไทย"
             >
+
+            <img
+                src="IMG_3750.jpeg"
+                alt="ภาพประกอบการแข่งขันคำคม เกมต่ออักษรภาษาไทย"
+            >
+
         </div>
 
         <div class="award-description">
@@ -1198,28 +1271,140 @@ header p {
             <h4>✨ ทักษะที่ได้รับ ✨</h4>
 
             <p>
-                • พัฒนาทักษะการคิดวิเคราะห์และการใช้เหตุผล<br>
-                • ฝึกการแก้ปัญหาอย่างเป็นระบบ<br>
-                • ประยุกต์ใช้ความรู้ด้านวิทยาศาสตร์ในการแข่งขัน<br>
-                • พัฒนาทักษะการค้นคว้าและการเรียนรู้ด้วยตนเอง<br>
-                • ฝึกการทำงานร่วมกับผู้อื่น<br>
-                • พัฒนาทักษะการวางแผนและการตัดสินใจ<br>
-                • ฝึกความรับผิดชอบและความมุ่งมั่นในการทำงาน
+                การใช้ภาษา การคิดวิเคราะห์ ความจำ และการแก้ปัญหา
+            </p>
+
+            <p>
+                การจะศึกษาต่อเข้าคณะนี้ต้องใช้ภาษาในการถ่ายทอดความรู้
+                การแข่งขันนี้จึงสะท้อนทักษะการสื่อสารและการคิดอย่างเป็นระบบ
             </p>
 
         </div>
 
     </div>
 
-    <!-- หมวดที่ 2 : ด้านความประพฤติ -->
+
+    <!-- ผลงานวิชาการที่ 2 -->
+    <div class="award-card">
+
+        <h3>
+            🏆 การแข่งขันศึกวัดเซียน ปรากฏการณ์ธรรมชาติ 🏆
+        </h3>
+
+        <p class="award-subtitle">
+            ระดับมัธยมศึกษาตอนปลาย
+        </p>
+
+        <p class="award-subtitle">
+            เนื่องในงานวันวิทยาศาสตร์แห่งชาติ ประจำปีการศึกษา 2567
+        </p>
+
+        <p class="award-result">
+            🥈 ได้รับรางวัลรองชนะเลิศ อันดับ 1 🥈
+        </p>
+
+        <div class="award-images">
+
+            <img
+                src="IMG_6578.jpeg"
+                alt="เกียรติบัตรการแข่งขันศึกวัดเซียน ปรากฏการณ์ธรรมชาติ"
+            >
+
+            <img
+                src="IMG_6494.jpeg"
+                alt="ภาพประกอบการแข่งขันศึกวัดเซียน ปรากฏการณ์ธรรมชาติ"
+            >
+
+        </div>
+
+        <div class="award-description">
+
+            <h4>✨ ทักษะที่ได้รับ ✨</h4>
+
+            <p>
+                ความรู้ทางวิทยาศาสตร์ ความสนใจในปรากฏการณ์ธรรมชาติ
+                และการคิดหาคำตอบ
+            </p>
+
+            <p>
+                เพราะแสดงให้เห็นว่ามีความสนใจและประสบการณ์ด้านวิทยาศาสตร์
+                ซึ่งสามารถต่อยอดไปสู่การเรียนวิทยาศาสตร์
+                และการจัดการเรียนรู้ให้ผู้อื่นได้
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ผลงานวิชาการที่ 3 -->
+    <div class="award-card">
+
+        <h3>
+            🏆 การแข่งขันตอบปัญหาทางวิทยาศาสตร์ 🏆
+        </h3>
+
+        <p class="award-subtitle">
+            ระดับชั้นมัธยมศึกษาปีที่ 5
+        </p>
+
+        <p class="award-subtitle">
+            เนื่องในงานวันวิทยาศาสตร์แห่งชาติ ประจำปีการศึกษา 2567
+        </p>
+
+        <p class="award-result">
+            ⭐ ได้เข้าร่วมการแข่งขัน ⭐
+        </p>
+
+        <div class="award-images">
+
+            <img
+                src="IMG_6599.jpeg"
+                alt="เกียรติบัตรการแข่งขันตอบปัญหาทางวิทยาศาสตร์"
+            >
+
+            <img
+                src="IMG_6600.jpeg"
+                alt="ภาพประกอบการแข่งขันตอบปัญหาทางวิทยาศาสตร์"
+            >
+
+        </div>
+
+        <div class="award-description">
+
+            <h4>✨ ทักษะที่ได้รับ ✨</h4>
+
+            <p>
+                ความรู้ทางวิทยาศาสตร์ การคิดวิเคราะห์ การแก้ปัญหา
+                และการนำความรู้ไปประยุกต์ใช้
+            </p>
+
+            <p>
+                ฉันสามารถนำการช่วยพัฒนาพื้นฐานความรู้และทักษะการคิดอย่างเป็นระบบ
+                ซึ่งเป็นทักษะสำคัญในการเรียนวิทยาศาสตร์
+                และสามารถนำไปต่อยอดในการอธิบายหลักการทางวิทยาศาสตร์
+                ออกแบบกิจกรรมการเรียนรู้ และถ่ายทอดความรู้ให้นักเรียนเข้าใจได้ง่ายขึ้น
+                ในคณะที่ฉันสนใจเข้าศึกษาค่ะ
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- ด้านความประพฤติ -->
+    <!-- ================================================= -->
+
     <div class="info-box">
-        <h3> ด้านความประพฤติ </h3>
+        <h3>ด้านความประพฤติ</h3>
 
         <p>
             ผลงานที่สะท้อนถึงความมีระเบียบวินัย
             ความรับผิดชอบ และการปฏิบัติตนอย่างเหมาะสม
         </p>
     </div>
+
 
     <!-- ผลงานความประพฤติที่ 1 -->
     <div class="award-card">
@@ -1229,18 +1414,25 @@ header p {
         </h3>
 
         <p class="award-subtitle">
-             ประจำปีการศึกษา 2568 
+            ประจำปีการศึกษา 2568
         </p>
 
         <p class="award-result">
             ⭐ ได้รับรางวัล “นักเรียนประพฤติดี” ⭐
         </p>
 
-        <div class="award-images single-image">
+        <div class="award-images">
+
             <img
-                src="IMG_6576.jpeg"
+                src="IMG_6601.jpeg"
                 alt="เกียรติบัตรรางวัลนักเรียนประพฤติดี"
             >
+
+            <img
+                src="IMG_3586.jpeg"
+                alt="ภาพประกอบรางวัลนักเรียนประพฤติดี"
+            >
+
         </div>
 
         <div class="award-description">
@@ -1248,19 +1440,25 @@ header p {
             <h4>🌟 ทักษะที่ได้รับ 🌟</h4>
 
             <p>
-                • พัฒนาความมีระเบียบวินัย<br>
-                • ฝึกความรับผิดชอบต่อตนเองและส่วนรวม<br>
-                • เรียนรู้การปฏิบัติตามกฎระเบียบของสถานศึกษา<br>
-                • ฝึกการวางตัวอย่างเหมาะสม<br>
-                • พัฒนาความซื่อสัตย์และความมีคุณธรรม<br>
-                • เรียนรู้การอยู่ร่วมกับผู้อื่นอย่างมีความสุข
+                ความรับผิดชอบ วินัย คุณธรรม และการปฏิบัติตนอย่างเหมาะสม
+            </p>
+
+            <p>
+                เป็นคุณลักษณะสำคัญของผู้ประกอบวิชาชีพครู
+                เพราะครูไม่ได้มีหน้าที่แค่ถ่ายทอดความรู้
+                แต่ยังเป็นแบบอย่างที่ดีให้แก่นักเรียน
+                และมีความรับผิดชอบต่อหน้าที่ของตัวเองค่ะ
             </p>
 
         </div>
 
     </div>
 
-    <!-- หมวดที่ 3 : ด้านจิตอาสา -->
+
+    <!-- ================================================= -->
+    <!-- ด้านจิตอาสา -->
+    <!-- ================================================= -->
+
     <div class="info-box">
         <h3>🎯 ด้านจิตอาสา 🎯</h3>
 
@@ -1269,6 +1467,7 @@ header p {
             การช่วยเหลือผู้อื่น และการทำงานเพื่อส่วนรวม
         </p>
     </div>
+
 
     <!-- ผลงานจิตอาสาที่ 1 -->
     <div class="award-card">
@@ -1284,7 +1483,7 @@ header p {
         </p>
 
         <p class="award-subtitle">
-             วันที่ 29 มกราคม พ.ศ. 2569 
+            วันที่ 29 มกราคม พ.ศ. 2569
         </p>
 
         <p class="award-result">
@@ -1293,15 +1492,17 @@ header p {
         </p>
 
         <div class="award-images single-image">
+
             <img
                 src="IMG_6579.jpeg"
                 alt="เกียรติบัตรปฏิบัติหน้าที่คณะกรรมการจัดกิจกรรมการแข่งขันทักษะวิชาการ"
             >
+
         </div>
 
         <div class="award-description">
 
-            <h4> ทักษะที่ได้รับ </h4>
+            <h4>ทักษะที่ได้รับ</h4>
 
             <p>
                 • พัฒนาทักษะการทำงานร่วมกับผู้อื่น<br>
@@ -1318,6 +1519,7 @@ header p {
     </div>
 
 </section>
+
 
 <!-- หน้า 5 : ขอบคุณ -->
 <section class="page thank-you-page" id="page5">

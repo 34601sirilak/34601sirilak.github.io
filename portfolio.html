@@ -584,7 +584,7 @@ header p {
 
 /* หน้าขอบคุณ */
 .thank-you-page {
-    min-height: 700px;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -597,7 +597,7 @@ header p {
 .thank-you-content {
     width: 100%;
     max-width: 800px;
-    padding: 40px 25px;
+    padding: 50px 30px;
     background: linear-gradient(
         135deg,
         rgba(255,255,255,0.98),
@@ -614,69 +614,6 @@ header p {
     animation: thankYouAppear 1s ease;
 }
 
-.teacher-picture {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 35px;
-    margin-bottom: 20px;
-}
-
-.person {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: personMove 3s ease-in-out infinite;
-}
-
-.person:nth-child(2) {
-    animation-delay: 0.8s;
-}
-
-.person-head {
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    background: #FFD8B8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-    border: 4px solid #F8C7DC;
-    box-shadow: 0 0 0 3px #DDF4FF;
-}
-
-.person-body {
-    width: 125px;
-    height: 130px;
-    border-radius: 45px 45px 20px 20px;
-    background: linear-gradient(135deg, #F3A9C8, #9DDCF5);
-    margin-top: -5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-    border: 4px solid white;
-    box-shadow: 0 0 0 3px #F8C7DC;
-}
-
-.student .person-body {
-    width: 105px;
-    height: 115px;
-    background: linear-gradient(135deg, #BFE7FA, #F8C7DC);
-}
-
-.teacher-name,
-.student-name {
-    margin-top: 10px;
-    color: #D66C9B;
-    font-size: 18px;
-}
-
-.student-name {
-    color: #70B5D4;
-}
-
 .thank-you-decoration {
     font-size: 32px;
     letter-spacing: 8px;
@@ -687,7 +624,7 @@ header p {
 .thank-you-content h2 {
     color: #D96C9B;
     font-size: clamp(45px, 8vw, 75px);
-    margin: 15px 0;
+    margin: 20px 0;
     letter-spacing: 5px;
     animation: textBounce 2s ease-in-out infinite;
     text-shadow: 2px 2px 0 #DDF4FF;
@@ -703,55 +640,7 @@ header p {
 .thank-you-subtext {
     color: #82B5CC;
     font-size: 17px !important;
-    margin-top: 12px;
-}
-
-.floating-item {
-    position: absolute;
-    z-index: 2;
-    font-size: 45px;
-    animation: floatingCute 5s ease-in-out infinite;
-}
-
-.item1 {
-    top: 12%;
-    left: 12%;
-}
-
-.item2 {
-    top: 25%;
-    right: 12%;
-    animation-delay: 1s;
-}
-
-.item3 {
-    bottom: 15%;
-    left: 18%;
-    animation-delay: 2s;
-}
-
-.item4 {
-    bottom: 18%;
-    right: 18%;
-    animation-delay: 3s;
-}
-
-.item5 {
-    top: 10%;
-    right: 35%;
-    animation-delay: 1.5s;
-}
-
-.item6 {
-    bottom: 12%;
-    left: 45%;
-    animation-delay: 2.5s;
-}
-
-.item7 {
-    top: 45%;
-    left: 7%;
-    animation-delay: 3.5s;
+    margin-top: 20px;
 }
 
 /* ปุ่มกลับหน้าหลัก */
@@ -892,25 +781,15 @@ header p {
     }
 }
 
-@keyframes floatingCute {
-    0%, 100% {
-        transform: translateY(20px) rotate(-6deg);
-        opacity: 0.65;
+@keyframes thankYouAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
     }
 
-    50% {
-        transform: translateY(-30px) rotate(6deg);
+    to {
         opacity: 1;
-    }
-}
-
-@keyframes personMove {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
+        transform: scale(1);
     }
 }
 
@@ -921,18 +800,6 @@ header p {
 
     50% {
         transform: translateY(-8px);
-    }
-}
-
-@keyframes thankYouAppear {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
     }
 }
 
@@ -1058,37 +925,11 @@ header p {
     }
 
     .thank-you-page {
-        min-height: 650px;
+        min-height: 550px;
     }
 
     .thank-you-content {
-        padding: 30px 15px;
-    }
-
-    .teacher-picture {
-        gap: 15px;
-    }
-
-    .person-head {
-        width: 65px;
-        height: 65px;
-        font-size: 35px;
-    }
-
-    .person-body {
-        width: 95px;
-        height: 105px;
-        font-size: 38px;
-    }
-
-    .student .person-body {
-        width: 80px;
-        height: 95px;
-    }
-
-    .teacher-name,
-    .student-name {
-        font-size: 15px;
+        padding: 35px 15px;
     }
 
     .thank-you-decoration {
@@ -1107,10 +948,6 @@ header p {
 
     .thank-you-subtext {
         font-size: 15px !important;
-    }
-
-    .floating-item {
-        font-size: 30px;
     }
 
     .back-home a {
@@ -1328,7 +1165,6 @@ header p {
         </p>
     </div>
 
-    
     <!-- ผลงานวิชาการที่ 1 : ปรากฏการณ์ธรรมชาติ -->
     <div class="award-card">
 
@@ -1483,49 +1319,21 @@ header p {
 
 </section>
 
-<!-- หน้า 5 -->
+<!-- หน้า 5 : ขอบคุณ -->
 <section class="page thank-you-page" id="page5">
 
     <div class="line-decoration"></div>
 
-    <div class="sparkle-page s1">✦</div>
-    <div class="sparkle-page s2">✧</div>
-    <div class="sparkle-page s3">✦</div>
-
-    <div class="floating-item item1">📚</div>
-    <div class="floating-item item2">✏️</div>
-    <div class="floating-item item3">🔬</div>
-    <div class="floating-item item4">🧪</div>
-    <div class="floating-item item5">⭐</div>
-    <div class="floating-item item6">💙</div>
-    <div class="floating-item item7">🍎</div>
-
     <div class="thank-you-content">
-
-        <div class="teacher-picture">
-
-            <div class="person teacher">
-                <div class="person-head">👩🏻‍🏫</div>
-                <div class="person-body">📚</div>
-                <div class="teacher-name">👩🏻‍🏫 คุณครู</div>
-            </div>
-
-            <div class="person student">
-                <div class="person-head">👩🏻‍🎓</div>
-                <div class="person-body">📖</div>
-                <div class="student-name">👩🏻‍🎓 นักเรียน</div>
-            </div>
-
-        </div>
 
         <div class="thank-you-decoration">
             ✨ 🌟 ✨
         </div>
 
-        <h2> ขอบคุณ </h2>
+        <h2>ขอบคุณ</h2>
 
         <p class="thank-you-text">
-            ขอบคุณที่รับชมผลงานของฉันนะคะ 
+            ขอบคุณที่รับชมผลงานของฉันนะคะ
         </p>
 
         <p class="thank-you-text">
@@ -1537,7 +1345,7 @@ header p {
         </div>
 
         <p class="thank-you-subtext">
-             นางสาว สิริลักษณ์ ผาดผ่อง 
+            นางสาว สิริลักษณ์ ผาดผ่อง
         </p>
 
         <div class="back-home">

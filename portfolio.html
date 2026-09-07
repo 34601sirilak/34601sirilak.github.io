@@ -418,8 +418,6 @@ body{
 }
 
 
-/* เส้นปะรอบรูป */
-
 .profile-frame::before{
 
     content:"";
@@ -444,8 +442,6 @@ body{
         dashedRotate 8s linear infinite;
 }
 
-
-/* ดาวด้านล่าง */
 
 .profile-frame::after{
 
@@ -486,8 +482,6 @@ body{
 }
 
 
-/* รูป */
-
 .profile-image{
 
     display:block;
@@ -510,8 +504,6 @@ body{
         imagePulse 3s ease-in-out infinite;
 }
 
-
-/* ดาวรอบรูป */
 
 .profile-frame .sparkle{
 
@@ -767,8 +759,16 @@ body{
     position:relative;
 
     z-index:5;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
 }
 
+
+/* กรอบแต่ละระดับ เป็นวงรีแนวนอน */
 
 .education-card{
 
@@ -783,15 +783,94 @@ body{
 
     border-left:7px solid #9DDCF5;
 
-    border-radius:25px;
+    border-radius:70px;
 
-    padding:25px;
+    padding:20px 30px 20px 22px;
 
-    margin-bottom:25px;
+    min-height:155px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
 
     box-shadow:
         0 0 0 3px #DDF4FF,
         0 7px 20px rgba(220,150,190,.13);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+.education-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 0 0 3px #DDF4FF,
+        0 10px 25px rgba(220,150,190,.22);
+}
+
+
+/* รูปโรงเรียนวงกลม */
+
+.school-image{
+
+    width:120px;
+
+    height:120px;
+
+    min-width:120px;
+
+    border-radius:50%;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    background:#FFFFFF;
+
+    border:4px solid white;
+
+    outline:4px dashed #F3A9C8;
+
+    outline-offset:4px;
+
+    padding:6px;
+
+    box-shadow:
+        0 0 0 7px #FFF0F7,
+        0 0 15px #F3A9C8,
+        0 0 25px #9DDCF5;
+
+    transition:.35s;
+
+    z-index:2;
+}
+
+
+.education-card:hover .school-image{
+
+    transform:
+        scale(1.05)
+        rotate(2deg);
+}
+
+
+/* เนื้อหาของโรงเรียน */
+
+.education-content{
+
+    flex:1;
+
+    text-align:left;
+
+    min-width:0;
 }
 
 
@@ -799,9 +878,11 @@ body{
 
     color:#D66C9B;
 
-    font-size:24px;
+    font-size:23px;
 
-    margin-bottom:10px;
+    margin:0 0 8px;
+
+    line-height:1.5;
 }
 
 
@@ -813,15 +894,29 @@ body{
 
     font-size:17px;
 
-    margin-bottom:10px;
+    margin-bottom:8px;
+
+    line-height:1.5;
 }
 
 
 .education-card p{
 
     margin:5px 0;
+
+    font-size:17px;
+
+    line-height:1.7;
 }
 
+
+.education-card strong{
+
+    color:#D66C9B;
+}
+
+
+/* เป้าหมายทางการศึกษา */
 
 .education-goal{
 
@@ -834,19 +929,35 @@ body{
 
     border:3px solid #F3C1D8;
 
-    border-radius:25px;
+    border-radius:30px;
 
     padding:25px;
 
     text-align:center;
 
-    margin-top:30px;
+    margin-top:5px;
+
+    box-shadow:
+        0 0 0 3px #DDF4FF,
+        0 7px 20px rgba(220,150,190,.13);
 }
 
 
 .education-goal h3{
 
     color:#D66C9B;
+
+    margin:0 0 10px;
+
+    font-size:23px;
+}
+
+
+.education-goal p{
+
+    font-size:17px;
+
+    line-height:1.8;
 }
 
 
@@ -1463,7 +1574,9 @@ footer{
     }
 
 
-    /* หน้าแรก */
+    /* =================================================
+       หน้าแรก
+    ================================================= */
 
     .home-page{
 
@@ -1577,7 +1690,9 @@ footer{
     }
 
 
-    /* Profile */
+    /* =================================================
+       Profile
+    ================================================= */
 
     .profile-img{
 
@@ -1599,21 +1714,101 @@ footer{
     }
 
 
-    /* Education */
+    /* =================================================
+       Education
+    ================================================= */
+
+    .education{
+
+        gap:20px;
+    }
+
 
     .education-card{
 
-        padding:18px;
+        border-radius:45px;
+
+        padding:18px 17px;
+
+        gap:17px;
+
+        min-height:135px;
+
+        align-items:center;
+    }
+
+
+    .school-image{
+
+        width:85px;
+
+        height:85px;
+
+        min-width:85px;
+
+        border-width:3px;
+
+        outline-width:3px;
+
+        outline-offset:3px;
+
+        padding:5px;
     }
 
 
     .education-card h3{
 
+        font-size:18px;
+
+        line-height:1.5;
+
+        margin-bottom:5px;
+    }
+
+
+    .education-card .year{
+
+        font-size:15px;
+
+        line-height:1.5;
+
+        margin-bottom:5px;
+    }
+
+
+    .education-card p{
+
+        font-size:15px;
+
+        line-height:1.6;
+    }
+
+
+    .education-goal{
+
+        padding:20px 17px;
+
+        border-radius:25px;
+    }
+
+
+    .education-goal h3{
+
         font-size:20px;
     }
 
 
-    /* University */
+    .education-goal p{
+
+        font-size:15px;
+
+        line-height:1.7;
+    }
+
+
+    /* =================================================
+       University
+    ================================================= */
 
     .university-cover{
 
@@ -1629,7 +1824,9 @@ footer{
     }
 
 
-    /* Works */
+    /* =================================================
+       Works
+    ================================================= */
 
     .award-card{
 
@@ -1797,9 +1994,7 @@ footer{
 
             <h1 class="home-title">
 
-                
                 ยินดีต้อนรับสู่โปรไฟล์ของฉัน
-                
 
             </h1>
 
@@ -2080,7 +2275,8 @@ footer{
                 เตรียมวิศวกรรมศาสตร์
             </div>
 
-           <div>
+
+            <div>
                 <strong>เป้าหมาย :</strong>
                 ศึกษาต่อคณะศึกษาศาสตร์
                 สาขาวิชาวิทยาศาสตร์ทั่วไป
@@ -2179,92 +2375,153 @@ footer{
     <div class="education">
 
 
+        <!-- =================================================
+             ระดับประถมศึกษา
+        ================================================== -->
+
         <div class="education-card">
 
-            <h3>
-                📚 ระดับประถมศึกษา
-            </h3>
+            <img
+                src="IMG_6619.jpeg"
+                alt="โรงเรียนบ้านมาบคล้า"
+                class="school-image"
+            >
 
-            <p class="year">
-                โรงเรียนบ้านมาบคล้า 
-            </p>
 
-            <p>
+            <div class="education-content">
 
-                ศึกษาระดับประถมศึกษา
-                และเรียนรู้พื้นฐานในด้านต่าง ๆ
-                ทั้งวิชาการและการทำกิจกรรม
+                <h3>
+                    📚 ระดับประถมศึกษา
+                </h3>
 
-            </p>
+
+                <p class="year">
+                    โรงเรียนบ้านมาบคล้า
+                </p>
+
+
+                <p>
+
+                    ศึกษาระดับประถมศึกษา
+                    และเรียนรู้พื้นฐานในด้านต่าง ๆ
+                    ทั้งวิชาการและการทำกิจกรรม
+
+                </p>
+
+            </div>
 
         </div>
 
 
+
+        <!-- =================================================
+             ระดับมัธยมศึกษาตอนต้น
+        ================================================== -->
+
         <div class="education-card">
 
-            <h3>
-                📘 ระดับมัธยมศึกษาตอนต้น
-            </h3>
+            <img
+                src="IMG_6620.jpeg"
+                alt="โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์"
+                class="school-image"
+            >
 
-            <p class="year">
-                ระดับมัธยมศึกษาตอนต้น
-            </p>
 
-            <p>
+            <div class="education-content">
 
-                ศึกษาในระดับมัธยมศึกษาตอนต้น
-                พร้อมพัฒนาทักษะด้านวิทยาศาสตร์
-                การคิดวิเคราะห์
-                และการทำงานร่วมกับผู้อื่น
+                <h3>
+                    📘 ระดับมัธยมศึกษาตอนต้น
+                </h3>
 
-            </p>
+
+                <p class="year">
+                    โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+                </p>
+
+
+                <p>
+
+                    ศึกษาในระดับมัธยมศึกษาตอนต้น
+                    พร้อมพัฒนาทักษะด้านวิทยาศาสตร์
+                    การคิดวิเคราะห์
+                    และการทำงานร่วมกับผู้อื่น
+
+                </p>
+
+            </div>
 
         </div>
 
 
+
+        <!-- =================================================
+             ระดับมัธยมศึกษาตอนปลาย
+        ================================================== -->
+
         <div class="education-card">
 
-            <h3>
-                🔬 ระดับมัธยมศึกษาตอนปลาย
-            </h3>
+            <img
+                src="IMG_6620.jpeg"
+                alt="โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์"
+                class="school-image"
+            >
 
-            <p class="year">
-                ปัจจุบัน
-            </p>
 
-            <p>
+            <div class="education-content">
 
-                กำลังศึกษาในแผนการเรียน
+                <h3>
+                    🔬 ระดับมัธยมศึกษาตอนปลาย
+                </h3>
 
-                <strong>
-                    เตรียมวิศวกรรมศาสตร์
-                </strong>
 
-            </p>
+                <p class="year">
+                    ปัจจุบัน
+                </p>
 
-            <p>
 
-                โรงเรียนบ้านบึง
-                “อุตสาหกรรมนุเคราะห์”
+                <p>
 
-            </p>
+                    โรงเรียนบ้านบึง
+                    “อุตสาหกรรมนุเคราะห์”
 
-            <p>
+                </p>
 
-                มีความสนใจในวิทยาศาสตร์
-                การทดลอง การคิดวิเคราะห์
-                และการแก้ปัญหา
 
-            </p>
+                <p>
+
+                    กำลังศึกษาในแผนการเรียน
+
+                    <strong>
+                        เตรียมวิศวกรรมศาสตร์
+                    </strong>
+
+                </p>
+
+
+                <p>
+
+                    มีความสนใจในวิทยาศาสตร์
+                    การทดลอง การคิดวิเคราะห์
+                    และการแก้ปัญหา
+
+                </p>
+
+            </div>
 
         </div>
 
+
+
+        <!-- =================================================
+             เป้าหมายทางการศึกษา
+        ================================================== -->
 
         <div class="education-goal">
 
             <h3>
                 🎯 เป้าหมายทางการศึกษา
             </h3>
+
 
             <p>
 

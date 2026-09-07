@@ -25,8 +25,16 @@ html{
 }
 
 body{
-    background:linear-gradient(135deg,#FFF0F7,#EAF8FF);
+    background:
+        linear-gradient(
+            135deg,
+            #eefaff,
+            #fcecff,
+            #fff1f8
+        );
+
     color:#52738C;
+
     min-height:100vh;
 }
 
@@ -37,25 +45,34 @@ body{
 
 .top-menu{
     width:100%;
-    background:linear-gradient(135deg,#FFF8FC,#F0FBFF);
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff9fc,
+            #f0fbff
+        );
 
     border-bottom:4px solid #F3C1D8;
 
-    box-shadow:0 5px 18px rgba(220,150,190,.18);
+    box-shadow:
+        0 5px 18px rgba(220,150,190,.18);
 
     position:sticky;
+
     top:0;
+
     z-index:1000;
 
     padding:10px 12px;
 }
 
 
-/* กล่องเมนู */
-
 .menu-list{
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     gap:8px;
@@ -63,8 +80,6 @@ body{
     width:100%;
 }
 
-
-/* ปุ่มเมนู */
 
 .menu-btn{
     flex:0 0 auto;
@@ -80,6 +95,7 @@ body{
     border-radius:25px;
 
     font-size:14px;
+
     font-weight:bold;
 
     cursor:pointer;
@@ -93,22 +109,24 @@ body{
 .menu-btn:hover{
     transform:translateY(-3px);
 
-    background:linear-gradient(
-        135deg,
-        #F3A9C8,
-        #9DDCF5
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #F3A9C8,
+            #9DDCF5
+        );
 
     color:white;
 }
 
 
 .menu-btn.active{
-    background:linear-gradient(
-        135deg,
-        #F3A9C8,
-        #9DDCF5
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #F3A9C8,
+            #9DDCF5
+        );
 
     color:white;
 
@@ -144,6 +162,7 @@ header{
 
 header h1{
     font-size:30px;
+
     margin-bottom:10px;
 }
 
@@ -304,103 +323,274 @@ header p{
 
 
 /* =====================================================
-   PAGE 1 : HOME
+   PAGE 1 : HOME แบบใหม่ตามภาพ
 ===================================================== */
 
-.home-page{
-    text-align:center;
-
+.home-page-new{
     position:relative;
 
     z-index:5;
 
-    padding-top:55px;
+    min-height:650px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:35px 20px;
 }
 
 
-.home-icon{
-    font-size:65px;
+.home-content{
+    width:100%;
 
-    margin-bottom:15px;
+    max-width:850px;
 
-    animation:
-        profileFloat 3s ease-in-out infinite;
+    padding:25px 20px 35px;
 }
 
 
-.home-page h1{
-    color:#D66C9B;
-
-    font-size:42px;
-
-    margin-bottom:15px;
-}
-
-
-.home-page h3{
-    color:#6BAFD2;
-
+.home-decoration{
     font-size:25px;
 
-    margin:15px 0;
+    letter-spacing:18px;
+
+    color:#555;
+
+    margin-bottom:10px;
 }
 
 
-.home-page p{
-    font-size:20px;
+.home-welcome{
+    font-size:34px;
 
-    margin:10px 0;
+    font-weight:bold;
+
+    color:#6BAFD2;
+
+    margin-bottom:8px;
+
+    text-shadow:
+        2px 2px 0 #e6f6ff;
 }
 
 
-.home-profile{
-    width:180px;
-    height:180px;
+.home-welcome span{
+    color:#E58AB1;
+}
+
+
+.home-profile-wrap{
+    position:relative;
+
+    width:270px;
+
+    height:270px;
+
+    margin:25px auto 35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+
+.home-profile-wrap::before{
+    content:"";
+
+    position:absolute;
+
+    width:290px;
+    height:290px;
+
+    border:4px dashed #F3A9C8;
+
+    border-radius:50%;
+
+    animation:
+        rotateCircle 15s linear infinite;
+}
+
+
+.home-profile-wrap::after{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    border:7px solid #DDF4FF;
+
+    border-radius:50%;
+}
+
+
+.home-profile-new{
+    position:relative;
+
+    z-index:5;
+
+    width:215px;
+    height:215px;
 
     object-fit:cover;
 
     border-radius:50%;
 
-    border:5px dashed #F3A9C8;
-
-    outline:5px solid #DDF4FF;
-
-    outline-offset:7px;
-
-    margin:25px auto;
+    border:5px solid white;
 
     box-shadow:
-        0 0 0 12px #FFF0F7,
-        0 0 20px #F3A9C8,
-        0 0 35px #9DDCF5;
+        0 0 0 7px #F3A9C8,
+        0 0 0 14px #FFF0F7,
+        0 0 0 20px #DDF4FF,
+        0 10px 25px rgba(220,150,190,.25);
 
     animation:
         profileFloat 3s ease-in-out infinite;
 }
 
 
-.home-box{
-    max-width:700px;
+.home-star{
+    position:absolute;
 
-    margin:25px auto;
+    color:#E89ABB;
 
-    padding:20px;
+    font-size:28px;
 
-    border-radius:25px;
+    z-index:10;
+
+    animation:
+        sparklePage 2s ease-in-out infinite;
+}
+
+
+.star1{
+    top:5px;
+    left:5px;
+}
+
+
+.star2{
+    top:30px;
+    right:0;
+}
+
+
+.star3{
+    bottom:15px;
+    left:20px;
+}
+
+
+.star4{
+    bottom:5px;
+    right:20px;
+}
+
+
+.home-intro{
+    margin:10px auto 8px;
+
+    font-size:21px;
+
+    color:#555;
+
+    line-height:1.8;
+}
+
+
+.home-name{
+    color:#E58AB1;
+
+    font-weight:bold;
+
+    font-size:24px;
+}
+
+
+.home-info{
+    font-size:18px;
+
+    color:#555;
+
+    line-height:1.9;
+
+    margin:8px 0;
+}
+
+
+.home-goal{
+    font-size:19px;
+
+    color:#555;
+
+    margin-top:5px;
+}
+
+
+.home-goal span{
+    color:#D66C9B;
+
+    font-weight:bold;
+}
+
+
+.home-enter-btn{
+    margin-top:30px;
+
+    padding:17px 38px;
+
+    border:none;
+
+    border-radius:22px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:white;
 
     background:
         linear-gradient(
             135deg,
-            #FFF5FA,
-            #F0FAFF
+            #73c8ed,
+            #e39ac1
         );
 
-    border:3px solid #F3C1D8;
+    box-shadow:
+        0 8px 20px rgba(180,170,220,.35);
+
+    transition:.3s;
 }
 
 
-.home-box strong{
+.home-enter-btn:hover{
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 12px 25px rgba(180,170,220,.45);
+}
+
+
+.home-page-number{
+    margin-top:20px;
+
     color:#D66C9B;
+
+    font-weight:bold;
+
+    font-size:14px;
 }
 
 
@@ -1038,6 +1228,19 @@ footer{
 }
 
 
+@keyframes rotateCircle{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
 /* =====================================================
    TABLET
 ===================================================== */
@@ -1152,31 +1355,90 @@ footer{
     }
 
 
-    .home-page{
-        padding-top:35px;
+    /* หน้าแรก */
+
+    .home-page-new{
+        min-height:600px;
+
+        padding:20px 5px;
     }
 
 
-    .home-page h1{
-        font-size:30px;
+    .home-content{
+        padding:15px 5px 25px;
     }
 
 
-    .home-page h3{
-        font-size:21px;
+    .home-decoration{
+        font-size:18px;
+
+        letter-spacing:8px;
     }
 
 
-    .home-page p{
+    .home-welcome{
+        font-size:25px;
+    }
+
+
+    .home-profile-wrap{
+        width:210px;
+
+        height:210px;
+
+        margin:25px auto 30px;
+    }
+
+
+    .home-profile-wrap::before{
+        width:225px;
+
+        height:225px;
+    }
+
+
+    .home-profile-wrap::after{
+        width:195px;
+
+        height:195px;
+    }
+
+
+    .home-profile-new{
+        width:165px;
+
+        height:165px;
+    }
+
+
+    .home-intro{
         font-size:17px;
     }
 
 
-    .home-profile{
-        width:145px;
-        height:145px;
+    .home-name{
+        font-size:20px;
     }
 
+
+    .home-info{
+        font-size:15px;
+    }
+
+
+    .home-goal{
+        font-size:16px;
+    }
+
+
+    .home-enter-btn{
+        font-size:15px;
+
+        padding:14px 25px;
+    }
+
+
+    /* Profile */
 
     .profile-img{
         width:140px;
@@ -1194,6 +1456,8 @@ footer{
     }
 
 
+    /* Education */
+
     .education-card{
         padding:18px;
     }
@@ -1203,6 +1467,8 @@ footer{
         font-size:20px;
     }
 
+
+    /* University */
 
     .university-cover{
         width:240px;
@@ -1214,6 +1480,8 @@ footer{
         font-size:21px;
     }
 
+
+    /* Works */
 
     .award-card{
         padding:16px;
@@ -1312,7 +1580,6 @@ footer{
 </nav>
 
 
-
 <!-- =====================================================
      HEADER
 ===================================================== -->
@@ -1330,12 +1597,11 @@ footer{
 </header>
 
 
-
 <div class="container">
 
 
 <!-- =====================================================
-     หน้า 1 : หน้าแรก
+     หน้า 1 : หน้าแรก แบบภาพที่ส่งมา
 ===================================================== -->
 
 <section class="page active" id="page1">
@@ -1347,71 +1613,107 @@ footer{
     <div class="sparkle-page s3">✦</div>
 
 
-    <div class="home-page">
+    <div class="home-page-new">
 
-        <div class="home-icon">
-            🌸
+        <div class="home-content">
+
+
+            <!-- ของตกแต่งด้านบน -->
+
+            <div class="home-decoration">
+                ✦　🐾　°　✧　🐾　°　✦
+            </div>
+
+
+            <!-- ข้อความต้อนรับ -->
+
+            <div class="home-welcome">
+
+                🙌🏻 ยินดีต้อนรับสู่
+                <span>โปรไฟล์ของฉัน</span> 🙌🏻
+
+            </div>
+
+
+            <!-- รูปโปรไฟล์ -->
+
+            <div class="home-profile-wrap">
+
+                <div class="home-star star1">
+                    ✦
+                </div>
+
+                <div class="home-star star2">
+                    ✧
+                </div>
+
+                <div class="home-star star3">
+                    ✦
+                </div>
+
+                <div class="home-star star4">
+                    ✧
+                </div>
+
+
+                <img
+                    src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
+                    alt="รูปโปรไฟล์"
+                    class="home-profile-new"
+                >
+
+            </div>
+
+
+            <!-- แนะนำตัว -->
+
+            <p class="home-intro">
+
+                สวัสดีค่ะ! 📌
+                ฉันชื่อ
+                <span class="home-name">
+                    ⭐ สิริลักษณ์ ผาดผ่อง (Sirilak Phartpong) ⭐
+                </span>
+
+            </p>
+
+
+            <p class="home-info">
+
+                📍 ขณะนี้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 5
+                แผนการเรียน เตรียมวิศวกรรมศาสตร์ 👩‍🔬
+
+            </p>
+
+
+            <p class="home-goal">
+
+                🎯 เป้าหมายในชีวิต
+                <span>คุณครูวิทยาศาสตร์</span>
+
+            </p>
+
+
+            <!-- ปุ่ม -->
+
+            <button
+                class="home-enter-btn"
+                onclick="showPage(1)"
+            >
+
+                📚 🔍 ดูแฟ้มสะสมงานของฉัน 🔍 📚
+
+            </button>
+
+
+            <div class="home-page-number">
+
+                หน้าแรก • Portfolio
+
+            </div>
+
+
         </div>
-
-        <h1>
-            PORTFOLIO
-        </h1>
-
-        <h3>
-            แฟ้มสะสมผลงาน
-        </h3>
-
-
-        <img
-            src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
-            alt="รูปโปรไฟล์"
-            class="home-profile"
-        >
-
-
-        <div class="home-box">
-
-            <p>
-                <strong>
-                    นางสาวสิริลักษณ์ ผาดผ่อง
-                </strong>
-            </p>
-
-            <p>
-                ชื่อเล่น : ปอ
-            </p>
-
-            <p>
-                นักเรียนแผนการเรียนเตรียมวิศวกรรมศาสตร์
-            </p>
-
-            <p>
-                💗 ความสนใจ :
-                วิทยาศาสตร์ การทดลอง
-                การคิดวิเคราะห์ และการเรียนรู้
-            </p>
-
-            <p>
-                🎯 เป้าหมาย :
-                คณะศึกษาศาสตร์
-                สาขาวิชาวิทยาศาสตร์ทั่วไป
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="page-navigation">
-
-        <button class="next-btn"
-                onclick="nextPage()">
-            ถัดไป ➜
-        </button>
-
-        <span class="page-number">
-            หน้า 1 / 6
-        </span>
 
     </div>
 
@@ -1665,8 +1967,6 @@ footer{
     <div class="education">
 
 
-        <!-- ระดับประถม -->
-
         <div class="education-card">
 
             <h3>
@@ -1685,8 +1985,6 @@ footer{
 
         </div>
 
-
-        <!-- ระดับมัธยมต้น -->
 
         <div class="education-card">
 
@@ -1707,8 +2005,6 @@ footer{
 
         </div>
 
-
-        <!-- ระดับมัธยมปลาย -->
 
         <div class="education-card">
 
@@ -1740,8 +2036,6 @@ footer{
 
         </div>
 
-
-        <!-- เป้าหมาย -->
 
         <div class="education-goal">
 
@@ -1948,9 +2242,7 @@ footer{
     </h2>
 
 
-    <!-- =================================================
-         ผลงานที่ 1
-    ================================================= -->
+    <!-- ผลงานที่ 1 -->
 
     <div class="award-card">
 
@@ -2014,9 +2306,7 @@ footer{
 
 
 
-    <!-- =================================================
-         ผลงานที่ 2
-    ================================================= -->
+    <!-- ผลงานที่ 2 -->
 
     <div class="award-card">
 
@@ -2083,9 +2373,7 @@ footer{
 
 
 
-    <!-- =================================================
-         ผลงานที่ 3
-    ================================================= -->
+    <!-- ผลงานที่ 3 -->
 
     <div class="award-card">
 
@@ -2150,9 +2438,7 @@ footer{
 
 
 
-    <!-- =================================================
-         ผลงานที่ 4
-    ================================================= -->
+    <!-- ผลงานที่ 4 -->
 
     <div class="award-card">
 
@@ -2210,9 +2496,7 @@ footer{
 
 
 
-    <!-- =================================================
-         กิจกรรมเพิ่มเติม
-    ================================================= -->
+    <!-- กิจกรรมเพิ่มเติม -->
 
     <div class="activity-box">
 
@@ -2255,9 +2539,7 @@ footer{
 
 
 
-    <!-- =================================================
-         ปุ่มท้ายสุด
-    ================================================= -->
+    <!-- ปุ่มท้าย -->
 
     <div class="page-navigation">
 
@@ -2302,11 +2584,6 @@ footer{
 
 <script>
 
-
-/* =====================================================
-   ตัวแปรหน้า
-===================================================== */
-
 let currentPage = 0;
 
 
@@ -2316,7 +2593,7 @@ const pages =
     document.querySelectorAll(".page");
 
 
-/* ดึงปุ่มเมนูทั้งหมด */
+/* ดึงปุ่มเมนู */
 
 const menuButtons =
     document.querySelectorAll(".menu-btn");
@@ -2328,13 +2605,13 @@ const menuButtons =
 
 function showPage(index){
 
-    /* ป้องกันเลขหน้าเกิน */
-
     if(
         index < 0 ||
         index >= pages.length
     ){
+
         return;
+
     }
 
 
@@ -2352,7 +2629,7 @@ function showPage(index){
     pages[index].classList.add("active");
 
 
-    /* เปลี่ยนสถานะปุ่มเมนู */
+    /* เปลี่ยนปุ่มเมนู */
 
     menuButtons.forEach(function(button){
 
@@ -2369,7 +2646,7 @@ function showPage(index){
     currentPage = index;
 
 
-    /* เลื่อนกลับขึ้นด้านบน */
+    /* เลื่อนขึ้นด้านบน */
 
     window.scrollTo({
 
@@ -2422,11 +2699,10 @@ function prevPage(){
 
 
 /* =====================================================
-   เริ่มต้นเว็บไซต์
+   เริ่มต้น
 ===================================================== */
 
 showPage(0);
-
 
 </script>
 

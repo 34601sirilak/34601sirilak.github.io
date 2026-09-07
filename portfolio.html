@@ -8,928 +8,801 @@
 
 <style>
 
-/* =========================
-   RESET
-========================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Tahoma, sans-serif;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:"Tahoma",sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    background: linear-gradient(135deg, #FFF0F7, #EAF8FF);
-    color: #52738C;
-    min-height: 100vh;
+body{
+    background:linear-gradient(135deg,#FFF0F7,#EAF8FF);
+    color:#52738C;
+    min-height:100vh;
 }
-
 
 /* =========================
    เมนูด้านบน
 ========================= */
 
-.top-menu {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
+.top-menu{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#FFF8FC,#F0FBFF);
+    padding:12px 15px;
+    border-bottom:4px solid #F3C1D8;
+    box-shadow:0 5px 18px rgba(220,150,190,.18);
 
-    width: 100%;
-
-    background: linear-gradient(
-        135deg,
-        #FFF8FC,
-        #F0FBFF
-    );
-
-    border-bottom: 4px solid #F3C1D8;
-
-    box-shadow:
-        0 5px 18px rgba(220,150,190,0.18);
-
-    padding: 12px 15px;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-
-/* ชื่อ Portfolio */
-
-.menu-title {
-    text-align: center;
-    color: #D66C9B;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.menu-list{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
 }
 
+.menu-btn{
+    border:2px solid #F3C1D8;
+    background:#FFFFFF;
+    color:#D66C9B;
 
-/* ปุ่มเมนูแนวนอน */
+    padding:9px 15px;
+    border-radius:25px;
 
-.menu-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size:15px;
+    font-weight:bold;
 
-    gap: 8px;
-
-    flex-wrap: wrap;
+    cursor:pointer;
+    transition:.3s;
 }
 
-
-.menu-buttons button {
-    border: 2px solid #F3C1D8;
-
-    background: #FFFFFF;
-
-    color: #D66C9B;
-
-    padding: 9px 16px;
-
-    border-radius: 25px;
-
-    font-size: 14px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s ease;
-
-    white-space: nowrap;
+.menu-btn:hover{
+    transform:translateY(-3px);
+    background:linear-gradient(135deg,#F3A9C8,#9DDCF5);
+    color:white;
 }
 
-
-.menu-buttons button:hover {
-    transform: translateY(-3px);
-
-    background: linear-gradient(
-        135deg,
-        #F3A9C8,
-        #9DDCF5
-    );
-
-    color: white;
-
-    border-color: white;
+.menu-btn.active{
+    background:linear-gradient(135deg,#F3A9C8,#9DDCF5);
+    color:white;
+    box-shadow:0 4px 12px rgba(150,210,240,.3);
 }
-
-
-.menu-buttons button.active-menu {
-    background: linear-gradient(
-        135deg,
-        #F3A9C8,
-        #9DDCF5
-    );
-
-    color: white;
-
-    border-color: white;
-
-    box-shadow:
-        0 4px 12px rgba(150,210,240,0.3);
-}
-
 
 /* =========================
-   HEADER
+   Header
 ========================= */
 
-header {
-    background: linear-gradient(
-        135deg,
-        #F3A9C8,
-        #9DDCF5
-    );
+header{
+    background:linear-gradient(135deg,#F3A9C8,#9DDCF5);
+    color:white;
+    text-align:center;
 
-    color: white;
+    padding:35px 15px;
 
-    text-align: center;
+    border-bottom:5px solid #F8D5E5;
+    box-shadow:0 4px 12px rgba(220,150,190,.18);
 
-    padding: 35px 15px;
-
-    border-bottom: 5px solid #F8D5E5;
-
-    box-shadow:
-        0 4px 12px rgba(220,150,190,0.18);
-
-    position: relative;
-
-    overflow: hidden;
+    position:relative;
+    overflow:hidden;
 }
 
-
-header h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
+header h1{
+    font-size:28px;
+    margin-bottom:8px;
 }
 
-
-header p {
-    font-size: 16px;
+header p{
+    font-size:16px;
 }
-
 
 /* =========================
-   CONTAINER
+   Container
 ========================= */
 
-.container {
-    max-width: 1000px;
-
-    margin: 35px auto;
-
-    padding: 20px;
+.container{
+    max-width:1000px;
+    margin:35px auto;
+    padding:20px;
 }
-
 
 /* =========================
    ระบบหน้า
 ========================= */
 
-.page {
-    display: none;
+.page{
+    display:none;
 
-    background: linear-gradient(
+    background:linear-gradient(
         135deg,
-        rgba(255,255,255,0.98),
-        rgba(255,247,252,0.96),
-        rgba(240,250,255,0.96)
+        rgba(255,255,255,.98),
+        rgba(255,247,252,.96),
+        rgba(240,250,255,.96)
     );
 
-    border-radius: 30px;
+    border-radius:30px;
 
-    padding: 45px 35px;
+    padding:45px 35px;
 
-    min-height: 520px;
+    min-height:520px;
 
-    border: 4px solid #F8C7DC;
+    border:4px solid #F8C7DC;
 
     box-shadow:
-        0 8px 25px rgba(220,150,190,0.15),
+        0 8px 25px rgba(220,150,190,.15),
         0 0 0 4px #DDF4FF;
 
-    position: relative;
+    position:relative;
+    overflow:hidden;
 }
 
-
-.page.active {
-    display: block;
-
-    animation: pageAppear 0.5s ease;
+.page.active{
+    display:block;
+    animation:pageAppear .5s ease;
 }
 
+/* =========================
+   ตกแต่งหน้า
+========================= */
+
+.line-decoration{
+    position:absolute;
+    inset:14px;
+
+    border:2px dashed rgba(243,169,200,.45);
+
+    border-radius:24px;
+
+    pointer-events:none;
+}
+
+.sparkle-page{
+    position:absolute;
+    color:#F3A9C8;
+
+    font-size:28px;
+
+    opacity:.4;
+
+    pointer-events:none;
+
+    animation:sparklePage 2s ease-in-out infinite;
+}
+
+.s1{
+    top:55px;
+    right:70px;
+}
+
+.s2{
+    bottom:60px;
+    left:70px;
+    color:#9DDCF5;
+}
+
+.s3{
+    top:50%;
+    right:25px;
+}
 
 /* =========================
    หัวข้อ
 ========================= */
 
-.page h2 {
-    color: #D96C9B;
+.page h2{
+    color:#D96C9B;
 
-    text-align: center;
+    text-align:center;
 
-    font-size: 32px;
+    font-size:32px;
 
-    margin-bottom: 30px;
+    margin-bottom:30px;
 
-    text-shadow:
-        2px 2px 0 #DDF4FF;
+    position:relative;
+    z-index:5;
+
+    text-shadow:2px 2px 0 #DDF4FF;
 }
 
-
-.page h3 {
-    color: #D66C9B;
+.page h3{
+    color:#D66C9B;
+    margin:20px 0 10px;
 }
-
 
 .page p,
-.page li {
-    font-size: 18px;
-    line-height: 1.8;
+.page li{
+    font-size:18px;
+    line-height:1.8;
 }
 
-
-.page ul {
-    padding-left: 30px;
+.page ul{
+    padding-left:30px;
 }
-
 
 /* =========================
-   หน้า 1 คำนำ
+   คำนำ
 ========================= */
 
-#page1 p {
-    position: relative;
-    z-index: 2;
-
-    text-align: justify;
-
-    margin-bottom: 20px;
+.intro{
+    position:relative;
+    z-index:5;
 }
 
-
-.signature {
-    text-align: right !important;
-    margin-top: 30px;
+.intro p{
+    text-align:justify;
+    margin-bottom:20px;
 }
 
+.signature{
+    text-align:right !important;
+    margin-top:30px;
+}
 
 /* =========================
-   หน้า 2 ABOUT ME
+   Profile
 ========================= */
 
-.profile {
-    text-align: center;
+.profile{
+    text-align:center;
+    position:relative;
+    z-index:5;
 }
 
+.profile-img{
+    width:160px;
+    height:160px;
 
-.profile-img {
-    width: 160px;
-    height: 160px;
+    border-radius:50%;
 
-    border-radius: 50%;
+    object-fit:cover;
 
-    object-fit: cover;
+    border:4px dashed #F3A9C8;
 
-    border: 4px dashed #F3A9C8;
+    outline:5px solid #DDF4FF;
+    outline-offset:8px;
 
-    outline: 5px solid #DDF4FF;
-
-    outline-offset: 8px;
-
-    margin-bottom: 30px;
+    margin-bottom:25px;
 
     box-shadow:
         0 0 0 13px #FFF0F7,
-        0 0 20px #F3A9C8,
+        0 0 15px #F3A9C8,
         0 0 30px #9DDCF5;
 
-    transition: 0.4s ease;
+    animation:profileFloat 3s ease-in-out infinite;
+
+    transition:.4s;
 }
 
-
-.profile-img:hover {
-    transform: scale(1.08);
+.profile-img:hover{
+    transform:scale(1.06);
 }
 
+.profile-info{
+    background:linear-gradient(135deg,#FFF5FA,#F0FAFF);
 
-.profile-info {
-    background: linear-gradient(
-        135deg,
-        #FFF5FA,
-        #F0FAFF
-    );
+    border:3px solid #F8C7DC;
 
-    border: 3px solid #F8C7DC;
+    border-radius:25px;
 
-    border-radius: 25px;
+    padding:25px;
 
-    padding: 25px;
+    line-height:2;
 
-    line-height: 2;
+    text-align:left;
 
-    text-align: left;
+    max-width:650px;
 
-    max-width: 650px;
-
-    margin: auto;
+    margin:auto;
 
     box-shadow:
         0 0 0 3px #DDF4FF,
-        0 6px 18px rgba(220,150,190,0.14);
+        0 6px 18px rgba(220,150,190,.14);
 }
 
-
-.profile-info div {
-    font-size: 18px;
-
-    margin-bottom: 8px;
+.profile-info div{
+    font-size:18px;
+    margin-bottom:8px;
 }
-
 
 /* =========================
-   หน้า 3 ความสนใจ
+   กล่องข้อมูล
 ========================= */
 
-.info-box {
-    background: linear-gradient(
-        135deg,
-        #FFF5FA,
-        #F0FAFF
-    );
+.info-box{
+    background:linear-gradient(135deg,#FFF5FA,#F0FAFF);
 
-    border: 3px solid #F3C1D8;
+    border:3px solid #F3C1D8;
 
-    border-left: 7px solid #9DDCF5;
+    border-left:7px solid #9DDCF5;
 
-    border-radius: 25px;
+    border-radius:25px;
 
-    padding: 25px;
+    padding:25px;
 
-    margin: 25px auto;
+    margin:25px auto;
 
-    max-width: 750px;
+    max-width:750px;
 
-    text-align: left;
+    position:relative;
+    z-index:5;
 
     box-shadow:
         0 0 0 3px #DDF4FF,
-        0 8px 22px rgba(220,150,190,0.16);
+        0 8px 22px rgba(220,150,190,.16);
 }
 
-
-.info-box h3 {
-    text-align: center;
-
-    font-size: 25px;
-
-    margin-bottom: 18px;
+.info-box h3{
+    text-align:center;
+    color:#D66C9B;
+    font-size:25px;
+    margin-bottom:15px;
 }
 
-
-.info-box p {
-    margin: 15px 0;
+.info-box p{
+    margin:15px 0;
 }
-
-
-.info-box strong {
-    color: #D66C9B;
-}
-
 
 /* =========================
-   หน้า 4 มหาวิทยาลัย
+   มหาวิทยาลัย
 ========================= */
 
-.university {
-    text-align: center;
+.university{
+    text-align:center;
+    position:relative;
+    z-index:5;
 }
 
+.university-cover{
+    width:300px;
+    height:300px;
 
-.university-cover {
-    width: 300px;
-    height: 300px;
+    margin:25px auto 35px;
 
-    margin: 25px auto 35px;
+    background:white;
 
-    background: white;
+    border-radius:25px;
 
-    border-radius: 25px;
+    border:4px dashed #F3A9C8;
 
-    border: 4px dashed #F3A9C8;
+    outline:4px solid #DDF4FF;
+    outline-offset:5px;
 
-    outline: 4px solid #DDF4FF;
-
-    outline-offset: 5px;
-
-    padding: 7px;
+    padding:7px;
 
     box-shadow:
         0 0 0 10px #FFF0F7,
         0 0 15px #F3A9C8,
         0 0 28px #9DDCF5;
+
+    transition:.4s;
 }
 
+.university-cover img{
+    width:100%;
+    height:100%;
 
-.university-cover img {
-    width: 100%;
-    height: 100%;
+    object-fit:contain;
 
-    object-fit: contain;
-
-    border-radius: 18px;
+    border-radius:18px;
 }
 
-
-.university-name {
-    background: linear-gradient(
-        135deg,
-        #FFF0F7,
-        #EAF7FF
-    );
-
-    border-radius: 25px;
-
-    padding: 25px;
-
-    margin: 20px 0;
-
-    border: 3px solid #F3C1D8;
-
-    box-shadow:
-        0 0 0 3px #DDF4FF;
+.university-cover:hover{
+    transform:translateY(-7px);
 }
 
+.university-name{
+    background:linear-gradient(135deg,#FFF0F7,#EAF7FF);
 
-.university-name h3 {
-    font-size: 25px;
+    border-radius:25px;
 
-    margin-bottom: 10px;
+    padding:25px;
+
+    border:3px solid #F3C1D8;
+
+    margin-bottom:20px;
 }
 
+.university-name h3{
+    color:#D66C9B;
+    font-size:25px;
+}
 
 .reason-box,
-.university-goal {
-    background: linear-gradient(
-        135deg,
-        #FFF8FB,
-        #F0FAFF
-    );
+.university-goal{
+    background:linear-gradient(135deg,#FFF8FB,#F0FAFF);
 
-    border-radius: 20px;
+    border-radius:20px;
 
-    padding: 20px 25px;
+    padding:20px 25px;
 
-    margin-top: 20px;
+    margin-top:20px;
 
-    border: 3px solid #BFE7FA;
+    border:3px solid #BFE7FA;
 
-    text-align: left;
+    text-align:left;
 }
 
-
-.reason-box {
-    border-left: 7px solid #F3A9C8;
+.reason-box{
+    border-left:7px solid #F3A9C8;
 }
-
 
 .reason-box h3,
-.university-goal h3 {
-    margin-bottom: 10px;
+.university-goal h3{
+    color:#6BAFD2;
 }
 
-
 /* =========================
-   หน้า 5 ผลงาน
+   ผลงาน
 ========================= */
 
-.award-card {
-    background: linear-gradient(
-        135deg,
-        #FFF8FB,
-        #F0FAFF
-    );
+.award-card{
+    background:linear-gradient(135deg,#FFF8FB,#F0FAFF);
 
-    border: 3px solid #F3C1D8;
+    border:3px solid #F3C1D8;
 
-    border-radius: 25px;
+    border-radius:25px;
 
-    padding: 22px;
+    padding:22px;
 
-    margin-bottom: 25px;
+    margin-bottom:25px;
 
     box-shadow:
         0 0 0 3px #DDF4FF,
-        0 6px 20px rgba(220,150,190,0.16);
+        0 6px 20px rgba(220,150,190,.16);
+
+    position:relative;
+    z-index:5;
 }
 
-
-.award-card h3 {
-    font-size: 23px;
-
-    margin-bottom: 8px;
+.award-card h3{
+    color:#D66C9B;
+    font-size:23px;
+    margin-bottom:8px;
 }
 
-
-.award-subtitle {
-    color: #6C91A5;
-
-    font-size: 17px !important;
-
-    margin-bottom: 8px;
+.award-subtitle{
+    color:#6C91A5;
+    font-size:17px !important;
 }
 
-
-.award-result {
-    color: #D66C9B;
-
-    font-weight: bold;
-
-    font-size: 18px !important;
-
-    margin-bottom: 18px;
+.award-result{
+    color:#D66C9B;
+    font-weight:bold;
+    margin:10px 0;
 }
 
+.award-images{
+    display:grid;
 
-/* รูปผลงาน */
+    grid-template-columns:repeat(2,minmax(0,1fr));
 
-.award-images {
-    display: grid;
+    gap:18px;
 
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 18px;
-
-    margin: 25px 0 30px;
+    margin:25px 0 30px;
 }
 
+.award-images img{
+    width:100%;
+    height:320px;
 
-.award-images img {
-    width: 100%;
+    object-fit:contain;
 
-    height: 320px;
+    background:white;
 
-    object-fit: contain;
+    border-radius:20px;
 
-    background: white;
+    border:4px dashed #F3A9C8;
 
-    border-radius: 20px;
+    outline:4px solid #DDF4FF;
+    outline-offset:5px;
 
-    border: 4px dashed #F3A9C8;
+    padding:7px;
 
-    outline: 4px solid #DDF4FF;
+    box-shadow:
+        0 0 0 10px #FFF0F7,
+        0 0 15px #F3A9C8,
+        0 0 28px #9DDCF5;
 
-    outline-offset: 5px;
-
-    padding: 7px;
-
-    transition: 0.3s ease;
+    transition:.4s;
 }
 
-
-.award-images img:hover {
-    transform: translateY(-8px) scale(1.02);
+.award-images img:hover{
+    transform:translateY(-8px) scale(1.02);
 }
 
-
-.award-images.single-image {
-    display: flex;
-
-    justify-content: center;
+.award-images.single-image{
+    display:flex;
+    justify-content:center;
 }
 
-
-.award-images.single-image img {
-    width: 100%;
-
-    max-width: 700px;
-
-    height: auto;
+.award-images.single-image img{
+    width:100%;
+    max-width:700px;
+    height:auto;
 }
 
+.award-description{
+    background:linear-gradient(135deg,#FFFFFF,#FFF5FA);
 
-/* รายละเอียด */
+    border-left:6px solid #9DDCF4;
 
-.award-description {
-    background: linear-gradient(
-        135deg,
-        #FFFFFF,
-        #FFF5FA
-    );
+    border-top:2px solid #F8C7DC;
+    border-right:2px solid #F8C7DC;
+    border-bottom:2px solid #F8C7DC;
 
-    border-left: 6px solid #9DDCF4;
+    border-radius:12px;
 
-    border-top: 2px solid #F8C7DC;
-
-    border-right: 2px solid #F8C7DC;
-
-    border-bottom: 2px solid #F8C7DC;
-
-    border-radius: 12px;
-
-    padding: 15px 18px;
+    padding:15px 18px;
 }
 
-
-.award-description h4 {
-    color: #D66C9B;
-
-    font-size: 19px;
-
-    margin-bottom: 8px;
+.award-description h4{
+    color:#D66C9B;
+    font-size:19px;
+    margin-bottom:8px;
 }
 
-
-.award-description p {
-    font-size: 16px !important;
-
-    line-height: 1.7;
-
-    margin-bottom: 10px;
+.award-description p{
+    font-size:16px !important;
+    line-height:1.7;
 }
-
 
 /* =========================
    ปุ่มนำทาง
 ========================= */
 
-.page-navigation {
-    display: flex;
+.page-navigation{
+    display:flex;
 
-    justify-content: center;
+    justify-content:center;
+    align-items:center;
 
-    align-items: center;
+    gap:15px;
 
-    gap: 12px;
+    margin-top:40px;
 
-    margin-top: 40px;
+    position:relative;
+    z-index:20;
 
-    flex-wrap: wrap;
+    flex-wrap:wrap;
 }
 
+.next-btn,
+.prev-btn,
+.home-btn{
+    border:none;
 
-.page-navigation button,
-.back-home a {
-    display: inline-block;
+    cursor:pointer;
 
-    text-decoration: none;
+    color:white;
 
-    border: none;
+    background:linear-gradient(135deg,#F3A9C8,#9DDCF5);
 
-    cursor: pointer;
+    padding:13px 28px;
 
-    color: white;
+    border-radius:30px;
 
-    background: linear-gradient(
-        135deg,
-        #F3A9C8,
-        #9DDCF5
-    );
+    font-size:17px;
 
-    padding: 13px 25px;
+    font-weight:bold;
 
-    border-radius: 30px;
-
-    font-size: 16px;
-
-    font-weight: bold;
+    border:3px solid white;
 
     box-shadow:
         0 0 0 3px #F8C7DC,
-        0 6px 18px rgba(150,210,240,0.25);
+        0 6px 18px rgba(150,210,240,.25);
 
-    transition: 0.3s ease;
+    transition:.3s;
 }
 
+.next-btn:hover,
+.prev-btn:hover,
+.home-btn:hover{
+    transform:translateY(-5px);
 
-.page-navigation button:hover,
-.back-home a:hover {
-    transform: translateY(-4px);
-
-    background: linear-gradient(
-        135deg,
-        #D96C9B,
-        #6BAFD2
-    );
+    background:linear-gradient(135deg,#D96C9B,#6BAFD2);
 }
 
-
-.page-number {
-    color: #D66C9B;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    width: 100%;
-
-    text-align: center;
+.page-number{
+    color:#D66C9B;
+    font-size:16px;
+    font-weight:bold;
 }
-
 
 /* =========================
    หน้าสุดท้าย
 ========================= */
 
-.thank-you {
-    text-align: center;
-
-    padding: 70px 20px;
+.thank-you{
+    text-align:center;
+    position:relative;
+    z-index:5;
 }
 
-
-.thank-you h2 {
-    font-size: 60px;
-
-    margin-bottom: 25px;
+.thank-you h2{
+    font-size:60px;
+    margin-top:80px;
 }
 
-
-.thank-you p {
-    font-size: 21px;
-
-    margin: 12px 0;
+.thank-you p{
+    font-size:21px;
+    margin:15px 0;
 }
 
-
-.back-home {
-    margin-top: 35px;
+.back-home{
+    margin-top:30px;
 }
-
 
 /* =========================
    Animation
 ========================= */
 
-@keyframes pageAppear {
+@keyframes pageAppear{
 
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(20px)
-            scale(0.98);
+    from{
+        opacity:0;
+        transform:translateY(20px) scale(.98);
     }
 
-    to {
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
     }
 }
 
+@keyframes profileFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+@keyframes sparklePage{
+
+    0%,100%{
+        opacity:.2;
+        transform:scale(.8) rotate(0);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.3) rotate(20deg);
+    }
+}
 
 /* =========================
    มือถือ
 ========================= */
 
-@media (max-width: 600px) {
+@media(max-width:600px){
 
-    .menu-title {
-        font-size: 15px;
+    .top-menu{
+        position:sticky;
+        top:0;
+        padding:8px;
     }
 
-
-    .menu-buttons {
-        gap: 5px;
+    .menu-list{
+        gap:5px;
     }
 
-
-    .menu-buttons button {
-        font-size: 12px;
-
-        padding: 8px 10px;
+    .menu-btn{
+        font-size:12px;
+        padding:7px 9px;
     }
 
-
-    header {
-        padding: 30px 15px;
+    header{
+        padding:28px 12px;
     }
 
-
-    header h1 {
-        font-size: 22px;
+    header h1{
+        font-size:22px;
     }
 
-
-    header p {
-        font-size: 14px;
+    header p{
+        font-size:14px;
     }
 
-
-    .container {
-        margin: 20px auto;
-
-        padding: 10px;
+    .container{
+        margin:20px auto;
+        padding:10px;
     }
 
-
-    .page {
-        padding: 30px 18px;
-
-        border-radius: 25px;
+    .page{
+        padding:30px 18px;
+        border-radius:25px;
     }
 
-
-    .page h2 {
-        font-size: 26px;
+    .page h2{
+        font-size:25px;
+        padding:0 10px;
     }
-
 
     .page p,
-    .page li {
-        font-size: 16px;
+    .page li{
+        font-size:16px;
     }
 
-
-    .profile-img {
-        width: 140px;
-        height: 140px;
+    .profile-img{
+        width:140px;
+        height:140px;
     }
 
-
-    .profile-info {
-        padding: 18px;
+    .profile-info{
+        padding:18px;
     }
 
-
-    .profile-info div {
-        font-size: 16px;
+    .profile-info div{
+        font-size:16px;
     }
 
-
-    .info-box {
-        padding: 20px 18px;
+    .info-box{
+        padding:18px;
     }
 
-
-    .info-box h3 {
-        font-size: 22px;
+    .info-box h3{
+        font-size:21px;
     }
 
-
-    .university-cover {
-        width: 240px;
-        height: 240px;
+    .university-cover{
+        width:240px;
+        height:240px;
     }
 
-
-    .award-card {
-        padding: 16px;
+    .award-card{
+        padding:16px;
     }
 
-
-    .award-card h3 {
-        font-size: 19px;
+    .award-card h3{
+        font-size:19px;
     }
 
-
-    .award-images {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 8px;
+    .award-images{
+        grid-template-columns:1fr 1fr;
+        gap:8px;
     }
 
-
-    .award-images img {
-        height: 200px;
-
-        border-width: 3px;
-
-        outline-width: 2px;
-
-        outline-offset: 3px;
-
-        padding: 5px;
+    .award-images img{
+        height:190px;
+        padding:5px;
     }
 
-
-    .award-description p {
-        font-size: 15px !important;
+    .award-description p{
+        font-size:15px !important;
     }
 
-
-    .thank-you h2 {
-        font-size: 45px;
+    .thank-you h2{
+        font-size:45px;
     }
 
+    .thank-you p{
+        font-size:18px;
+    }
 
-    .thank-you p {
-        font-size: 18px;
+    .next-btn,
+    .prev-btn,
+    .home-btn{
+        font-size:14px;
+        padding:10px 18px;
     }
 
 }
 
 </style>
 </head>
-
 
 <body>
 
@@ -940,45 +813,25 @@ header p {
 
 <nav class="top-menu">
 
-    <div class="menu-title">
-        ✨ Portfolio ของฉัน ✨
-    </div>
+    <div class="menu-list">
 
-
-    <div class="menu-buttons">
-
-        <button
-            onclick="goToPage(0)"
-            id="menu0"
-            class="active-menu">
+        <button class="menu-btn active" onclick="showPage(0)">
             📖 คำนำ
         </button>
 
-
-        <button
-            onclick="goToPage(1)"
-            id="menu1">
+        <button class="menu-btn" onclick="showPage(1)">
             🦋 About Me
         </button>
 
-
-        <button
-            onclick="goToPage(2)"
-            id="menu2">
+        <button class="menu-btn" onclick="showPage(2)">
             ⭐ ความสนใจ
         </button>
 
-
-        <button
-            onclick="goToPage(3)"
-            id="menu3">
+        <button class="menu-btn" onclick="showPage(3)">
             🎓 มหาวิทยาลัย
         </button>
 
-
-        <button
-            onclick="goToPage(4)"
-            id="menu4">
+        <button class="menu-btn" onclick="showPage(4)">
             🏆 ผลงาน
         </button>
 
@@ -988,7 +841,7 @@ header p {
 
 
 <!-- =====================================================
-     HEADER
+     Header
 ===================================================== -->
 
 <header>
@@ -1008,53 +861,50 @@ header p {
 
 
 <!-- =====================================================
-     หน้า 1 คำนำ
+     หน้า 1 : คำนำ
 ===================================================== -->
 
-<section
-    class="page active"
-    id="page1">
+<section class="page active" id="page1">
 
-    <h2>
-        📖 คำนำ 📖
-    </h2>
+    <div class="line-decoration"></div>
 
+    <div class="sparkle-page s1">✦</div>
+    <div class="sparkle-page s2">✧</div>
+    <div class="sparkle-page s3">✦</div>
 
-    <p>
+    <div class="intro">
 
-        แฟ้มสะสมผลงาน (Portfolio) ฉบับนี้จัดทำขึ้นเพื่อรวบรวม
-        ข้อมูลประวัติส่วนตัว ประวัติการศึกษา ผลงาน กิจกรรม
-        และเกียรติบัตรต่าง ๆ ของข้าพเจ้า
-        เพื่อใช้ประกอบการสมัครเข้าศึกษาต่อในคณะศึกษาศาสตร์
-        สาขาวิชาวิทยาศาสตร์ทั่วไป
-        และเพื่อแสดงถึงความรู้ ความสามารถ
-        ความสนใจ และความตั้งใจในการศึกษาต่อ
+        <h2>📖 คำนำ 📖</h2>
 
-    </p>
+        <p>
+            แฟ้มสะสมผลงาน (Portfolio) ฉบับนี้จัดทำขึ้นเพื่อรวบรวม
+            ข้อมูลประวัติส่วนตัว ประวัติการศึกษา ผลงาน กิจกรรม
+            และเกียรติบัตรต่าง ๆ ของข้าพเจ้า
+            เพื่อใช้ประกอบการสมัครเข้าศึกษาต่อในคณะศึกษาศาสตร์
+            สาขาวิชาวิทยาศาสตร์ทั่วไป
+            และเพื่อแสดงถึงความรู้ ความสามารถ
+            ความสนใจ และความตั้งใจในการศึกษาต่อ
+        </p>
 
+        <p>
+            ขอขอบคุณทุกท่านที่ให้ความสนใจและรับชม
+            แฟ้มสะสมผลงานฉบับนี้
+            หวังเป็นอย่างยิ่งว่าแฟ้มสะสมผลงานฉบับนี้
+            จะช่วยให้คณะกรรมการได้รู้จักตัวตน
+            ความสามารถ และความมุ่งมั่นของข้าพเจ้า
+            มากยิ่งขึ้น
+        </p>
 
-    <p>
+        <p class="signature">
+            นางสาว สิริลักษณ์ ผาดผ่อง
+        </p>
 
-        ขอขอบคุณทุกท่านที่ให้ความสนใจและรับชม
-        แฟ้มสะสมผลงานฉบับนี้
-        หวังเป็นอย่างยิ่งว่าแฟ้มสะสมผลงานฉบับนี้
-        จะช่วยให้คณะกรรมการได้รู้จักตัวตน
-        ความสามารถ และความมุ่งมั่นของข้าพเจ้า
-        มากยิ่งขึ้น
-
-    </p>
-
-
-    <p class="signature">
-
-        นางสาว สิริลักษณ์ ผาดผ่อง
-
-    </p>
+    </div>
 
 
     <div class="page-navigation">
 
-        <button onclick="goToPage(1)">
+        <button class="next-btn" onclick="nextPage()">
             ถัดไป ➜
         </button>
 
@@ -1068,20 +918,20 @@ header p {
 
 
 <!-- =====================================================
-     หน้า 2 ABOUT ME
+     หน้า 2 : About Me
 ===================================================== -->
 
-<section
-    class="page"
-    id="page2">
+<section class="page" id="page2">
 
-    <h2>
-        🦋 About Me 🦋
-    </h2>
+    <div class="line-decoration"></div>
 
+    <div class="sparkle-page s1">✦</div>
+    <div class="sparkle-page s2">✧</div>
+    <div class="sparkle-page s3">✦</div>
+
+    <h2>🦋 About Me 🦋</h2>
 
     <div class="profile">
-
 
         <img
             src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
@@ -1089,36 +939,33 @@ header p {
             class="profile-img"
         >
 
-
         <div class="profile-info">
 
             <div>
-                <strong>ชื่อ-สกุล :</strong>
+                ชื่อ-สกุล :
                 นางสาวสิริลักษณ์ ผาดผ่อง
             </div>
 
             <div>
-                <strong>ชื่อเล่น :</strong>
-                ปอ
+                ชื่อเล่น : ปอ
             </div>
 
             <div>
-                <strong>วัน/เดือน/ปีเกิด :</strong>
+                วัน/เดือน/ปีเกิด :
                 18 ตุลาคม พ.ศ.2551
             </div>
 
             <div>
-                <strong>อายุ :</strong>
-                17 ปี
+                อายุ : 17 ปี
             </div>
 
             <div>
-                <strong>แผนการเรียน :</strong>
+                แผนการเรียน :
                 เตรียมวิศวกรรมศาสตร์
             </div>
 
             <div>
-                📩 <strong>ช่องทางการติดต่อ</strong>
+                📩 ช่องทางการติดต่อ 📩
             </div>
 
             <div>
@@ -1143,11 +990,11 @@ header p {
 
     <div class="page-navigation">
 
-        <button onclick="goToPage(0)">
+        <button class="prev-btn" onclick="prevPage()">
             ← ย้อนกลับ
         </button>
 
-        <button onclick="goToPage(2)">
+        <button class="next-btn" onclick="nextPage()">
             ถัดไป ➜
         </button>
 
@@ -1161,12 +1008,16 @@ header p {
 
 
 <!-- =====================================================
-     หน้า 3 ความสนใจและจุดเด่น
+     หน้า 3 : ความสนใจ + จุดเด่น
 ===================================================== -->
 
-<section
-    class="page"
-    id="page3">
+<section class="page" id="page3">
+
+    <div class="line-decoration"></div>
+
+    <div class="sparkle-page s1">✦</div>
+    <div class="sparkle-page s2">✧</div>
+    <div class="sparkle-page s3">✦</div>
 
     <h2>
         ⭐ ความสนใจและจุดเด่น ⭐
@@ -1181,12 +1032,9 @@ header p {
             🔍 ความสนใจ 🔎
         </h3>
 
-
         <p>
 
-            <strong>
-                1. วิทยาศาสตร์
-            </strong>
+            <strong>1. วิทยาศาสตร์</strong>
 
             <br>
 
@@ -1197,12 +1045,9 @@ header p {
 
         </p>
 
-
         <p>
 
-            <strong>
-                2. การเรียนรู้
-            </strong>
+            <strong>2. การเรียนรู้</strong>
 
             <br>
 
@@ -1224,27 +1069,20 @@ header p {
             ⭐ จุดเด่นของฉัน ⭐
         </h3>
 
-
         <p>
 
-            <strong>
-                1. มีความรับผิดชอบต่องาน
-            </strong>
+            <strong>1. มีความรับผิดชอบต่องาน</strong>
 
             <br>
 
             ตั้งใจทำงานที่ได้รับมอบหมาย
-            ให้สำเร็จ
-            และส่งงานตรงตามเวลาที่กำหนด
+            ให้สำเร็จและส่งงานตรงตามเวลาที่กำหนด
 
         </p>
 
-
         <p>
 
-            <strong>
-                2. มีความอดทนสูง
-            </strong>
+            <strong>2. มีความอดทนสูง</strong>
 
             <br>
 
@@ -1254,12 +1092,9 @@ header p {
 
         </p>
 
-
         <p>
 
-            <strong>
-                3. ชอบช่วยเหลือผู้อื่น
-            </strong>
+            <strong>3. ชอบช่วยเหลือผู้อื่น</strong>
 
             <br>
 
@@ -1275,11 +1110,11 @@ header p {
 
     <div class="page-navigation">
 
-        <button onclick="goToPage(1)">
+        <button class="prev-btn" onclick="prevPage()">
             ← ย้อนกลับ
         </button>
 
-        <button onclick="goToPage(3)">
+        <button class="next-btn" onclick="nextPage()">
             ถัดไป ➜
         </button>
 
@@ -1293,12 +1128,16 @@ header p {
 
 
 <!-- =====================================================
-     หน้า 4 มหาวิทยาลัย
+     หน้า 4 : มหาวิทยาลัย
 ===================================================== -->
 
-<section
-    class="page"
-    id="page4">
+<section class="page" id="page4">
+
+    <div class="line-decoration"></div>
+
+    <div class="sparkle-page s1">✦</div>
+    <div class="sparkle-page s2">✧</div>
+    <div class="sparkle-page s3">✦</div>
 
     <h2>
         🎓 มหาวิทยาลัยที่ฉันสนใจ 🎓
@@ -1306,7 +1145,6 @@ header p {
 
 
     <div class="university">
-
 
         <div class="university-cover">
 
@@ -1325,9 +1163,7 @@ header p {
             </h3>
 
             <p>
-                <strong>
-                    คณะศึกษาศาสตร์
-                </strong>
+                <strong>คณะศึกษาศาสตร์</strong>
             </p>
 
             <p>
@@ -1340,9 +1176,8 @@ header p {
         <div class="reason-box">
 
             <h3>
-                เหตุผลที่ฉันสนใจ
+                💗 เหตุผลที่ฉันสนใจ
             </h3>
-
 
             <p>
 
@@ -1356,7 +1191,6 @@ header p {
 
             </p>
 
-
             <p style="margin-top:15px;">
 
                 นอกจากนี้ ฉันยังชอบการวิเคราะห์
@@ -1368,7 +1202,6 @@ header p {
 
             </p>
 
-
             <p style="margin-top:15px;">
 
                 ฉันจึงมีความตั้งใจที่จะศึกษาต่อใน
@@ -1376,12 +1209,10 @@ header p {
                     คณะศึกษาศาสตร์
                     สาขาวิชาวิทยาศาสตร์ทั่วไป
                 </strong>
-
                 เพื่อพัฒนาความรู้และทักษะ
                 ด้านวิทยาศาสตร์
                 รวมถึงเรียนรู้การถ่ายทอดความรู้
                 ให้ผู้อื่นเข้าใจได้ง่าย
-                และนำความรู้ไปต่อยอดในอนาคต
 
             </p>
 
@@ -1391,9 +1222,8 @@ header p {
         <div class="university-goal">
 
             <h3>
-                🎓 เป้าหมายของฉัน 🎓
+                🎯 เป้าหมายของฉัน
             </h3>
-
 
             <p>
 
@@ -1415,11 +1245,11 @@ header p {
 
     <div class="page-navigation">
 
-        <button onclick="goToPage(2)">
+        <button class="prev-btn" onclick="prevPage()">
             ← ย้อนกลับ
         </button>
 
-        <button onclick="goToPage(4)">
+        <button class="next-btn" onclick="nextPage()">
             ถัดไป ➜
         </button>
 
@@ -1433,12 +1263,16 @@ header p {
 
 
 <!-- =====================================================
-     หน้า 5 ผลงาน
+     หน้า 5 : ผลงาน
 ===================================================== -->
 
-<section
-    class="page"
-    id="page5">
+<section class="page" id="page5">
+
+    <div class="line-decoration"></div>
+
+    <div class="sparkle-page s1">✦</div>
+    <div class="sparkle-page s2">✧</div>
+    <div class="sparkle-page s3">✦</div>
 
     <h2>
         🏆 ผลงานและรางวัล 🏆
@@ -1454,13 +1288,11 @@ header p {
         </h3>
 
         <p>
-
             ผลงานที่สะท้อนถึงความรู้
             ความสามารถ
             การคิดวิเคราะห์
             ความคิดสร้างสรรค์
             และการนำความรู้ไปประยุกต์ใช้
-
         </p>
 
     </div>
@@ -1487,21 +1319,19 @@ header p {
             ⭐ ได้รับรางวัลอันดับที่ 77 ⭐
         </p>
 
-
         <div class="award-images">
 
             <img
                 src="IMG_3751.jpeg"
-                alt="เกียรติบัตรการแข่งขัน"
+                alt="เกียรติบัตรการแข่งขันคำคม"
             >
 
             <img
                 src="IMG_3750.jpeg"
-                alt="ภาพการแข่งขัน"
+                alt="ภาพการแข่งขันคำคม"
             >
 
         </div>
-
 
         <div class="award-description">
 
@@ -1517,8 +1347,6 @@ header p {
             <p>
                 การแข่งขันนี้สะท้อนทักษะการสื่อสาร
                 และการคิดอย่างเป็นระบบ
-                ซึ่งสามารถนำไปต่อยอด
-                ในการศึกษาต่อด้านการศึกษาได้
             </p>
 
         </div>
@@ -1547,12 +1375,11 @@ header p {
             🥈 ได้รับรางวัลรองชนะเลิศ อันดับ 1 🥈
         </p>
 
-
         <div class="award-images">
 
             <img
                 src="IMG_6578.jpeg"
-                alt="เกียรติบัตร"
+                alt="เกียรติบัตรการแข่งขันศึกวัดเซียน"
             >
 
             <img
@@ -1561,7 +1388,6 @@ header p {
             >
 
         </div>
-
 
         <div class="award-description">
 
@@ -1601,21 +1427,19 @@ header p {
             ⭐ ได้เข้าร่วมการแข่งขัน ⭐
         </p>
 
-
         <div class="award-images">
 
             <img
                 src="IMG_6599.jpeg"
-                alt="เกียรติบัตร"
+                alt="เกียรติบัตรการแข่งขันตอบปัญหาวิทยาศาสตร์"
             >
 
             <img
                 src="IMG_6600.jpeg"
-                alt="ภาพการแข่งขัน"
+                alt="ภาพการแข่งขันตอบปัญหาวิทยาศาสตร์"
             >
 
         </div>
-
 
         <div class="award-description">
 
@@ -1644,11 +1468,9 @@ header p {
         </h3>
 
         <p>
-
             ผลงานที่สะท้อนถึงความมีระเบียบวินัย
             ความรับผิดชอบ
             และการปฏิบัติตนอย่างเหมาะสม
-
         </p>
 
     </div>
@@ -1670,7 +1492,6 @@ header p {
             ⭐ ได้รับรางวัล “นักเรียนประพฤติดี” ⭐
         </p>
 
-
         <div class="award-images">
 
             <img
@@ -1680,11 +1501,10 @@ header p {
 
             <img
                 src="IMG_3586.jpeg"
-                alt="ภาพกิจกรรม"
+                alt="ภาพนักเรียนประพฤติดี"
             >
 
         </div>
-
 
         <div class="award-description">
 
@@ -1693,7 +1513,9 @@ header p {
             </h4>
 
             <p>
-                ความรับผิดชอบ วินัย คุณธรรม
+                ความรับผิดชอบ
+                วินัย
+                คุณธรรม
                 และการปฏิบัติตนอย่างเหมาะสม
             </p>
 
@@ -1711,11 +1533,9 @@ header p {
         </h3>
 
         <p>
-
             กิจกรรมที่สะท้อนถึงการมีส่วนร่วม
             การช่วยเหลือผู้อื่น
             และการทำงานเพื่อส่วนรวม
-
         </p>
 
     </div>
@@ -1730,23 +1550,18 @@ header p {
             จัดกิจกรรมการแข่งขันทักษะวิชาการ 🤝
         </h3>
 
-
         <p class="award-subtitle">
-            📚 กิจกรรมเปิดบ้านวิชาการ
-            “BBU JOB FAIR” 📚
+            📚 กิจกรรมเปิดบ้านวิชาการ “BBU JOB FAIR” 📚
         </p>
-
 
         <p class="award-subtitle">
             วันที่ 29 มกราคม พ.ศ. 2569
         </p>
 
-
         <p class="award-result">
             ⭐ ได้ปฏิบัติหน้าที่คณะกรรมการ
             จัดกิจกรรมการแข่งขันทักษะวิชาการ ⭐
         </p>
-
 
         <div class="award-images single-image">
 
@@ -1757,30 +1572,20 @@ header p {
 
         </div>
 
-
         <div class="award-description">
 
             <h4>
                 ✨ ทักษะที่ได้รับ ✨
             </h4>
 
-
             <p>
-
                 • พัฒนาทักษะการทำงานร่วมกับผู้อื่น<br>
-
                 • ฝึกความรับผิดชอบต่อหน้าที่<br>
-
                 • เรียนรู้การช่วยเหลือและการทำงานเพื่อส่วนรวม<br>
-
                 • พัฒนาทักษะการสื่อสารและการประสานงาน<br>
-
                 • ฝึกการวางแผนและการจัดกิจกรรม<br>
-
                 • เรียนรู้การแก้ปัญหาเฉพาะหน้า<br>
-
                 • พัฒนาความมีน้ำใจและจิตสาธารณะ
-
             </p>
 
         </div>
@@ -1788,28 +1593,21 @@ header p {
     </div>
 
 
-    <!-- ปุ่ม -->
+    <!-- ปุ่มนำทางหน้าสุดท้าย -->
 
     <div class="page-navigation">
 
-        <button onclick="goToPage(3)">
+        <button class="prev-btn" onclick="prevPage()">
             ← ย้อนกลับ
+        </button>
+
+        <button class="home-btn" onclick="showPage(0)">
+            🏠 กลับหน้าหลัก
         </button>
 
         <span class="page-number">
             หน้า 5 / 5
         </span>
-
-    </div>
-
-
-    <!-- กลับหน้าหลัก -->
-
-    <div class="back-home">
-
-        <a href="index.html">
-            🏠 กลับไปยังหน้าหลัก
-        </a>
 
     </div>
 
@@ -1820,58 +1618,34 @@ header p {
 
 
 <!-- =====================================================
-     JAVASCRIPT
+     JavaScript
 ===================================================== -->
 
 <script>
 
-/* หน้าปัจจุบัน */
-
 let currentPage = 0;
 
+const pages = document.querySelectorAll(".page");
 
-/* รายการหน้า */
-
-const pages =
-    document.querySelectorAll(".page");
-
-
-/* ปุ่มเมนู */
-
-const menuButtons =
-    document.querySelectorAll(".menu-buttons button");
+const menuButtons = document.querySelectorAll(".menu-btn");
 
 
 /* =========================
-   เปลี่ยนหน้า
+   แสดงหน้า
 ========================= */
 
-function goToPage(index) {
+function showPage(index){
 
-    /* ตรวจสอบหน้า */
-
-    if (
-        index < 0 ||
-        index >= pages.length
-    ) {
+    if(index < 0 || index >= pages.length){
         return;
     }
 
 
     /* ซ่อนทุกหน้า */
 
-    pages.forEach(function(page) {
+    pages.forEach(function(page){
 
         page.classList.remove("active");
-
-    });
-
-
-    /* เอาสี active ออกจากเมนูทั้งหมด */
-
-    menuButtons.forEach(function(button) {
-
-        button.classList.remove("active-menu");
 
     });
 
@@ -1881,66 +1655,73 @@ function goToPage(index) {
     pages[index].classList.add("active");
 
 
-    /* ทำเมนูหน้าปัจจุบันให้ active */
+    /* เปลี่ยนปุ่มเมนู */
 
-    menuButtons[index]
-        .classList.add("active-menu");
+    menuButtons.forEach(function(button){
+
+        button.classList.remove("active");
+
+    });
 
 
-    /* จำหน้าปัจจุบัน */
+    menuButtons[index].classList.add("active");
+
+
+    /* เปลี่ยนหน้าปัจจุบัน */
 
     currentPage = index;
 
 
-    /* เลื่อนกลับด้านบนของเนื้อหา */
+    /* เลื่อนขึ้นด้านบน */
 
     window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+
+        top:0,
+
+        behavior:"smooth"
+
     });
 
 }
 
 
 /* =========================
-   ปุ่มคีย์บอร์ด
+   หน้าถัดไป
 ========================= */
 
-document.addEventListener(
-    "keydown",
-    function(event) {
+function nextPage(){
 
-        if (
-            event.key === "ArrowRight" &&
-            currentPage < pages.length - 1
-        ) {
+    if(currentPage < pages.length - 1){
 
-            goToPage(currentPage + 1);
-
-        }
-
-
-        if (
-            event.key === "ArrowLeft" &&
-            currentPage > 0
-        ) {
-
-            goToPage(currentPage - 1);
-
-        }
+        showPage(currentPage + 1);
 
     }
-);
+
+}
+
+
+/* =========================
+   หน้าย้อนกลับ
+========================= */
+
+function prevPage(){
+
+    if(currentPage > 0){
+
+        showPage(currentPage - 1);
+
+    }
+
+}
 
 
 /* =========================
    เริ่มต้นหน้า 1
 ========================= */
 
-goToPage(0);
+showPage(0);
 
 </script>
-
 
 </body>
 </html>

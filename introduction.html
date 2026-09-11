@@ -30,7 +30,6 @@
             padding-top: 75px;
         }
 
-
         /* =====================
            แถบเมนูด้านบน
         ===================== */
@@ -43,18 +42,17 @@
 
             width: 100%;
 
-            padding: 18px 10px;
+            padding: 16px 10px;
 
             text-align: center;
 
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
 
             box-shadow:
                 0 3px 15px rgba(90, 70, 150, 0.15);
 
             z-index: 1000;
         }
-
 
         nav a {
             display: inline-block;
@@ -74,7 +72,6 @@
             transition: 0.3s;
         }
 
-
         nav a:hover {
             color: white;
 
@@ -83,8 +80,9 @@
                 #7951b3,
                 #5799d5
             );
-        }
 
+            transform: translateY(-2px);
+        }
 
         /* =====================
            เนื้อหา
@@ -107,15 +105,15 @@
                 0 10px 30px rgba(90, 70, 150, 0.18);
         }
 
-
         h1 {
             text-align: center;
 
             color: #704ca5;
 
             margin-bottom: 30px;
-        }
 
+            font-size: 36px;
+        }
 
         p {
             font-size: 18px;
@@ -126,7 +124,6 @@
 
             margin-bottom: 20px;
         }
-
 
         /* =====================
            ปุ่มด้านล่าง
@@ -142,13 +139,14 @@
             gap: 15px;
         }
 
-
         .btn {
             display: inline-block;
 
             text-decoration: none;
 
             color: white;
+
+            font-weight: bold;
 
             padding: 12px 25px;
 
@@ -163,7 +161,6 @@
             transition: 0.3s;
         }
 
-
         .btn:hover {
             transform: translateY(-3px);
 
@@ -171,15 +168,14 @@
                 0 7px 15px rgba(90, 70, 150, 0.2);
         }
 
-
         /* =====================
            มือถือ
         ===================== */
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
 
             body {
-                padding-top: 120px;
+                padding-top: 125px;
             }
 
             nav {
@@ -195,6 +191,8 @@
             }
 
             .box {
+                width: 92%;
+
                 padding: 30px 20px;
             }
 
@@ -204,6 +202,8 @@
 
             p {
                 font-size: 16px;
+
+                line-height: 1.8;
             }
 
             .buttons {
@@ -213,14 +213,13 @@
             .btn {
                 text-align: center;
             }
+
         }
 
     </style>
 </head>
 
-
 <body>
-
 
     <!-- =====================
          แถบเมนูด้านบน
@@ -229,7 +228,7 @@
     <nav>
 
         <a href="index.html">
-            หน้าแรก
+            หน้าหลัก
         </a>
 
         <a href="introduction.html">
@@ -241,18 +240,16 @@
         </a>
 
         <a href="university.html">
-            มหาวิทยาลัย
+            มหาลัย
         </a>
 
         <a href="portfolio.html">
-            ผลงาน
+            ผลงาน/กิจกรรม
         </a>
 
         <a href="skills.html">
             ทักษะ
         </a>
-
-        <!-- ลบเมนู "ติดต่อ" ออกแล้ว -->
 
     </nav>
 
@@ -261,12 +258,11 @@
          เนื้อหาคำนำ
     ===================== -->
 
-    <div class="box">
+    <main class="box">
 
         <h1>
             💜 คำนำ 💙
         </h1>
-
 
         <p>
             แฟ้มสะสมผลงานเล่มนี้จัดทำขึ้นเพื่อรวบรวมประวัติ
@@ -274,7 +270,6 @@
             โดยข้าพเจ้ามีความสนใจด้านวิทยาศาสตร์ ชื่นชอบการทดลอง
             และสนุกกับการคิดวิเคราะห์เพื่อค้นหาคำตอบ
         </p>
-
 
         <p>
             ข้าพเจ้ามีความสนใจศึกษาต่อในคณะศึกษาศาสตร์
@@ -294,9 +289,8 @@
                 href="index.html"
                 class="btn"
             >
-                ← ย้อนกลับ
+                ← หน้าหลัก
             </a>
-
 
             <a
                 href="about.html"
@@ -307,8 +301,7 @@
 
         </div>
 
-    </div>
-
+    </main>
 
 </body>
 </html>

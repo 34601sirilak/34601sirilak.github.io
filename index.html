@@ -7,6 +7,7 @@
     <title>Portfolio | สิริลักษณ์ ผาดผ่อง</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -36,9 +37,9 @@
 
         nav {
             width: 100%;
-            padding: 18px 8%;
+            padding: 16px 10px;
 
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 255, 255, 0.92);
 
             box-shadow:
                 0 4px 15px rgba(95, 70, 150, 0.12);
@@ -46,11 +47,34 @@
             text-align: center;
         }
 
-        .logo {
-            font-size: 24px;
+        nav a {
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: #60428d;
+
             font-weight: bold;
 
-            color: #7250a8;
+            margin: 3px 5px;
+
+            padding: 8px 12px;
+
+            border-radius: 20px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+
+            background: linear-gradient(
+                90deg,
+                #7951b3,
+                #5799d5
+            );
+
+            transform: translateY(-2px);
         }
 
         /* =========================
@@ -127,6 +151,7 @@
 
         .info {
             font-size: 21px;
+
             line-height: 2;
 
             color: #57466e;
@@ -162,6 +187,7 @@
             color: white;
 
             font-size: 18px;
+
             font-weight: bold;
 
             padding: 14px 32px;
@@ -207,7 +233,23 @@
            มือถือ
         ========================= */
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 10px 5px;
+            }
+
+            nav a {
+                font-size: 12px;
+
+                padding: 6px 8px;
+
+                margin: 2px;
+            }
+
+            .home {
+                padding: 35px 15px;
+            }
 
             .content {
                 padding: 35px 20px;
@@ -232,22 +274,47 @@
 
             .button {
                 font-size: 16px;
+
                 padding: 12px 25px;
             }
+
         }
+
     </style>
 </head>
 
 <body>
 
     <!-- =========================
-         ส่วนหัว
+         เมนูด้านบน
     ========================= -->
 
     <nav>
-        <div class="logo">
-            My Portfolio 
-        </div>
+
+        <a href="index.html">
+            หน้าหลัก
+        </a>
+
+        <a href="introduction.html">
+            คำนำ
+        </a>
+
+        <a href="about.html">
+            About Me
+        </a>
+
+        <a href="university.html">
+            มหาลัย
+        </a>
+
+        <a href="portfolio.html">
+            ผลงาน/กิจกรรม
+        </a>
+
+        <a href="skills.html">
+            ทักษะ
+        </a>
+
     </nav>
 
 
@@ -284,7 +351,8 @@
                 </p>
 
                 <p>
-                    แผนการเรียน <strong>เตรียมวิศวกรรมศาสตร์</strong>
+                    แผนการเรียน
+                    <strong>เตรียมวิศวกรรมศาสตร์</strong>
                 </p>
 
             </div>
@@ -293,7 +361,7 @@
             <!-- ข้อความ -->
 
             <p class="welcome">
-                ยินดีต้อนรับเข้าสู่แฟ้มสะสมผลงานของฉัน 
+                ยินดีต้อนรับเข้าสู่แฟ้มสะสมผลงานของฉัน
             </p>
 
 
@@ -303,7 +371,7 @@
                 href="introduction.html"
                 class="button"
             >
-             📚🔍 เข้าดูผลงานของฉัน 🔎📚
+                📚🔍 เข้าดูผลงานของฉัน 🔎📚
             </a>
 
         </div>

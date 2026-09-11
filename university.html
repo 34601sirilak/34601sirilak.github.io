@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>มหาวิทยาลัย | Portfolio</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    background: linear-gradient(135deg, #eee5ff, #dff1ff);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* แถบเมนูด้านบน */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #7652b5, #5799d5);
+    padding: 15px 10px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* กล่องเนื้อหา */
+.container {
+    max-width: 850px;
+    margin: 110px auto 40px;
+    padding: 30px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(80,60,130,0.18);
+    text-align: center;
+}
+
+/* หัวข้อ */
+h1 {
+    color: #7045a8;
+    margin-bottom: 25px;
+}
+
+/* รูปมหาวิทยาลัย */
+.university-img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ข้อมูล */
+.info {
+    background: linear-gradient(135deg, #f3eaff, #e8f6ff);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+.info p {
+    font-size: 18px;
+    margin: 12px 0;
+    line-height: 1.7;
+}
+
+.label {
+    color: #7045a8;
+    font-weight: bold;
+}
+
+/* เป้าหมาย */
+.goal {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f4ff;
+    border-left: 5px solid #7652b5;
+    border-radius: 15px;
+}
+
+.goal h2 {
+    color: #7045a8;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.goal p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* ปุ่ม */
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #7652b5, #5799d5);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(80,60,130,0.25);
+}
+</style>
+</head>
+
+<body>
+
+<!-- แถบเมนู -->
+<nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="introduction.html">คำนำ</a>
+    <a href="about.html">About Me</a>
+    <a href="university.html">มหาวิทยาลัย</a>
+    <a href="portfolio.html">ผลงาน/กิจกรรม</a>
+    <a href="skills.html">ทักษะ</a>
+    <a href="projects.html">โครงงาน</a>
+    <a href="contact.html">ติดต่อ</a>
+</nav>
+
+<!-- เนื้อหา -->
+<div class="container">
+
+    <h1>🎓 มหาวิทยาลัยที่ใฝ่ฝัน</h1>
+
+    <!-- รูปมหาวิทยาลัย -->
+    <img src="IMG_6475.png" 
+         alt="มหาวิทยาลัยเกษตรศาสตร์ บางเขน"
+         class="university-img">
+
+    <div class="info">
+
+        <p>
+            <span class="label">มหาวิทยาลัย</span><br>
+            มหาวิทยาลัยเกษตรศาสตร์ บางเขน
+        </p>
+
+        <p>
+            <span class="label">คณะ</span><br>
+            คณะศึกษาศาสตร์
+        </p>
+
+        <p>
+            <span class="label">สาขา</span><br>
+            วิชาวิทยาศาสตร์ทั่วไป
+        </p>
+
+    </div>
+
+    <!-- เป้าหมาย -->
+    <div class="goal">
+        <h2>🎯 เป้าหมาย</h2>
+        <p>
+            มุ่งมั่นพัฒนาความรู้และทักษะด้านวิทยาศาสตร์
+            เพื่อนำไปต่อยอดสู่การเป็นครูวิทยาศาสตร์ที่ดี
+            และสามารถถ่ายทอดความรู้ให้นักเรียนเข้าใจได้ง่าย
+        </p>
+    </div>
+
+    <!-- ปุ่ม -->
+    <div class="buttons">
+        <a href="about.html" class="btn">← ย้อนกลับ</a>
+        <a href="portfolio.html" class="btn">ถัดไป → ผลงาน/กิจกรรม</a>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
         }
 
         body {
-            font-family: Tahoma, sans-serif;
+            font-family: Tahoma, Arial, sans-serif;
             min-height: 100vh;
 
             background: linear-gradient(
@@ -30,32 +31,35 @@
             );
 
             color: #4b3b60;
-            padding-top: 75px;
+
+            padding-top: 85px;
         }
 
 
         /* =========================
-           แถบเมนูด้านบน
+           เมนูด้านบน
         ========================= */
 
         nav {
             position: fixed;
+
             top: 0;
             left: 0;
 
             width: 100%;
 
-            padding: 16px 10px;
+            padding: 15px 10px;
 
             text-align: center;
 
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.95);
 
             box-shadow:
                 0 3px 15px rgba(90, 70, 150, 0.15);
 
-            z-index: 1000;
+            z-index: 9999;
         }
+
 
         nav a {
             display: inline-block;
@@ -74,6 +78,7 @@
 
             transition: 0.3s;
         }
+
 
         nav a:hover {
             color: white;
@@ -94,13 +99,14 @@
 
         .container {
             width: 92%;
+
             max-width: 850px;
 
             margin: 50px auto;
 
             padding: 45px 40px;
 
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.88);
 
             border-radius: 30px;
 
@@ -123,6 +129,7 @@
             margin-bottom: 12px;
         }
 
+
         .subtitle {
             text-align: center;
 
@@ -135,7 +142,7 @@
 
 
         /* =========================
-           ช่องทางการติดต่อ
+           กล่องติดต่อ
         ========================= */
 
         .contact-card {
@@ -163,12 +170,14 @@
             transition: 0.3s;
         }
 
+
         .contact-card:hover {
             transform: translateY(-4px);
 
             box-shadow:
                 0 12px 25px rgba(91, 70, 150, 0.18);
         }
+
 
         .contact-card h2 {
             font-size: 22px;
@@ -177,6 +186,7 @@
 
             margin-bottom: 12px;
         }
+
 
         .contact-card p {
             font-size: 18px;
@@ -188,7 +198,7 @@
 
 
         /* =========================
-           ลิงก์
+           ลิงก์ Email / โทร
         ========================= */
 
         .contact-card a {
@@ -198,6 +208,7 @@
 
             text-decoration: none;
         }
+
 
         .contact-card a:hover {
             color: #704ca5;
@@ -219,6 +230,7 @@
 
             margin-top: 40px;
         }
+
 
         .btn {
             display: inline-block;
@@ -245,6 +257,7 @@
             transition: 0.3s;
         }
 
+
         .btn:hover {
             transform: translateY(-3px);
 
@@ -254,7 +267,7 @@
 
 
         /* =========================
-           Responsive มือถือ
+           มือถือ
         ========================= */
 
         @media (max-width: 700px) {
@@ -263,9 +276,11 @@
                 padding-top: 125px;
             }
 
+
             nav {
                 padding: 10px 5px;
             }
+
 
             nav a {
                 font-size: 12px;
@@ -275,27 +290,33 @@
                 margin: 2px;
             }
 
+
             .container {
                 width: 92%;
 
                 padding: 35px 18px;
             }
 
+
             .title {
                 font-size: 29px;
             }
+
 
             .subtitle {
                 font-size: 16px;
             }
 
+
             .contact-card {
                 padding: 22px 15px;
             }
 
+
             .contact-card h2 {
                 font-size: 20px;
             }
+
 
             .contact-card p {
                 font-size: 16px;
@@ -303,13 +324,16 @@
                 word-break: break-word;
             }
 
+
             .buttons {
                 flex-direction: column;
             }
 
+
             .btn {
                 text-align: center;
             }
+
         }
 
     </style>
@@ -320,36 +344,36 @@
 
 
     <!-- =========================
-         แถบเมนูด้านบน
+         เมนูด้านบน
     ========================= -->
 
     <nav>
 
-        <a href="index.html">
+        <a href="./index.html">
             หน้าแรก
         </a>
 
-        <a href="introduction.html">
+        <a href="./introduction.html">
             คำนำ
         </a>
 
-        <a href="about.html">
+        <a href="./about.html">
             About Me
         </a>
 
-        <a href="university.html">
+        <a href="./university.html">
             มหาวิทยาลัย
         </a>
 
-        <a href="portfolio.html">
+        <a href="./portfolio.html">
             ผลงาน
         </a>
 
-        <a href="skills.html">
+        <a href="./skills.html">
             ทักษะ
         </a>
 
-        <a href="contact.html">
+        <a href="./contact.html">
             ติดต่อ
         </a>
 
@@ -362,9 +386,11 @@
 
     <main class="container">
 
+
         <h1 class="title">
-            ช่องทางการติดต่อ
+            💜 ช่องทางการติดต่อ 💙
         </h1>
+
 
         <p class="subtitle">
             สามารถติดต่อฉันได้ผ่านช่องทางต่อไปนี้
@@ -382,9 +408,11 @@
             </h2>
 
             <p>
+
                 <a href="mailto:por99srl@gmail.com">
                     por99srl@gmail.com
                 </a>
+
             </p>
 
         </div>
@@ -401,9 +429,11 @@
             </h2>
 
             <p>
+
                 <a href="tel:0901994740">
                     090-199-4740
                 </a>
+
             </p>
 
         </div>
@@ -427,13 +457,14 @@
 
 
         <!-- =========================
-             ปุ่มนำทาง
+             ปุ่มด้านล่าง
         ========================= -->
 
         <div class="buttons">
 
+
             <a
-                href="skills.html"
+                href="./skills.html"
                 class="btn"
             >
                 ← ย้อนกลับ
@@ -441,16 +472,19 @@
 
 
             <a
-                href="index.html"
+                href="./index.html"
                 class="btn"
             >
                 🏠 กลับไปหน้าหลัก
             </a>
+
 
         </div>
 
 
     </main>
 
+
 </body>
+
 </html>

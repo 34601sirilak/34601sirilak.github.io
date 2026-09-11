@@ -7,6 +7,7 @@
 <title>ทักษะและความสามารถ | Portfolio</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -30,31 +31,54 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
-    background: linear-gradient(90deg, #7652b5, #5799d5);
+
+    background: linear-gradient(
+        90deg,
+        #7652b5,
+        #5799d5
+    );
+
     padding: 15px 10px;
+
     text-align: center;
+
     z-index: 1000;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.18);
 }
 
 nav a {
     color: white;
+
     text-decoration: none;
+
     margin: 0 8px;
+
     font-weight: bold;
+
     font-size: 14px;
+
+    display: inline-block;
+
+    transition: 0.3s;
 }
 
 nav a:hover {
     text-decoration: underline;
+
+    transform: translateY(-2px);
 }
 
 /* ================= กล่องหลัก ================= */
 
 .container {
     max-width: 1000px;
+
     margin: 110px auto 50px;
+
     padding: 25px;
 }
 
@@ -62,57 +86,93 @@ nav a:hover {
 
 .main-title {
     text-align: center;
+
     color: #7045a8;
+
     font-size: 32px;
+
     margin-bottom: 12px;
 }
 
 .subtitle {
     text-align: center;
+
     color: #5799d5;
+
     font-size: 17px;
+
     margin-bottom: 35px;
+
+    line-height: 1.7;
 }
 
 /* ================= การ์ดทักษะ ================= */
 
 .skill-card {
     background: rgba(255,255,255,0.96);
+
     border-radius: 25px;
+
     padding: 28px;
+
     margin-bottom: 30px;
-    box-shadow: 0 7px 22px rgba(80,60,130,0.15);
+
+    box-shadow:
+        0 7px 22px rgba(80,60,130,0.15);
 }
 
 .skill-card h2 {
     text-align: center;
+
     color: #7045a8;
+
     margin-bottom: 22px;
+
     font-size: 23px;
+
+    line-height: 1.5;
 }
 
 /* ================= รูปภาพ ================= */
 
 .skill-image {
     width: 75%;
+
     max-width: 650px;
+
     height: 380px;
+
     object-fit: contain;
+
     display: block;
+
     margin: 0 auto 22px;
+
     background: white;
+
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.18);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.18);
 }
 
 /* ================= คำอธิบาย ================= */
 
 .description {
-    background: linear-gradient(135deg, #f5efff, #eef9ff);
+    background: linear-gradient(
+        135deg,
+        #f5efff,
+        #eef9ff
+    );
+
     border-left: 5px solid #7652b5;
+
     padding: 18px 20px;
+
     border-radius: 12px;
+
     line-height: 1.9;
+
     font-size: 16px;
 }
 
@@ -120,62 +180,104 @@ nav a:hover {
 
 .youtube-box {
     width: 85%;
+
     max-width: 700px;
+
     margin: 0 auto 22px;
 }
 
 .youtube-box iframe {
     width: 100%;
+
     aspect-ratio: 16 / 9;
+
     border: none;
+
     border-radius: 16px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* ปุ่มเปิด YouTube */
+/* ================= ปุ่ม YouTube ================= */
 
 .youtube-button {
     display: block;
+
     width: fit-content;
+
     margin: 15px auto 22px;
+
     padding: 12px 22px;
+
     border-radius: 25px;
-    background: linear-gradient(90deg, #7652b5, #5799d5);
+
+    background: linear-gradient(
+        90deg,
+        #7652b5,
+        #5799d5
+    );
+
     color: white;
+
     text-decoration: none;
+
     font-weight: bold;
+
     transition: 0.3s;
 }
 
 .youtube-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 12px rgba(80,60,130,0.25);
+
+    box-shadow:
+        0 5px 12px rgba(80,60,130,0.25);
 }
 
 /* ================= ปุ่มด้านล่าง ================= */
 
 .buttons {
     margin-top: 40px;
+
     display: flex;
+
     justify-content: center;
+
     gap: 15px;
+
     flex-wrap: wrap;
 }
 
 .btn {
     display: inline-block;
+
     padding: 13px 25px;
+
     border-radius: 25px;
-    background: linear-gradient(90deg, #7652b5, #5799d5);
+
+    background: linear-gradient(
+        90deg,
+        #7652b5,
+        #5799d5
+    );
+
     color: white;
+
     text-decoration: none;
+
     font-weight: bold;
+
     transition: 0.3s;
+
+    box-shadow:
+        0 5px 12px rgba(80,60,130,0.15);
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 12px rgba(80,60,130,0.25);
+
+    box-shadow:
+        0 7px 15px rgba(80,60,130,0.25);
 }
 
 /* ================= มือถือ ================= */
@@ -188,12 +290,15 @@ nav a:hover {
 
     nav a {
         font-size: 12px;
+
         margin: 3px;
-        display: inline-block;
+
+        padding: 3px 2px;
     }
 
     .container {
         margin-top: 130px;
+
         padding: 12px;
     }
 
@@ -201,19 +306,43 @@ nav a:hover {
         font-size: 27px;
     }
 
+    .subtitle {
+        font-size: 15px;
+    }
+
     .skill-card {
         padding: 18px;
     }
 
+    .skill-card h2 {
+        font-size: 20px;
+    }
+
     .skill-image {
         width: 100%;
+
         height: 300px;
     }
 
     .youtube-box {
         width: 100%;
     }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        text-align: center;
+
+        width: 100%;
+    }
 }
+
 </style>
 </head>
 
@@ -222,14 +351,31 @@ nav a:hover {
 <!-- ================= แถบเมนู ================= -->
 
 <nav>
-    <a href="index.html">หน้าแรก</a>
-    <a href="introduction.html">คำนำ</a>
-    <a href="about.html">About Me</a>
-    <a href="university.html">มหาวิทยาลัย</a>
-    <a href="portfolio.html">ผลงาน/กิจกรรม</a>
-    <a href="skills.html">ทักษะ</a>
-    <a href="projects.html">โครงงาน</a>
-    <a href="contact.html">ติดต่อ</a>
+
+    <a href="index.html">
+        หน้าแรก
+    </a>
+
+    <a href="introduction.html">
+        คำนำ
+    </a>
+
+    <a href="about.html">
+        About Me
+    </a>
+
+    <a href="university.html">
+        มหาวิทยาลัย
+    </a>
+
+    <a href="portfolio.html">
+        ผลงาน/กิจกรรม
+    </a>
+
+    <a href="skills.html">
+        ทักษะ
+    </a>
+
 </nav>
 
 
@@ -237,7 +383,9 @@ nav a:hover {
 
 <div class="container">
 
-    <h1 class="main-title">✨ ทักษะและความสามารถ</h1>
+    <h1 class="main-title">
+        ✨ ทักษะและความสามารถ
+    </h1>
 
     <p class="subtitle">
         ทักษะและประสบการณ์ที่ได้รับจากการเรียนรู้และการเข้าร่วมกิจกรรม
@@ -250,7 +398,9 @@ nav a:hover {
 
     <div class="skill-card">
 
-        <h2>🔬 1. ด้านการทดลอง</h2>
+        <h2>
+            🔬 1. ด้านการทดลอง
+        </h2>
 
         <img
             src="62E81353-97CA-4E21-B749-157D2050A3C5.jpeg"
@@ -273,7 +423,9 @@ nav a:hover {
 
     <div class="skill-card">
 
-        <h2>🤝 2. ด้านจิตอาสา</h2>
+        <h2>
+            🤝 2. ด้านจิตอาสา
+        </h2>
 
         <img
             src="IMG_6612.jpeg"
@@ -285,7 +437,7 @@ nav a:hover {
             มีประสบการณ์ในการมาช่วยงานสวัสดิการร้านค้ากับทางโรงเรียน
             ในวันรายงานตัวนักเรียนชั้นมัธยมศึกษาปีที่ 1
             สามารถช่วยงานจนเสร็จและไม่เกิดปัญหา
-            สามารถทำงานร่วมกับผู้อื่นได้ 
+            สามารถทำงานร่วมกับผู้อื่นได้
         </p>
 
     </div>
@@ -297,7 +449,9 @@ nav a:hover {
 
     <div class="skill-card">
 
-        <h2>🌟 3. ทักษะการเป็นผู้นำ</h2>
+        <h2>
+            🌟 3. ทักษะการเป็นผู้นำ
+        </h2>
 
         <img
             src="IMG_6610.jpeg"
@@ -321,7 +475,9 @@ nav a:hover {
 
     <div class="skill-card">
 
-        <h2>🎤 4. ทักษะการพูดและนำเสนอ</h2>
+        <h2>
+            🎤 4. ทักษะการพูดและนำเสนอ
+        </h2>
 
         <div class="youtube-box">
 
@@ -337,8 +493,11 @@ nav a:hover {
         <a
             href="https://youtu.be/7oh6j_ihH0M?si=xyB4h49g-t-s6-GL"
             target="_blank"
+            rel="noopener noreferrer"
             class="youtube-button">
+
             ▶ กดเข้าชมคลิปบน YouTube
+
         </a>
 
         <p class="description">
@@ -356,7 +515,9 @@ nav a:hover {
 
     <div class="skill-card">
 
-        <h2>👥 5. ทักษะการทำงานเป็นทีม</h2>
+        <h2>
+            👥 5. ทักษะการทำงานเป็นทีม
+        </h2>
 
         <img
             src="IMG_6622.jpeg"
@@ -375,17 +536,30 @@ nav a:hover {
 
 
     <!-- ================================================= -->
-    <!-- ปุ่มย้อนกลับ / ถัดไป -->
+    <!-- ปุ่มด้านล่าง -->
     <!-- ================================================= -->
 
     <div class="buttons">
 
-        <a href="portfolio.html" class="btn">
+        <!-- ย้อนกลับไปหน้าผลงาน -->
+
+        <a
+            href="portfolio.html"
+            class="btn">
+
             ← ย้อนกลับ ผลงาน/กิจกรรม
+
         </a>
 
-        <a href="projects.html" class="btn">
-            ถัดไป → ติดต่อ
+
+        <!-- กลับหน้าหลัก -->
+
+        <a
+            href="index.html"
+            class="btn">
+
+            🏠 กลับหน้าหลัก
+
         </a>
 
     </div>

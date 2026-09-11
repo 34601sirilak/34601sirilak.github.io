@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me | สิริลักษณ์ ผาดผ่อง</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Tahoma, sans-serif;
+            min-height: 100vh;
+
+            background: linear-gradient(
+                135deg,
+                #eee6ff,
+                #e8eaff,
+                #dff3ff
+            );
+
+            color: #4b3b60;
+
+            padding-top: 75px;
+        }
+
+
+        /* =========================
+           แถบเมนูด้านบน
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            padding: 16px 10px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.92);
+
+            box-shadow:
+                0 3px 15px rgba(90, 70, 150, 0.15);
+
+            z-index: 1000;
+        }
+
+        nav a {
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: #60428d;
+
+            font-weight: bold;
+
+            margin: 3px 5px;
+
+            padding: 8px 12px;
+
+            border-radius: 20px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+
+            background: linear-gradient(
+                90deg,
+                #7951b3,
+                #5799d5
+            );
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           กล่องหลัก
+        ========================= */
+
+        .container {
+            width: 92%;
+
+            max-width: 1000px;
+
+            margin: 45px auto;
+
+            padding: 45px 40px;
+
+            background: rgba(255, 255, 255, 0.8);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 12px 35px rgba(90, 70, 150, 0.16);
+        }
+
+
+        /* =========================
+           หัวข้อ
+        ========================= */
+
+        .title {
+            text-align: center;
+
+            font-size: 36px;
+
+            color: #704ca5;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           รูปโปรไฟล์
+        ========================= */
+
+        .profile {
+            display: block;
+
+            width: 230px;
+            height: 230px;
+
+            margin: 0 auto 30px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 8px solid white;
+
+            box-shadow:
+                0 8px 25px rgba(91, 70, 150, 0.25);
+        }
+
+
+        /* =========================
+           ข้อมูลส่วนตัว
+        ========================= */
+
+        .personal {
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+        .personal p {
+            font-size: 19px;
+
+            line-height: 2;
+
+            color: #514361;
+        }
+
+        .personal strong {
+            color: #68469b;
+        }
+
+
+        /* =========================
+           หัวข้อประวัติการศึกษา
+        ========================= */
+
+        .education-title {
+            text-align: center;
+
+            font-size: 29px;
+
+            color: #704ca5;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           กล่องประวัติการศึกษา
+           วงรีแนวนอน
+        ========================= */
+
+        .education {
+            display: flex;
+
+            align-items: center;
+
+            width: 100%;
+
+            min-height: 145px;
+
+            padding: 18px 30px;
+
+            margin-bottom: 25px;
+
+            border-radius: 100px;
+
+            background: linear-gradient(
+                100deg,
+                rgba(239, 229, 255, 0.95),
+                rgba(224, 242, 255, 0.95)
+            );
+
+            border: 3px solid #b6a1dc;
+
+            box-shadow:
+                0 7px 20px rgba(91, 70, 150, 0.12);
+
+            transition: 0.3s;
+        }
+
+        .education:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 12px 25px rgba(91, 70, 150, 0.18);
+        }
+
+
+        /* =========================
+           รูปโรงเรียน
+        ========================= */
+
+        .school-image {
+            width: 105px;
+            height: 105px;
+
+            flex-shrink: 0;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 6px solid white;
+
+            box-shadow:
+                0 5px 15px rgba(80, 65, 130, 0.2);
+
+            margin-right: 25px;
+        }
+
+
+        /* =========================
+           ข้อมูลโรงเรียน
+        ========================= */
+
+        .school-info {
+            line-height: 1.8;
+        }
+
+        .school-info h3 {
+            font-size: 20px;
+
+            color: #654393;
+
+            margin-bottom: 5px;
+        }
+
+        .school-info p {
+            font-size: 16px;
+
+            color: #5d5269;
+        }
+
+
+        /* =========================
+           ปุ่ม
+        ========================= */
+
+        .buttons {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-top: 45px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: white;
+
+            font-weight: bold;
+
+            padding: 13px 27px;
+
+            border-radius: 30px;
+
+            background: linear-gradient(
+                90deg,
+                #7951b3,
+                #5799d5
+            );
+
+            box-shadow:
+                0 6px 15px rgba(90, 70, 150, 0.2);
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 20px rgba(90, 70, 150, 0.3);
+        }
+
+
+        /* =========================
+           Responsive มือถือ
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding-top: 125px;
+            }
+
+            nav {
+                padding: 10px 5px;
+            }
+
+            nav a {
+                font-size: 12px;
+
+                padding: 6px 8px;
+
+                margin: 2px;
+            }
+
+            .container {
+                padding: 35px 18px;
+            }
+
+            .title {
+                font-size: 29px;
+            }
+
+            .profile {
+                width: 190px;
+                height: 190px;
+            }
+
+            .personal p {
+                font-size: 16px;
+            }
+
+            .education {
+                border-radius: 35px;
+
+                padding: 18px;
+
+                align-items: center;
+            }
+
+            .school-image {
+                width: 80px;
+                height: 80px;
+
+                margin-right: 15px;
+            }
+
+            .school-info h3 {
+                font-size: 16px;
+            }
+
+            .school-info p {
+                font-size: 14px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         แถบเมนูด้านบน
+    ========================= -->
+
+    <nav>
+
+        <a href="index.html">
+            หน้าแรก
+        </a>
+
+        <a href="introduction.html">
+            คำนำ
+        </a>
+
+        <a href="about.html">
+            About Me
+        </a>
+
+        <a href="university.html">
+            มหาวิทยาลัย
+        </a>
+
+        <a href="portfolio.html">
+            ผลงาน
+        </a>
+
+        <a href="skills.html">
+            ทักษะ
+        </a>
+
+        <a href="projects.html">
+            โครงงาน
+        </a>
+
+        <a href="contact.html">
+            ติดต่อ
+        </a>
+
+    </nav>
+
+
+    <!-- =========================
+         เนื้อหาหลัก
+    ========================= -->
+
+    <main class="container">
+
+
+        <h1 class="title">
+             About Me 
+        </h1>
+
+
+        <!-- =========================
+             รูปโปรไฟล์
+        ========================= -->
+
+        <img
+            src="45E1DEB7-D377-4807-8F1D-0FC5536C5C96.png"
+            alt="สิริลักษณ์ ผาดผ่อง"
+            class="profile"
+        >
+
+
+        <!-- =========================
+             ข้อมูลส่วนตัว
+        ========================= -->
+
+        <div class="personal">
+
+            <p>
+                <strong>ชื่อ :</strong>
+                นางสาวสิริลักษณ์ ผาดผ่อง
+            </p>
+
+            <p>
+                <strong>ชื่อเล่น :</strong>
+                ปอ
+            </p>
+
+            <p>
+                <strong>วันเกิด :</strong>
+                18 ตุลาคม 2551
+            </p>
+
+            <p>
+                <strong>ระดับการศึกษา :</strong>
+                นักเรียนชั้นมัธยมศึกษาปีที่ 6
+            </p>
+
+            <p>
+                <strong>แผนการเรียน :</strong>
+                เตรียมวิศวกรรมศาสตร์
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             ประวัติการศึกษา
+        ========================= -->
+
+        <h2 class="education-title">
+            🎓 ประวัติการศึกษา
+        </h2>
+
+
+        <!-- ประถมศึกษา -->
+
+        <div class="education">
+
+            <img
+                src="IMG_6619.jpeg"
+                alt="โรงเรียนบ้านมาบคล้า"
+                class="school-image"
+            >
+
+            <div class="school-info">
+
+                <h3>
+                    ระดับประถมศึกษา
+                </h3>
+
+                <p>
+                    โรงเรียนบ้านมาบคล้า
+                </p>
+
+                <p>
+                    (โรงเรียนขนาดเล็ก)
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- มัธยมศึกษาตอนต้น -->
+
+        <div class="education">
+
+            <img
+                src="IMG_6620.jpeg"
+                alt="โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์"
+                class="school-image"
+            >
+
+            <div class="school-info">
+
+                <h3>
+                    ระดับมัธยมศึกษาตอนต้น
+                </h3>
+
+                <p>
+                    โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
+                </p>
+
+                <p>
+                    (แผนการเรียน ไทย-สังคม)
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- มัธยมศึกษาตอนปลาย -->
+
+        <div class="education">
+
+            <img
+                src="IMG_6620.jpeg"
+                alt="โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์"
+                class="school-image"
+            >
+
+            <div class="school-info">
+
+                <h3>
+                    ระดับมัธยมศึกษาตอนปลาย
+                </h3>
+
+                <p>
+                    โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
+                </p>
+
+                <p>
+                    (แผนการเรียน เตรียมวิศวกรรมศาสตร์)
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             ปุ่มย้อนกลับ / ถัดไป
+        ========================= -->
+
+        <div class="buttons">
+
+            <a
+                href="introduction.html"
+                class="btn"
+            >
+                ← ย้อนกลับ
+            </a>
+
+            <a
+                href="university.html"
+                class="btn"
+            >
+                ถัดไป → มหาวิทยาลัย
+            </a>
+
+        </div>
+
+
+    </main>
+
+</body>
+</html>

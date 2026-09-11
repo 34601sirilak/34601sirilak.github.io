@@ -7,6 +7,7 @@
     <title>คำนำ | สิริลักษณ์ ผาดผ่อง</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -14,12 +15,21 @@
         }
 
         body {
-            font-family: Tahoma, sans-serif;
+            font-family: "Tahoma", sans-serif;
             min-height: 100vh;
-            background: linear-gradient(135deg, #eee6ff, #e8eaff, #dff3ff);
+
+            background: linear-gradient(
+                135deg,
+                #eee6ff,
+                #e8eaff,
+                #dff3ff
+            );
+
             color: #4b3b60;
+
             padding-top: 75px;
         }
+
 
         /* =====================
            แถบเมนูด้านบน
@@ -27,8 +37,10 @@
 
         nav {
             position: fixed;
+
             top: 0;
             left: 0;
+
             width: 100%;
 
             padding: 18px 10px;
@@ -37,10 +49,12 @@
 
             background: rgba(255, 255, 255, 0.9);
 
-            box-shadow: 0 3px 15px rgba(90, 70, 150, 0.15);
+            box-shadow:
+                0 3px 15px rgba(90, 70, 150, 0.15);
 
             z-index: 1000;
         }
+
 
         nav a {
             display: inline-block;
@@ -60,6 +74,7 @@
             transition: 0.3s;
         }
 
+
         nav a:hover {
             color: white;
 
@@ -70,12 +85,14 @@
             );
         }
 
+
         /* =====================
            เนื้อหา
         ===================== */
 
         .box {
             width: 90%;
+
             max-width: 850px;
 
             margin: 50px auto;
@@ -90,6 +107,7 @@
                 0 10px 30px rgba(90, 70, 150, 0.18);
         }
 
+
         h1 {
             text-align: center;
 
@@ -97,6 +115,7 @@
 
             margin-bottom: 30px;
         }
+
 
         p {
             font-size: 18px;
@@ -107,6 +126,7 @@
 
             margin-bottom: 20px;
         }
+
 
         /* =====================
            ปุ่มด้านล่าง
@@ -122,7 +142,10 @@
             gap: 15px;
         }
 
+
         .btn {
+            display: inline-block;
+
             text-decoration: none;
 
             color: white;
@@ -140,12 +163,14 @@
             transition: 0.3s;
         }
 
+
         .btn:hover {
             transform: translateY(-3px);
 
             box-shadow:
                 0 7px 15px rgba(90, 70, 150, 0.2);
         }
+
 
         /* =====================
            มือถือ
@@ -189,10 +214,13 @@
                 text-align: center;
             }
         }
+
     </style>
 </head>
 
+
 <body>
+
 
     <!-- =====================
          แถบเมนูด้านบน
@@ -200,21 +228,33 @@
 
     <nav>
 
-        <a href="index.html">หน้าแรก</a>
+        <a href="index.html">
+            หน้าแรก
+        </a>
 
-        <a href="introduction.html">คำนำ</a>
+        <a href="introduction.html">
+            คำนำ
+        </a>
 
-        <a href="about.html">About Me</a>
+        <a href="about.html">
+            About Me
+        </a>
 
-        <a href="university.html">มหาวิทยาลัย</a>
+        <a href="university.html">
+            มหาวิทยาลัย
+        </a>
 
-        <a href="portfolio.html">ผลงาน</a>
+        <a href="portfolio.html">
+            ผลงาน
+        </a>
 
-        <a href="skills.html">ทักษะ</a>
+        <a href="skills.html">
+            ทักษะ
+        </a>
 
-        <a href="projects.html">โครงงาน</a>
-
-        <a href="contact.html">ติดต่อ</a>
+        <a href="contact.html">
+            ติดต่อ
+        </a>
 
     </nav>
 
@@ -225,7 +265,10 @@
 
     <div class="box">
 
-        <h1>💜 คำนำ 💙</h1>
+        <h1>
+            💜 คำนำ 💙
+        </h1>
+
 
         <p>
             แฟ้มสะสมผลงานเล่มนี้จัดทำขึ้นเพื่อรวบรวมประวัติ
@@ -233,6 +276,7 @@
             โดยข้าพเจ้ามีความสนใจด้านวิทยาศาสตร์ ชื่นชอบการทดลอง
             และสนุกกับการคิดวิเคราะห์เพื่อค้นหาคำตอบ
         </p>
+
 
         <p>
             ข้าพเจ้ามีความสนใจศึกษาต่อในคณะศึกษาศาสตร์
@@ -248,17 +292,27 @@
 
         <div class="buttons">
 
-            <a href="index.html" class="btn">
+
+            <a
+                href="index.html"
+                class="btn"
+            >
                 ← ย้อนกลับ
             </a>
 
-            <a href="about.html" class="btn">
+
+            <a
+                href="about.html"
+                class="btn"
+            >
                 ถัดไป → About Me
             </a>
+
 
         </div>
 
     </div>
+
 
 </body>
 </html>

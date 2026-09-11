@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@
         }
 
         body {
-            font-family: Tahoma, sans-serif;
+            font-family: Tahoma, Arial, sans-serif;
             min-height: 100vh;
 
             background: linear-gradient(
@@ -41,6 +42,7 @@
 
         nav {
             position: fixed;
+
             top: 0;
             left: 0;
 
@@ -57,6 +59,7 @@
 
             z-index: 1000;
         }
+
 
         nav a {
             display: inline-block;
@@ -75,6 +78,7 @@
 
             transition: 0.3s;
         }
+
 
         nav a:hover {
             color: white;
@@ -156,8 +160,9 @@
         .personal {
             text-align: center;
 
-            margin-bottom: 50px;
+            margin-bottom: 35px;
         }
+
 
         .personal p {
             font-size: 19px;
@@ -167,8 +172,62 @@
             color: #514361;
         }
 
+
         .personal strong {
             color: #68469b;
+        }
+
+
+        /* =========================
+           ช่องทางการติดต่อ
+        ========================= */
+
+        .contact-title {
+            text-align: center;
+
+            font-size: 27px;
+
+            color: #704ca5;
+
+            margin-top: 15px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .contact {
+            text-align: center;
+
+            padding: 20px;
+
+            margin-bottom: 35px;
+
+            border-radius: 25px;
+
+            background: linear-gradient(
+                100deg,
+                rgba(239, 229, 255, 0.95),
+                rgba(224, 242, 255, 0.95)
+            );
+
+            border: 2px solid #c5b5df;
+
+            box-shadow:
+                0 7px 20px rgba(91, 70, 150, 0.12);
+        }
+
+
+        .contact p {
+            font-size: 18px;
+
+            line-height: 2;
+
+            color: #514361;
+        }
+
+
+        .contact strong {
+            color: #654393;
         }
 
 
@@ -189,7 +248,6 @@
 
         /* =========================
            กล่องประวัติการศึกษา
-           วงรีแนวนอน
         ========================= */
 
         .education {
@@ -220,6 +278,7 @@
 
             transition: 0.3s;
         }
+
 
         .education:hover {
             transform: translateY(-4px);
@@ -260,6 +319,7 @@
             line-height: 1.8;
         }
 
+
         .school-info h3 {
             font-size: 20px;
 
@@ -267,6 +327,7 @@
 
             margin-bottom: 5px;
         }
+
 
         .school-info p {
             font-size: 16px;
@@ -276,7 +337,7 @@
 
 
         /* =========================
-           ปุ่ม
+           ปุ่มด้านล่าง
         ========================= */
 
         .buttons {
@@ -288,6 +349,7 @@
 
             margin-top: 45px;
         }
+
 
         .btn {
             display: inline-block;
@@ -314,6 +376,7 @@
             transition: 0.3s;
         }
 
+
         .btn:hover {
             transform: translateY(-3px);
 
@@ -332,9 +395,11 @@
                 padding-top: 125px;
             }
 
+
             nav {
                 padding: 10px 5px;
             }
+
 
             nav a {
                 font-size: 12px;
@@ -344,22 +409,37 @@
                 margin: 2px;
             }
 
+
             .container {
                 padding: 35px 18px;
             }
 
+
             .title {
                 font-size: 29px;
             }
+
 
             .profile {
                 width: 190px;
                 height: 190px;
             }
 
+
             .personal p {
                 font-size: 16px;
             }
+
+
+            .contact-title {
+                font-size: 23px;
+            }
+
+
+            .contact p {
+                font-size: 16px;
+            }
+
 
             .education {
                 border-radius: 35px;
@@ -369,6 +449,7 @@
                 align-items: center;
             }
 
+
             .school-image {
                 width: 80px;
                 height: 80px;
@@ -376,21 +457,26 @@
                 margin-right: 15px;
             }
 
+
             .school-info h3 {
                 font-size: 16px;
             }
+
 
             .school-info p {
                 font-size: 14px;
             }
 
+
             .buttons {
                 flex-direction: column;
             }
 
+
             .btn {
                 text-align: center;
             }
+
         }
 
     </style>
@@ -407,35 +493,27 @@
     <nav>
 
         <a href="index.html">
-            หน้าแรก
+            🏠 หน้าหลัก
         </a>
 
         <a href="introduction.html">
-            คำนำ
+            📖 คำนำ
         </a>
 
         <a href="about.html">
-            About Me
+            👤 About Me
         </a>
 
         <a href="university.html">
-            มหาวิทยาลัย
+            🎓 มหาลัย
         </a>
 
         <a href="portfolio.html">
-            ผลงาน
+            🏆 ผลงาน/กิจกรรม
         </a>
 
         <a href="skills.html">
-            ทักษะ
-        </a>
-
-        <a href="projects.html">
-            โครงงาน
-        </a>
-
-        <a href="contact.html">
-            ติดต่อ
+            💡 ทักษะ
         </a>
 
     </nav>
@@ -449,7 +527,7 @@
 
 
         <h1 class="title">
-             About Me 
+            About Me
         </h1>
 
 
@@ -493,6 +571,46 @@
             <p>
                 <strong>แผนการเรียน :</strong>
                 เตรียมวิศวกรรมศาสตร์
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             ช่องทางการติดต่อ
+        ========================= -->
+
+        <h2 class="contact-title">
+            📞 ช่องทางการติดต่อ
+        </h2>
+
+
+        <div class="contact">
+
+            <p>
+                <strong>Email</strong>
+            </p>
+
+            <p>
+                por99srl@gmail.com
+            </p>
+
+
+            <p>
+                <strong>เบอร์โทรศัพท์</strong>
+            </p>
+
+            <p>
+                0901994740
+            </p>
+
+
+            <p>
+                <strong>Facebook</strong>
+            </p>
+
+            <p>
+                Sirilak Phartpong
             </p>
 
         </div>
@@ -607,11 +725,12 @@
                 ← ย้อนกลับ
             </a>
 
+
             <a
                 href="university.html"
                 class="btn"
             >
-                ถัดไป → มหาวิทยาลัย
+                ถัดไป → มหาลัย
             </a>
 
         </div>

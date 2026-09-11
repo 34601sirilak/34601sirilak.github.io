@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ผลงานและกิจกรรม | Portfolio</title>
+<title>ผลงานและกิจกรรม | สิริลักษณ์ ผาดผ่อง</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,225 +20,443 @@ html {
 
 body {
     font-family: Tahoma, sans-serif;
-    background: linear-gradient(135deg, #eee5ff, #dff1ff);
+
+    background: linear-gradient(
+        135deg,
+        #eee5ff,
+        #dff1ff
+    );
+
     min-height: 100vh;
+
     color: #333;
 }
 
-/* ================= แถบเมนู ================= */
+
+/* =========================
+   แถบเมนู
+========================= */
 
 nav {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
-    background: linear-gradient(90deg, #7652b5, #5799d5);
+
+    background: linear-gradient(
+        90deg,
+        #7652b5,
+        #5799d5
+    );
+
     padding: 15px 10px;
+
     text-align: center;
+
     z-index: 1000;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.18);
 }
+
 
 nav a {
     color: white;
+
     text-decoration: none;
+
     margin: 0 8px;
+
     font-weight: bold;
+
     font-size: 14px;
+
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
 }
+
 
 nav a:hover {
-    text-decoration: underline;
+    background: rgba(255,255,255,0.2);
+
+    transform: translateY(-2px);
 }
 
-/* ================= กล่องหลัก ================= */
+
+/* =========================
+   กล่องหลัก
+========================= */
 
 .container {
     max-width: 1050px;
+
     margin: 110px auto 50px;
+
     padding: 30px;
 }
 
-/* ================= หัวข้อ ================= */
+
+/* =========================
+   หัวข้อ
+========================= */
 
 .main-title {
     text-align: center;
+
     color: #7045a8;
+
     font-size: 32px;
+
     margin-bottom: 15px;
 }
 
+
 .subtitle {
     text-align: center;
+
     color: #5799d5;
+
     font-size: 18px;
+
     margin-bottom: 40px;
 }
 
-/* ================= หัวข้อแต่ละด้าน ================= */
+
+/* =========================
+   หัวข้อแต่ละด้าน
+========================= */
 
 .section-title {
     text-align: center;
+
     margin: 45px 0 25px;
+
     padding: 14px;
+
     border-radius: 18px;
+
     color: white;
-    background: linear-gradient(90deg, #7652b5, #5799d5);
-    box-shadow: 0 5px 15px rgba(80,60,130,0.18);
+
+    background: linear-gradient(
+        90deg,
+        #7652b5,
+        #5799d5
+    );
+
+    box-shadow:
+        0 5px 15px rgba(80,60,130,0.18);
 }
+
 
 .section-title h2 {
     font-size: 25px;
 }
 
-/* ================= การ์ดผลงาน ================= */
+
+/* =========================
+   การ์ดผลงาน
+========================= */
 
 .card {
     background: rgba(255,255,255,0.95);
+
     border-radius: 25px;
+
     padding: 25px;
+
     margin-bottom: 30px;
-    box-shadow: 0 7px 22px rgba(80,60,130,0.15);
+
+    box-shadow:
+        0 7px 22px rgba(80,60,130,0.15);
 }
+
 
 .card h3 {
     color: #7045a8;
+
     font-size: 21px;
+
     text-align: center;
+
     margin-bottom: 20px;
+
     line-height: 1.6;
 }
 
-/* ================= รูป ================= */
+
+/* =========================
+   รูปเดี่ยว
+========================= */
 
 .single-image {
     width: 75%;
+
     max-width: 750px;
+
     display: block;
+
     margin: 0 auto 22px;
+
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.18);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.18);
 }
+
+
+/* =========================
+   รูปคู่
+========================= */
 
 .two-images {
     display: flex;
+
     justify-content: center;
+
     align-items: stretch;
+
     gap: 20px;
+
     margin-bottom: 22px;
 }
 
+
 .two-images img {
     width: calc(50% - 10px);
+
     max-height: 430px;
+
     object-fit: contain;
+
     background: white;
+
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.18);
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.18);
 }
 
-/* ================= คำอธิบาย ================= */
+
+/* =========================
+   คำอธิบาย
+========================= */
 
 .description {
-    background: linear-gradient(135deg, #f5efff, #eef9ff);
+    background: linear-gradient(
+        135deg,
+        #f5efff,
+        #eef9ff
+    );
+
     border-left: 5px solid #7652b5;
+
     padding: 18px 20px;
+
     border-radius: 12px;
+
     line-height: 1.8;
+
     font-size: 16px;
 }
 
-/* ================= ปุ่ม ================= */
+
+/* =========================
+   ปุ่ม
+========================= */
 
 .buttons {
     margin-top: 40px;
+
     display: flex;
+
     justify-content: center;
+
     gap: 15px;
+
     flex-wrap: wrap;
 }
 
+
 .btn {
     display: inline-block;
+
     padding: 13px 25px;
+
     border-radius: 25px;
-    background: linear-gradient(90deg, #7652b5, #5799d5);
+
+    background: linear-gradient(
+        90deg,
+        #7652b5,
+        #5799d5
+    );
+
     color: white;
+
     text-decoration: none;
+
     font-weight: bold;
+
     transition: 0.3s;
 }
 
+
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 12px rgba(80,60,130,0.25);
+
+    box-shadow:
+        0 5px 12px rgba(80,60,130,0.25);
 }
 
-/* ================= มือถือ ================= */
+
+/* =========================
+   มือถือ
+========================= */
 
 @media (max-width: 700px) {
 
     nav {
-        padding: 12px 5px;
+        padding: 10px 5px;
     }
+
 
     nav a {
         font-size: 12px;
-        margin: 3px;
-        display: inline-block;
+
+        margin: 2px;
+
+        padding: 6px 8px;
     }
 
+
     .container {
-        margin-top: 130px;
+        width: 92%;
+
+        margin-top: 125px;
+
         padding: 15px;
     }
+
 
     .main-title {
         font-size: 26px;
     }
 
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+
     .section-title h2 {
         font-size: 21px;
     }
+
 
     .card {
         padding: 18px;
     }
 
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+
     .single-image {
         width: 100%;
     }
 
+
     .two-images {
         flex-direction: column;
+
         gap: 15px;
     }
 
+
     .two-images img {
         width: 100%;
+
+        max-height: none;
     }
+
+
+    .description {
+        font-size: 15px;
+    }
+
+
+    .buttons {
+        flex-direction: column;
+    }
+
+
+    .btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= แถบเมนู ================= -->
+
+<!-- =========================
+     แถบเมนู
+========================= -->
 
 <nav>
-    <a href="index.html">หน้าแรก</a>
-    <a href="introduction.html">คำนำ</a>
-    <a href="about.html">About Me</a>
-    <a href="university.html">มหาวิทยาลัย</a>
-    <a href="portfolio.html">ผลงาน/กิจกรรม</a>
-    <a href="skills.html">ทักษะ</a>
-    <a href="contact.html">ติดต่อ</a>
+
+    <a href="index.html">
+        หน้าแรก
+    </a>
+
+    <a href="introduction.html">
+        คำนำ
+    </a>
+
+    <a href="about.html">
+        About Me
+    </a>
+
+    <a href="university.html">
+        มหาลัย
+    </a>
+
+    <a href="portfolio.html">
+        ผลงาน/กิจกรรม
+    </a>
+
+    <a href="skills.html">
+        ทักษะ
+    </a>
+
 </nav>
 
 
+<!-- =========================
+     เนื้อหาหลัก
+========================= -->
+
 <div class="container">
 
-    <h1 class="main-title">🏆 ผลงานและกิจกรรม</h1>
+
+    <h1 class="main-title">
+        🎖️ ผลงานและกิจกรรม
+    </h1>
+
 
     <p class="subtitle">
         รวบรวมผลงาน กิจกรรม และประสบการณ์ที่ได้พัฒนาความรู้และทักษะ
@@ -249,7 +468,11 @@ nav a:hover {
     <!-- ================================================= -->
 
     <div class="section-title">
-        <h2>📚 ด้านวิชาการ</h2>
+
+        <h2>
+            🏆 ด้านวิชาการ
+        </h2>
+
     </div>
 
 
@@ -261,9 +484,13 @@ nav a:hover {
             ผลงานที่ 1 : การแข่งขัน Science Team ระดับมัธยมศึกษาตอนปลาย
         </h3>
 
-        <img src="IMG_6689.jpeg"
-             alt="เกียรติบัตรการแข่งขัน Science Team"
-             class="single-image">
+
+        <img
+            src="IMG_6689.jpeg"
+            alt="เกียรติบัตรการแข่งขัน Science Team"
+            class="single-image"
+        >
+
 
         <p class="description">
             กิจกรรมนี้ได้ฝึกการทำงานร่วมกันเป็นทีม
@@ -283,16 +510,22 @@ nav a:hover {
             ระดับมัธยมศึกษาตอนปลาย
         </h3>
 
+
         <div class="two-images">
 
-            <!-- เกียรติบัตรขึ้นก่อน -->
-            <img src="IMG_6578.jpeg"
-                 alt="เกียรติบัตรการแข่งขันศึกวัดเซียน">
+            <img
+                src="IMG_6578.jpeg"
+                alt="เกียรติบัตรการแข่งขันศึกวัดเซียน"
+            >
 
-            <img src="IMG_6494.jpeg"
-                 alt="ภาพกิจกรรมการแข่งขันศึกวัดเซียน">
+
+            <img
+                src="IMG_6494.jpeg"
+                alt="ภาพกิจกรรมการแข่งขันศึกวัดเซียน"
+            >
 
         </div>
+
 
         <p class="description">
             กิจกรรมนี้ได้ฝึกการวิเคราะห์ การแก้ไขปัญหา
@@ -313,16 +546,22 @@ nav a:hover {
             ระดับชั้นมัธยมศึกษาปีที่ 5
         </h3>
 
+
         <div class="two-images">
 
-            <!-- เกียรติบัตรขึ้นก่อน -->
-            <img src="IMG_6599.jpeg"
-                 alt="เกียรติบัตรการแข่งขันตอบปัญหาทางวิทยาศาสตร์">
+            <img
+                src="IMG_6599.jpeg"
+                alt="เกียรติบัตรการแข่งขันตอบปัญหาทางวิทยาศาสตร์"
+            >
 
-            <img src="IMG_6600.jpeg"
-                 alt="ภาพกิจกรรมการแข่งขันตอบปัญหาทางวิทยาศาสตร์">
+
+            <img
+                src="IMG_6600.jpeg"
+                alt="ภาพกิจกรรมการแข่งขันตอบปัญหาทางวิทยาศาสตร์"
+            >
 
         </div>
+
 
         <p class="description">
             กิจกรรมนี้ได้นำความรู้ทางวิชาวิทยาศาสตร์มาใช้
@@ -343,15 +582,22 @@ nav a:hover {
             ชิงแชมป์ประเทศไทย ประจำปี 2568
         </h3>
 
+
         <div class="two-images">
 
-            <img src="IMG_3751.jpeg"
-                 alt="เกียรติบัตรการแข่งขันครอสเวิร์ดเกม">
+            <img
+                src="IMG_3751.jpeg"
+                alt="เกียรติบัตรการแข่งขันครอสเวิร์ดเกม"
+            >
 
-            <img src="IMG_3750.jpeg"
-                 alt="ภาพกิจกรรมการแข่งขันครอสเวิร์ดเกม">
+
+            <img
+                src="IMG_3750.jpeg"
+                alt="ภาพกิจกรรมการแข่งขันครอสเวิร์ดเกม"
+            >
 
         </div>
+
 
         <p class="description">
             กิจกรรมนี้ได้ฝึกการคิดวางแผน
@@ -362,13 +608,16 @@ nav a:hover {
     </div>
 
 
-
     <!-- ================================================= -->
     <!--                    ด้านคุณธรรม                     -->
     <!-- ================================================= -->
 
     <div class="section-title">
-        <h2>🌷 ด้านคุณธรรม</h2>
+
+        <h2>
+            👑 ด้านคุณธรรม
+        </h2>
+
     </div>
 
 
@@ -380,9 +629,13 @@ nav a:hover {
             ผลงานที่ 1 : นักเรียนประพฤติดี ประจำปีการศึกษา 2568
         </h3>
 
-        <img src="IMG_6601.jpeg"
-             alt="เกียรติบัตรนักเรียนประพฤติดี"
-             class="single-image">
+
+        <img
+            src="IMG_6601.jpeg"
+            alt="เกียรติบัตรนักเรียนประพฤติดี"
+            class="single-image"
+        >
+
 
         <p class="description">
             กิจกรรมนี้สะท้อนให้เห็นถึงความรับผิดชอบ มีวินัย
@@ -400,9 +653,13 @@ nav a:hover {
             ผลงานที่ 2 : ค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน
         </h3>
 
-        <img src="IMG_6690.jpeg"
-             alt="เกียรติบัตรค่ายพัฒนาคุณธรรม"
-             class="single-image">
+
+        <img
+            src="IMG_6690.jpeg"
+            alt="เกียรติบัตรค่ายพัฒนาคุณธรรม"
+            class="single-image"
+        >
+
 
         <p class="description">
             กิจกรรมนี้ฝึกการเรียนรู้และการอยู่ร่วมกับผู้อื่น
@@ -413,13 +670,16 @@ nav a:hover {
     </div>
 
 
-
     <!-- ================================================= -->
     <!--                   ด้านภาวะผู้นำ                    -->
     <!-- ================================================= -->
 
     <div class="section-title">
-        <h2>🌟 ด้านภาวะผู้นำ</h2>
+
+        <h2>
+            🌟 ด้านภาวะผู้นำ
+        </h2>
+
     </div>
 
 
@@ -432,15 +692,22 @@ nav a:hover {
             เนื่องในกิจกรรมสัปดาห์คณิตศาสตร์สู่ความเป็นเลิศ
         </h3>
 
+
         <div class="two-images">
 
-            <img src="IMG_6604.jpeg"
-                 alt="เกียรติบัตรผู้ช่วยวิทยากร">
+            <img
+                src="IMG_6604.jpeg"
+                alt="เกียรติบัตรผู้ช่วยวิทยากร"
+            >
 
-            <img src="IMG_6610.jpeg"
-                 alt="ภาพกิจกรรมผู้ช่วยวิทยากร">
+
+            <img
+                src="IMG_6610.jpeg"
+                alt="ภาพกิจกรรมผู้ช่วยวิทยากร"
+            >
 
         </div>
+
 
         <p class="description">
             กิจกรรมนี้ช่วยพัฒนาความกล้าแสดงออกและทักษะการสื่อสาร
@@ -460,9 +727,13 @@ nav a:hover {
             (Mind Education)
         </h3>
 
-        <img src="IMG_6691.jpeg"
-             alt="โครงการสร้างภูมิคุ้มกันและความสมดุลทางจิตใจและปัญญา"
-             class="single-image">
+
+        <img
+            src="IMG_6691.jpeg"
+            alt="โครงการสร้างภูมิคุ้มกันและความสมดุลทางจิตใจและปัญญา"
+            class="single-image"
+        >
+
 
         <p class="description">
             กิจกรรมนี้ช่วยพัฒนาทักษะการสื่อสาร การทำงานร่วมกับผู้อื่น
@@ -472,21 +743,34 @@ nav a:hover {
     </div>
 
 
-    <!-- ================= ปุ่มด้านล่าง ================= -->
+    <!-- =========================
+         ปุ่มด้านล่าง
+    ========================= -->
 
     <div class="buttons">
 
-        <a href="university.html" class="btn">
-            ← ย้อนกลับ มหาวิทยาลัย
+
+        <a
+            href="university.html"
+            class="btn"
+        >
+            ← ย้อนกลับ มหาลัย
         </a>
 
-        <a href="skills.html" class="btn">
-            ถัดไป → Skills
+
+        <a
+            href="skills.html"
+            class="btn"
+        >
+            ถัดไป → ทักษะ
         </a>
+
 
     </div>
 
+
 </div>
+
 
 </body>
 </html>
